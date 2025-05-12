@@ -1,28 +1,29 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class ChimeraScript : MonoBehaviour
 {
-    public int speed = 100;
+    public Transform eyeball;
+    [SerializeField] int speed = 300;
+    [SerializeField] int maxDist = 1000;
     private Rigidbody2D rgb;
-    private Vector2 velocity;
-    private Vector2 input;
-
+    private Vector2 pos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        velocity = new Vector2(speed, speed);
+        pos = transform.position;
         rgb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Vector2 newPos = rgb.position + (input * velocity * Time.deltaTime);
-        rgb.MovePosition(newPos);
+        Vector2 EyePos = new Vector2(eyeball.position.x, eyeball.position.y);
+        pos = (Vector2) transform.position;
+        if (Vector2.Distance(EyePos, pos) > maxDist)
+        {
+            Vector2 newPos = Vector2.MoveTowards(transform.position, EyePos, speed * Time.deltaTime);
+            rgb.MovePosition(newPos);
+        }
     }
-    //if an input is there, then move the chimeras all in the same way
-    //if no input, either stand still or move towards nearby enemy to attack
 }
