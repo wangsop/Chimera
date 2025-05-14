@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class ChimeraScript : MonoBehaviour
 {
@@ -18,12 +17,15 @@ public class ChimeraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 EyePos = new Vector2(eyeball.position.x, eyeball.position.y);
-        pos = (Vector2) transform.position;
-        if (Vector2.Distance(EyePos, pos) > maxDist)
+        if (Input.GetKey(KeyCode.Space))
         {
-            Vector2 newPos = Vector2.MoveTowards(transform.position, EyePos, speed * Time.deltaTime);
-            rgb.MovePosition(newPos);
+            Vector2 EyePos = new Vector2(eyeball.position.x, eyeball.position.y);
+            pos = (Vector2)transform.position;
+            if (Vector2.Distance(EyePos, pos) > maxDist)
+            {
+                Vector2 newPos = Vector2.MoveTowards(transform.position, EyePos, speed * Time.deltaTime);
+                rgb.MovePosition(newPos);
+            }
         }
     }
 }
