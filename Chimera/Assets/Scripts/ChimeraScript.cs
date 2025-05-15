@@ -1,17 +1,16 @@
 using UnityEngine;
 
-public class ChimeraScript : MonoBehaviour
+public class ChimeraScript : Creature
 {
     public Transform eyeball;
-    [SerializeField] int speed = 300;
     [SerializeField] int maxDist = 1000;
-    private Rigidbody2D rgb;
     private Vector2 pos;
+    private Rigidbody2D rigid;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pos = transform.position;
-        rgb = GetComponent<Rigidbody2D>();
+        rigid = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -24,8 +23,10 @@ public class ChimeraScript : MonoBehaviour
             if (Vector2.Distance(EyePos, pos) > maxDist)
             {
                 Vector2 newPos = Vector2.MoveTowards(transform.position, EyePos, speed * Time.deltaTime);
-                rgb.MovePosition(newPos);
+                rigid.MovePosition(newPos);
             }
+        } else {
+            //run super update
         }
     }
 }
