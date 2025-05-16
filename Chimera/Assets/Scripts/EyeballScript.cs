@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
 
-public class MoveScript : MonoBehaviour
+public class MoveScript : MonoBehaviour, Entity
 {
     public int speed = 100;
     private Rigidbody2D rgb;
