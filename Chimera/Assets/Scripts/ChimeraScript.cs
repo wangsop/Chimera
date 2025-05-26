@@ -5,16 +5,16 @@ public class ChimeraScript : Creature
     public Transform eyeball;
     [SerializeField] int maxDist = 1000;
     private Vector2 pos;
-    private Rigidbody2D rigid;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    new void Start()
     {
         pos = transform.position;
-        rigid = gameObject.GetComponent<Rigidbody2D>();
+        hostile = false;
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
@@ -23,10 +23,10 @@ public class ChimeraScript : Creature
             if (Vector2.Distance(EyePos, pos) > maxDist)
             {
                 Vector2 newPos = Vector2.MoveTowards(transform.position, EyePos, speed * Time.deltaTime);
-                rigid.MovePosition(newPos);
+                rgb.MovePosition(newPos);
             }
         } else {
-            //run super update
+            base.Update();
         }
     }
 }
