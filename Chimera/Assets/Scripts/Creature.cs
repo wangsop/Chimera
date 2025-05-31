@@ -6,7 +6,7 @@ public abstract class Creature : MonoBehaviour, Entity
      protected bool hostile;
      protected int health = 10;
      protected int attack = 1;
-    [SerializeField] protected Collider2D collisions;
+    //[SerializeField] protected Collider2D collisions;
      protected Rigidbody2D rgb;
     [SerializeField] protected Collider2D trig;
      protected Creature aggro;
@@ -35,7 +35,6 @@ public abstract class Creature : MonoBehaviour, Entity
             Debug.Log("Overlap detected with: " + col.gameObject.name);
         }
         clock++;
-        //for chimeras, if space is down, that takes priority; else,
         if (aggro != null) {
             //head towards object of aggro
             Vector2 aggPos = new Vector2(aggro.gameObject.GetComponent<Transform>().position.x, aggro.gameObject.GetComponent<Transform>().position.y);
@@ -45,9 +44,9 @@ public abstract class Creature : MonoBehaviour, Entity
                 Vector2 newPos = Vector2.MoveTowards(transform.position, aggPos, speed * Time.deltaTime);
                 rgb.MovePosition(newPos);
             } else {
-                Debug.Log("Attacking");
-                if (clock > 60) {
+                if (clock > 1000) {
                     clock = 0;
+                    Debug.Log("Attacking");
                     Attack(aggro); //every 60 frames, while aggro is within attack range, attack aggro target
                 }
             }
@@ -55,7 +54,7 @@ public abstract class Creature : MonoBehaviour, Entity
     }
 
     public bool takeDamage(int dmg) {
-        Debug.Log(hostile ? "Enemy" : "Ally" + " took damage");
+        Debug.Log(hostile ? "Enemy took damage" : "Ally took damage");
         health -= dmg;
         if (health <= 0) {
             Die();
@@ -65,7 +64,7 @@ public abstract class Creature : MonoBehaviour, Entity
     }
 
     public void Attack(Creature target) {
-        Debug.Log(hostile ? "Enemy" : "Ally" + " attacked");
+        Debug.Log(hostile ? "Enemy attacked" : "Ally attacked");
         bool died = target.takeDamage(attack);
         if (died) {
             aggro = null;
@@ -77,7 +76,7 @@ public abstract class Creature : MonoBehaviour, Entity
         Destroy(this.gameObject);
     }
 
-    protected void OnTriggerEnter(Collider other) {
+    protected void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("New trigger enter");
         if (aggro == null && (other.gameObject.GetComponent<Creature>() != null)) {
             if (other.gameObject.GetComponent<Creature>().hostile != hostile) {
@@ -88,16 +87,19 @@ public abstract class Creature : MonoBehaviour, Entity
             inTrigger.Add(other.gameObject.GetComponent<Creature>());
         }
     }
-    protected void OnCollisionEnter(Collision other) {
+    protected void OnCollisionEnter2D(Collision2D other) {
         Debug.Log("Collision");
     }
     //so right now, the first enemy to enter trigger is aggro'd onto until it dies or leaves the trigger (when eyeball moves)
-    protected void OnTriggerExit(Collider other) {
-        if (other.gameObject == aggro.gameObject) {
-            aggro = null; //if currently aggro'd object leaves trigger colllider, stops aggroing it
-            reAggro();
-        } else if (other.gameObject.GetComponent<Creature>() != null) {
-            inTrigger.Remove(other.gameObject.GetComponent<Creature>());
+    protected void OnTriggerExit2D(Collider2D other) {
+        Debug.Log("Trigger Exit");
+        if (other != null) {
+            if (other.gameObject == aggro.gameObject) {
+                aggro = null; //if currently aggro'd object leaves trigger colllider, stops aggroing it
+                reAggro();
+            } else if (other.gameObject.GetComponent<Creature>() != null) {
+                inTrigger.Remove(other.gameObject.GetComponent<Creature>());
+            }
         }
     }
     protected void reAggro() {

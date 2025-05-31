@@ -5,6 +5,7 @@ public class MonsterScript : Creature
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     new void Start()
     {
+        health = 8;
         hostile = true;
         base.Start();
     }
