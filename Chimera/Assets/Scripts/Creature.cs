@@ -14,17 +14,20 @@ public abstract class Creature : MonoBehaviour, Entity
      protected List<Creature> inTrigger;
     [SerializeField] protected int attackRange = 15;
     [SerializeField] protected int speed = 300;
-    /* Head head;
+     int attackCount = 0;
+     Head head;
      Body body;
-     Tail tail;*/
+     Tail tail;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
-        /*health = body.getHealth();
-        attack = tail.getAttack();*/
+        head = gameObject.GetComponentInChildren<Head>();
+        body = gameObject.GetComponentInChildren<Body>();
+        tail = gameObject.GetComponentInChildren<Tail>();
+        health = body.getHealth();
+        attack = tail.getAttack();
         rgb = GetComponent<Rigidbody2D>();
         inTrigger = new List<Creature>();
-        //implement sprite image get/set here
     }
 
     // Update is called once per frame
@@ -46,8 +49,13 @@ public abstract class Creature : MonoBehaviour, Entity
             } else {
                 if (clock > 1000) {
                     clock = 0;
+                    attackCount++;
                     Debug.Log("Attacking");
-                    Attack(aggro); //every 60 frames, while aggro is within attack range, attack aggro target
+                    Attack(aggro); //every second, while aggro is within attack range, attack aggro target
+                    if (attackCount > 5){
+                        attackCount = 0;
+                        head.UseAbility();
+                    }
                 }
             }
         }
