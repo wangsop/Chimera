@@ -16,7 +16,7 @@ public abstract class BodyPart : MonoBehaviour
 
     protected abstract void Initialize();
     // Update is called once per frame
-    protected void Update()
+    protected virtual void Update()
     {
         
     }

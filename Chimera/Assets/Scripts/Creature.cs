@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public abstract class Creature : MonoBehaviour, Entity
 {
      protected bool hostile;
      protected int health = 10;
+     protected int maxHealth = 10;
      protected int attack = 1;
     //[SerializeField] protected Collider2D collisions;
      protected Rigidbody2D rgb;
@@ -18,6 +20,7 @@ public abstract class Creature : MonoBehaviour, Entity
      Head head;
      Body body;
      Tail tail;
+     public event Action<float> OnHealthChanged = delegate { };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
@@ -25,6 +28,7 @@ public abstract class Creature : MonoBehaviour, Entity
         body = gameObject.GetComponentInChildren<Body>();
         tail = gameObject.GetComponentInChildren<Tail>();
         health = body.getHealth();
+        maxHealth = body.getHealth();
         attack = tail.getAttack();
         rgb = GetComponent<Rigidbody2D>();
         inTrigger = new List<Creature>();
@@ -64,6 +68,8 @@ public abstract class Creature : MonoBehaviour, Entity
     public bool takeDamage(int dmg) {
         Debug.Log(hostile ? "Enemy took damage" : "Ally took damage");
         health -= dmg;
+        float healthPercent = (float) health / (float) maxHealth;
+        OnHealthChanged(healthPercent);
         if (health <= 0) {
             Die();
             return true;
