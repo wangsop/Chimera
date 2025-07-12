@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dcfa580454a784d57a112ddad167ef4a
+guid: 9517a4f9700784cf3bc98cffdfb5cf62
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3648415037842237001
-    second: SlugPixel_0
+      213: 4517843058918333263
+    second: SlugPixel-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -104,19 +104,63 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 7
-        width: 48
-        height: 29
+        y: 0
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7b9583c6ad93e5dc0800000000000000
-      internalID: -3648415037842237001
+      spriteID: 6b30bfa2df04949b4bce147ed15c6860
+      internalID: -379357398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlugPixel_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6140553e5c2d943d88921b763c53e42e
+      internalID: -140096408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlugPixel_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e18109bd19d64881a5f79cdcc344436
+      internalID: -1495587707
       vertices: []
       indices: 
       edges: []
@@ -125,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e71e072a56a24b0f9babb4c67db1bdf
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +178,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SlugPixel_0: -379357398
+      SlugPixel_1: -140096408
+      SlugPixel_2: -1495587707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

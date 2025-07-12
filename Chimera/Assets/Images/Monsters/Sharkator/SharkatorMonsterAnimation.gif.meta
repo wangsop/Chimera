@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 116db803c4e2247b8bb93aad3c11771b
+guid: a720ed209f71a430ebab5006ccaff9dd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7129159502799811493
-    second: SharkatorMonsterAnimation_0
+      213: 2128506503662308254
+    second: SharkatorMonsterAnimation (1)_0
+  - first:
+      213: -1643942193397092923
+    second: SharkatorMonsterAnimation (1)_1
+  - first:
+      213: -4478640461975549929
+    second: SharkatorMonsterAnimation (1)_2
+  - first:
+      213: -7495146208564738849
+    second: SharkatorMonsterAnimation (1)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SharkatorMonsterAnimation_0
+      name: SharkatorMonsterAnimation (1)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 48
-        height: 34
+        x: 359
+        y: 263
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5c44804433201d90800000000000000
-      internalID: -7129159502799811493
+      spriteID: e9b86e44369f98d10800000000000000
+      internalID: 2128506503662308254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkatorMonsterAnimation (1)_1
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 247
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cd2a4bf84b8f29e0800000000000000
+      internalID: -1643942193397092923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkatorMonsterAnimation (1)_2
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 247
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 718814b8a3ca8d1c0800000000000000
+      internalID: -4478640461975549929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkatorMonsterAnimation (1)_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 15
+        width: 370
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd402eafb34ebf790800000000000000
+      internalID: -7495146208564738849
       vertices: []
       indices: 
       edges: []
@@ -134,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SharkatorMonsterAnimation (1)_0: 2128506503662308254
+      SharkatorMonsterAnimation (1)_1: -1643942193397092923
+      SharkatorMonsterAnimation (1)_2: -4478640461975549929
+      SharkatorMonsterAnimation (1)_3: -7495146208564738849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

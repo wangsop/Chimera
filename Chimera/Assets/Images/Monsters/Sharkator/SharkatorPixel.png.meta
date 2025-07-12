@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 4051133d554d94cbc97c72d37e16c4a5
+guid: 8f6a9b9ce3af547fcb763628e92b2325
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2811072354655029680
-    second: SharkatorPixel_0
+      213: 8943124343872926439
+    second: SharkatorPixel-1.png_0
+  - first:
+      213: 4359704335619924483
+    second: SharkatorPixel-1.png_1
+  - first:
+      213: 7716470219842361236
+    second: SharkatorPixel-1.png_2
+  - first:
+      213: -7251534111068441058
+    second: SharkatorPixel-1.png_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SharkatorPixel_0
+      name: SharkatorPixel-1.png_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 48
-        height: 34
+        x: 359
+        y: 263
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 056bdde46901df8d0800000000000000
-      internalID: -2811072354655029680
+      spriteID: 7e2b1b2453c5c1c70800000000000000
+      internalID: 8943124343872926439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkatorPixel-1.png_1
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 247
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3022b5a9ef7c08c30800000000000000
+      internalID: 4359704335619924483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkatorPixel-1.png_2
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 247
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497959508c8661b60800000000000000
+      internalID: 7716470219842361236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkatorPixel-1.png_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 15
+        width: 370
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16332175206d5b90800000000000000
+      internalID: -7251534111068441058
       vertices: []
       indices: 
       edges: []
@@ -134,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SharkatorPixel-1.png_0: 8943124343872926439
+      SharkatorPixel-1.png_1: 4359704335619924483
+      SharkatorPixel-1.png_2: 7716470219842361236
+      SharkatorPixel-1.png_3: -7251534111068441058
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
