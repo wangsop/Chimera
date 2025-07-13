@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 51f54d26013feb640a96c1abe03bc788
+guid: fde590b10841043519b645a493067631
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4726726963383171884
-    second: GreenHealth_0
+      213: -3905568111921736855
+    second: SlugMonsterAnimation (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GreenHealth_0
+      name: SlugMonsterAnimation_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1193
-        height: 118
+        width: 384
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4d4094dbeda476eb0800000000000000
-      internalID: -4726726963383171884
+      spriteID: 0c78e7c1b5a6b4d8bb81f30af2a5f992
+      internalID: -801980997
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8e8403a8a9e6743909e0704f7de26775
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GreenHealth_0: -4726726963383171884
+      SlugMonsterAnimation_0: -801980997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

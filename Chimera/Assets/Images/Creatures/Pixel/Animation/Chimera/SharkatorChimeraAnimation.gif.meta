@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 51f54d26013feb640a96c1abe03bc788
+guid: abe017230c93c4fe5b188d542142eba2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4726726963383171884
-    second: GreenHealth_0
+      213: 7980902098724397911
+    second: SharkatorChimeraAnimation (1)_0
+  - first:
+      213: 6771983144573447587
+    second: SharkatorChimeraAnimation (1)_1
+  - first:
+      213: 3367483359050044080
+    second: SharkatorChimeraAnimation (1)_2
+  - first:
+      213: -3164997877361519938
+    second: SharkatorChimeraAnimation (1)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +109,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GreenHealth_0
+      name: SharkatorChimeraAnimation_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1193
-        height: 118
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4d4094dbeda476eb0800000000000000
-      internalID: -4726726963383171884
+      spriteID: eb199f1e89057420ebe983873a7ff419
+      internalID: -1028286693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkatorChimeraAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e456309d326c497382611e4c421056f
+      internalID: -1901544130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkatorChimeraAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4382d04b9be44b9c9142ee029171746
+      internalID: -1283958583
       vertices: []
       indices: 
       edges: []
@@ -125,7 +178,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e234591c315114777af355851eda24d0
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +188,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GreenHealth_0: -4726726963383171884
+      SharkatorChimeraAnimation_0: -1028286693
+      SharkatorChimeraAnimation_1: -1901544130
+      SharkatorChimeraAnimation_2: -1283958583
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
