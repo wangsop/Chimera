@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 178874fcfe05b4f5789095cd8815eaf2
+guid: 9517a4f9700784cf3bc98cffdfb5cf62
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7115184442846701004
-    second: SlugChimeraAnimation (1)_0
+      213: 4517843058918333263
+    second: SlugPixel-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SlugChimeraAnimation_0
+      name: SlugPixel_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b9552b542f1e495fab9a1f3fc405ffe
-      internalID: -331940759
+      spriteID: 6b30bfa2df04949b4bce147ed15c6860
+      internalID: -379357398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlugChimeraAnimation_1
+      name: SlugPixel_1
       rect:
         serializedVersion: 2
         x: 128
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e8dc15a94a93471596ecdc63e05bf16
-      internalID: -1408748577
+      spriteID: 6140553e5c2d943d88921b763c53e42e
+      internalID: -140096408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SlugChimeraAnimation_2
+      name: SlugPixel_2
       rect:
         serializedVersion: 2
         x: 256
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c40b0ce35e1340cb9a8cc2dd3e70122
-      internalID: -515178098
+      spriteID: 5e18109bd19d64881a5f79cdcc344436
+      internalID: -1495587707
       vertices: []
       indices: 
       edges: []
@@ -169,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7f57afbd6a823455d9548e6cb08fea80
+    spriteID: 5e71e072a56a24b0f9babb4c67db1bdf
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +179,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SlugChimeraAnimation_0: -331940759
-      SlugChimeraAnimation_1: -1408748577
-      SlugChimeraAnimation_2: -515178098
+      SlugPixel_0: -379357398
+      SlugPixel_1: -140096408
+      SlugPixel_2: -1495587707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
