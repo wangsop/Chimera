@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sharkator_0: 1745935395977840466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
