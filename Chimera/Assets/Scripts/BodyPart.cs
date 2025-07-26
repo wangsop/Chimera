@@ -20,4 +20,9 @@ public abstract class BodyPart : MonoBehaviour
     {
         
     }
+
+    public int GetIndex()
+    {
+        return index;
+    }
 }
