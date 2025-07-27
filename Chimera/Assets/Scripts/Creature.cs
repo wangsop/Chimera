@@ -4,7 +4,7 @@ using System;
 
 public abstract class Creature : MonoBehaviour, Entity
 {
-     protected bool hostile;
+    protected bool hostile;
      protected int health = 10;
      protected int maxHealth = 10;
      protected int attack = 1;
@@ -107,7 +107,7 @@ public abstract class Creature : MonoBehaviour, Entity
     //so right now, the first enemy to enter trigger is aggro'd onto until it dies or leaves the trigger (when eyeball moves)
     protected void OnTriggerExit2D(Collider2D other) {
         Debug.Log("Trigger Exit");
-        if (other != null) {
+        if (other != null && aggro != null) {
             if (other.gameObject == aggro.gameObject) {
                 aggro = null; //if currently aggro'd object leaves trigger colllider, stops aggroing it
                 reAggro();

@@ -4029,7 +4029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6365c8480abbc466ab291a30fd06df49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 600
 --- !u!50 &1632628123
 Rigidbody2D:
   serializedVersion: 5
@@ -5574,6 +5574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
+      propertyPath: Monster
+      value: 
+      objectReference: {fileID: 9121029991162654454, guid: 2b5fac41662d542908e528a5d72ed287, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
