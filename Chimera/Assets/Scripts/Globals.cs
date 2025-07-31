@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class Globals : MonoBehaviour
 {
     public Sprite[] Heads;
     public Sprite[] Bodies;
     public Sprite[] Tails;
-    private static List<GameObject> Chimeras = new List<GameObject>();
+    public static List<GameObject> Chimeras = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -17,9 +17,9 @@ public abstract class Creature : MonoBehaviour, Entity
     [SerializeField] protected int attackRange = 15;
     [SerializeField] protected int speed = 300;
      int attackCount = 0;
-     Head head;
-     Body body;
-     Tail tail;
+     protected Head head;
+     protected Body body;
+     protected Tail tail;
      public event Action<float> OnHealthChanged = delegate { };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()

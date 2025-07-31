@@ -29,4 +29,11 @@ public class ChimeraScript : Creature
             base.Update();
         }
     }
+    public int[] GetIndexes(){
+        int[] ret = new int[3];
+        ret[0] = this.head.GetIndex();
+        ret[1] = this.body.GetIndex();
+        ret[2] = this.tail.GetIndex();
+        return ret;
+    }
 }
