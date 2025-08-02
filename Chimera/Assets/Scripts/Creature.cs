@@ -32,6 +32,9 @@ public abstract class Creature : MonoBehaviour, Entity
         attack = tail.getAttack();
         rgb = GetComponent<Rigidbody2D>();
         inTrigger = new List<Creature>();
+        head.animator.SetBool("IsChimera", !hostile);
+        body.animator.SetBool("IsChimera", !hostile);
+        tail.animator.SetBool("IsChimera", !hostile);
     }
 
     // Update is called once per frame
@@ -87,6 +90,9 @@ public abstract class Creature : MonoBehaviour, Entity
     } 
 
     public void Die() {
+        head.animator.SetBool("IsAlive", false);
+        body.animator.SetBool("IsAlive", false);
+        tail.animator.SetBool("IsAlive", false);
         Destroy(this.gameObject);
     }
 
