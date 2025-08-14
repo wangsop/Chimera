@@ -8,6 +8,7 @@ public class ChimeraScript : Creature
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     new void Start()
     {
+        eyeball = GameObject.Find("Eyeball").transform;
         pos = transform.position;
         hostile = false;
         base.Start();
