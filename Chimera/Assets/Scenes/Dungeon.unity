@@ -5399,6 +5399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 1992808610758496205, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: Monster
       value: 
