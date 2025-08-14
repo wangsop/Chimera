@@ -4190,14 +4190,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 886300167378776049, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2045612333, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
-    - target: {fileID: 2782144448250455955, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2130554539, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
     - target: {fileID: 3093246287781483032, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
       propertyPath: m_Name
       value: ChimeraSharkator
@@ -4246,10 +4238,6 @@ PrefabInstance:
       propertyPath: eyeball
       value: 
       objectReference: {fileID: 1632628121}
-    - target: {fileID: 6811082951988678172, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -2065295203, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
     m_RemovedComponents:
     - {fileID: 5505893236338004038, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
     - {fileID: 7557381812111623609, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
@@ -4294,7 +4282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4730ade5959ab43eda552a7c199ad1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!114 &1918896990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4307,7 +4294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1caf2dbbee6114f1a8713a90c709cda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!114 &1918896991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4320,7 +4306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939ca9982254e43bc98456eb24a1f524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1 &1950125175
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,14 +5457,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 886300167378776049, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -379357398, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
-    - target: {fileID: 2782144448250455955, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1495587707, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
     - target: {fileID: 3093246287781483032, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
       propertyPath: m_Name
       value: Chimera
@@ -5528,10 +5505,6 @@ PrefabInstance:
       propertyPath: eyeball
       value: 
       objectReference: {fileID: 1632628121}
-    - target: {fileID: 6811082951988678172, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -140096408, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
