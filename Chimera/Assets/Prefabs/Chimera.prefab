@@ -99,7 +99,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7150557900060077372}
   - component: {fileID: 886300167378776049}
-  - component: {fileID: 5505893236338004038}
   - component: {fileID: 6630592310412305675}
   m_Layer: 6
   m_Name: Head
@@ -178,19 +177,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5505893236338004038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2571177860145057814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb009ad2962a244fb78ddbdfb5cc132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!95 &6630592310412305675
 Animator:
   serializedVersion: 7
@@ -567,7 +553,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1080603628619123629}
   - component: {fileID: 2782144448250455955}
-  - component: {fileID: 7626971378533189306}
   - component: {fileID: 5374587677181209040}
   m_Layer: 6
   m_Name: Tail
@@ -646,19 +631,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7626971378533189306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6233617077451277462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84f184ee891ba845972dbec40a317fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!95 &5374587677181209040
 Animator:
   serializedVersion: 7
@@ -691,7 +663,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5909135150134327354}
   - component: {fileID: 6811082951988678172}
-  - component: {fileID: 7557381812111623609}
   - component: {fileID: 3743218502083059471}
   m_Layer: 6
   m_Name: Body
@@ -770,19 +741,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7557381812111623609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8154823592149183914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e01d97ebbabfc0a448c42278e610eb32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!95 &3743218502083059471
 Animator:
   serializedVersion: 7
