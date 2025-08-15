@@ -27,10 +27,8 @@ public class CatalogGenerateScript : MonoBehaviour
     }
 
 
-    public void AddChimeraByObject(GameObject c){
-        ChimeraScript chimera = c.GetComponent<ChimeraScript>();
-        int[] temp = chimera.GetIndexes();
-        AddChimera(temp[0], temp[1], temp[2]);
+    public void AddChimeraByObject((int, int, int) c){
+        AddChimera(c.Item1, c.Item2, c.Item3);
     }
     public void AddChimera(int headIndex, int bodyIndex, int tailIndex){
         GameObject newEntry = Instantiate(prefab, new Vector3(-280, currentY, 90), Quaternion.Euler(0, 0, 0)) as GameObject;

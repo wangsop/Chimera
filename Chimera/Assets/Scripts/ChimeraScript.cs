@@ -9,7 +9,7 @@ public class ChimeraScript : Creature
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     new void Start()
     {
-        if (SceneManager.GetActiveScene().name != "Chimera Catalog")
+        if (SceneManager.GetActiveScene().name == "Dungeon")
         {
             eyeball = GameObject.Find("Eyeball").transform;
         }
