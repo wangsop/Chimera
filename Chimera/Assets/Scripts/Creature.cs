@@ -17,9 +17,9 @@ public abstract class Creature : MonoBehaviour, Entity
     [SerializeField] protected int attackRange = 15;
     [SerializeField] protected int speed = 300;
      int attackCount = 0;
-     Head head;
-     Body body;
-     Tail tail;
+     protected Head head;
+     protected Body body;
+     protected Tail tail;
      public event Action<float> OnHealthChanged = delegate { };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
@@ -27,14 +27,15 @@ public abstract class Creature : MonoBehaviour, Entity
         head = gameObject.GetComponentInChildren<Head>();
         body = gameObject.GetComponentInChildren<Body>();
         tail = gameObject.GetComponentInChildren<Tail>();
+        trig = gameObject.GetComponent<Collider2D>();
         health = body.getHealth();
         maxHealth = body.getHealth();
         attack = tail.getAttack();
         rgb = GetComponent<Rigidbody2D>();
         inTrigger = new List<Creature>();
-        head.animator.SetBool("IsChimera", !hostile);
-        body.animator.SetBool("IsChimera", !hostile);
-        tail.animator.SetBool("IsChimera", !hostile);
+        head.GetComponent<Animator>().SetBool("IsChimera", !hostile);
+        body.GetComponent<Animator>().SetBool("IsChimera", !hostile);
+        tail.GetComponent<Animator>().SetBool("IsChimera", !hostile);
     }
 
     // Update is called once per frame
@@ -97,13 +98,13 @@ public abstract class Creature : MonoBehaviour, Entity
     }
 
     protected void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("New trigger enter");
+        //Debug.Log("New trigger enter");
         if (aggro == null && (other.gameObject.GetComponent<Creature>() != null)) {
             if (other.gameObject.GetComponent<Creature>().hostile != hostile) {
                 aggro = other.gameObject.GetComponent<Creature>(); //only aggro if it's an enemy Creature
                 Debug.Log("Aggroed");
             }
-        } else if (other.gameObject.GetComponent<Creature>() != null) {
+        } else if (other.gameObject.GetComponent<Creature>() != null && other.gameObject.GetComponent<Creature>().hostile != hostile) {
             inTrigger.Add(other.gameObject.GetComponent<Creature>());
         }
     }
@@ -112,7 +113,7 @@ public abstract class Creature : MonoBehaviour, Entity
     }
     //so right now, the first enemy to enter trigger is aggro'd onto until it dies or leaves the trigger (when eyeball moves)
     protected void OnTriggerExit2D(Collider2D other) {
-        Debug.Log("Trigger Exit");
+        //Debug.Log("Trigger Exit");
         if (other != null && aggro != null) {
             if (other.gameObject == aggro.gameObject) {
                 aggro = null; //if currently aggro'd object leaves trigger colllider, stops aggroing it

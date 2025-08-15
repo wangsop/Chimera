@@ -6,16 +6,32 @@ public class CatalogGenerateScript : MonoBehaviour
 {
     public GameObject prefab;
     public GameObject contentRect;
+    Globals globals;
     int currentY = 360;
     int index = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentY = 360;
-        AddChimera(0, 1, 0);
-        AddChimera(1, 0, 1);
+        globals = GameObject.Find("Main Camera").GetComponent<Globals>();
+        globals.isDungeon = false;
+        for (int i = 0; i < Globals.Chimeras.Count; i++) {
+            AddChimeraByObject(Globals.Chimeras[i]);
+        }
     }
 
+    void OnDestroy()
+    {
+        Debug.Log("Exiting chimera catalog.");
+        globals.isDungeon = true;
+    }
+
+
+    public void AddChimeraByObject(GameObject c){
+        ChimeraScript chimera = c.GetComponent<ChimeraScript>();
+        int[] temp = chimera.GetIndexes();
+        AddChimera(temp[0], temp[1], temp[2]);
+    }
     public void AddChimera(int headIndex, int bodyIndex, int tailIndex){
         GameObject newEntry = Instantiate(prefab, new Vector3(-280, currentY, 90), Quaternion.Euler(0, 0, 0)) as GameObject;
         currentY -= 160;
@@ -26,11 +42,11 @@ public class CatalogGenerateScript : MonoBehaviour
         GameObject tail = newEntry.transform.GetChild(2).gameObject;
         GameObject text = newEntry.transform.GetChild(3).gameObject;
         Image im1 = head.GetComponent<Image>();
-        im1.sprite = GameObject.Find("Main Camera").GetComponent<Globals>().Heads[headIndex];
+        im1.sprite = globals.Heads[headIndex];
         Image im2 = body.GetComponent<Image>();
-        im2.sprite = GameObject.Find("Main Camera").GetComponent<Globals>().Bodies[bodyIndex];
+        im2.sprite = globals.Bodies[bodyIndex];
         Image im3 = tail.GetComponent<Image>();
-        im3.sprite = GameObject.Find("Main Camera").GetComponent<Globals>().Tails[tailIndex];
+        im3.sprite = globals.Tails[tailIndex];
         TMP_Text tmp = text.GetComponent<TMP_Text>();
         tmp.text = "      "+index;
         index++;
