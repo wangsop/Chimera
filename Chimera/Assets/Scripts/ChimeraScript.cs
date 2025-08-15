@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChimeraScript : Creature
 {
@@ -8,7 +9,10 @@ public class ChimeraScript : Creature
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     new void Start()
     {
-        eyeball = GameObject.Find("Eyeball").transform;
+        if (SceneManager.GetActiveScene().name != "Chimera Catalog")
+        {
+            eyeball = GameObject.Find("Eyeball").transform;
+        }
         pos = transform.position;
         hostile = false;
         base.Start();
@@ -17,7 +21,7 @@ public class ChimeraScript : Creature
     // Update is called once per frame
     new void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && eyeball != null)
         {
             Vector2 EyePos = new Vector2(eyeball.position.x, eyeball.position.y);
             pos = (Vector2)transform.position;

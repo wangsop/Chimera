@@ -365,7 +365,7 @@ PrefabInstance:
     - target: {fileID: 113321971896168759, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1028286693, guid: abe017230c93c4fe5b188d542142eba2, type: 3}
+      objectReference: {fileID: 2045612333, guid: 297f89d82a3fd45d887697ffafeb3f74, type: 3}
     - target: {fileID: 3084053309604116570, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -449,7 +449,7 @@ PrefabInstance:
     - target: {fileID: 5097210001745409518, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1901544130, guid: abe017230c93c4fe5b188d542142eba2, type: 3}
+      objectReference: {fileID: -2065295203, guid: 297f89d82a3fd45d887697ffafeb3f74, type: 3}
     - target: {fileID: 5255346425337322033, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_Name
       value: ChimeraEntry2
@@ -463,7 +463,7 @@ PrefabInstance:
     - target: {fileID: 6492717412576555347, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1283958583, guid: abe017230c93c4fe5b188d542142eba2, type: 3}
+      objectReference: {fileID: 2130554539, guid: 297f89d82a3fd45d887697ffafeb3f74, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
