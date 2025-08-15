@@ -21,26 +21,31 @@ public class Globals : MonoBehaviour
     public string[] bscripts = new string[2]{"LichenSlugBody", "SharkatorBody"};
     public string[] tscripts = new string[2]{"LichenSlugTail", "SharkatorTail"};
     public GameObject Chimerafab;
+    public bool isDungeon = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //initialize all chimeras in party
-        Vector3 add = new Vector3(10, 2, 0);
-        for (int i = 0; i < 5; i++) {
-            GameObject newChimera = Instantiate(Chimerafab, add * i, Quaternion.identity);
-            Debug.Log("new chimera instantiated");
-            Type hscript = Type.GetType(hscripts[party[i,0]]);
-            Type bscript = Type.GetType(bscripts[party[i,1]]);
-            Type tscript = Type.GetType(tscripts[party[i,2]]);
-            GameObject headChild = newChimera.transform.GetChild(0).gameObject;
-            GameObject bodyChild = newChimera.transform.GetChild(1).gameObject;
-            GameObject tailChild = newChimera.transform.GetChild(2).gameObject;
-            Component headScript = headChild.AddComponent(hscript);
-            Component bodyScript = bodyChild.AddComponent(bscript);
-            Component tailScript = tailChild.AddComponent(tscript);
-
-        }
-    }
+        if (isDungeon)
+        {
+            //initialize all chimeras in party
+            Vector3 add = new Vector3(10, 2, 0);
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject newChimera = Instantiate(Chimerafab, add * i, Quaternion.identity);
+                Chimeras.Add(newChimera);
+                Debug.Log("new chimera instantiated");
+                Type hscript = Type.GetType(hscripts[party[i, 0]]);
+                Type bscript = Type.GetType(bscripts[party[i, 1]]);
+                Type tscript = Type.GetType(tscripts[party[i, 2]]);
+                GameObject headChild = newChimera.transform.GetChild(0).gameObject;
+                GameObject bodyChild = newChimera.transform.GetChild(1).gameObject;
+                GameObject tailChild = newChimera.transform.GetChild(2).gameObject;
+                Component headScript = headChild.AddComponent(hscript);
+                Component bodyScript = bodyChild.AddComponent(bscript);
+                Component tailScript = tailChild.AddComponent(tscript);
+            }
+        } 
+    } 
 
     // Update is called once per frame
     void Update()
@@ -48,11 +53,11 @@ public class Globals : MonoBehaviour
         
     }
 
-    void AddChimera(GameObject chimera)
+    public static void AddChimera(GameObject chimera)
     {
         if (chimera.GetComponent<ChimeraScript>() == null)
         {
-            Debug.LogWarning("Invalid Chimera " + chimera.name + "!", transform);
+            Debug.LogWarning("Invalid Chimera " + chimera.name + "!");
             return;
         }
         Chimeras.Add(chimera);

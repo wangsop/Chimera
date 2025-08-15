@@ -14,9 +14,16 @@ public class CatalogGenerateScript : MonoBehaviour
     {
         currentY = 360;
         globals = GameObject.Find("Main Camera").GetComponent<Globals>();
+        globals.isDungeon = false;
         for (int i = 0; i < Globals.Chimeras.Count; i++) {
             AddChimeraByObject(Globals.Chimeras[i]);
         }
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("Exiting chimera catalog.");
+        globals.isDungeon = true;
     }
 
 
