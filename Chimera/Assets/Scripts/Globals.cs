@@ -10,7 +10,8 @@ public class Globals : MonoBehaviour
     public Sprite[] Heads;
     public Sprite[] Bodies;
     public Sprite[] Tails;
-    public static List<(int, int, int)> Chimeras = new List<(int, int, int)>();
+    public static List<ChimeraStats> Chimeras = new List<ChimeraStats>();
+    //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
     public static int[,] party = new int[5,3]{
         {0,1,0},
         {0,0,0},
@@ -61,11 +62,12 @@ public class Globals : MonoBehaviour
             return;
         }
         GameObject newChimera = Instantiate(temp, Vector3.zero, Quaternion.identity);
-        Chimeras.Add((UnityEngine.Random.Range(0, numMonsters), UnityEngine.Random.Range(0, numMonsters), UnityEngine.Random.Range(0, numMonsters)));
-        Debug.Log("new chimera instantiated");
-        Type hscript = Type.GetType(hscripts[Chimeras[Chimeras.Count - 1].Item1]);
-        Type bscript = Type.GetType(bscripts[Chimeras[Chimeras.Count - 1].Item2]);
-        Type tscript = Type.GetType(tscripts[Chimeras[Chimeras.Count - 1].Item3]);
+        ChimeraStats create = new ChimeraStats(UnityEngine.Random.Range(0, numMonsters), UnityEngine.Random.Range(0, numMonsters), UnityEngine.Random.Range(0, numMonsters));
+        Chimeras.Add(create);
+        Debug.Log("new chimera instantiated: "+create.HeadInd + create.BodyInd + create.TailInd);
+        Type hscript = Type.GetType(hscripts[Chimeras[Chimeras.Count - 1].HeadInd]);
+        Type bscript = Type.GetType(bscripts[Chimeras[Chimeras.Count - 1].BodyInd]);
+        Type tscript = Type.GetType(tscripts[Chimeras[Chimeras.Count - 1].TailInd]);
         //check for duplicates
         GameObject headChild = newChimera.transform.GetChild(0).gameObject;
         GameObject bodyChild = newChimera.transform.GetChild(1).gameObject;
@@ -85,6 +87,20 @@ public class Globals : MonoBehaviour
         Debug.Log("Added a new chimera!");
     }*/
     public void Back(){
-        SceneManager.LoadScene("Chimera Catalog");
+        SceneManager.LoadScene("Lab");
     }
 }
+public class ChimeraStats{
+        public int HeadInd;
+        public int BodyInd;
+        public int TailInd;
+        public int level;
+        public int exp;
+        public ChimeraStats(int h, int b, int t) {
+            HeadInd = h;
+            BodyInd = b;
+            TailInd = t;
+            level = 1;
+            exp = 0;
+        }
+    }
