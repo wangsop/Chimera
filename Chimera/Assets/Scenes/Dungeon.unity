@@ -324,16 +324,8 @@ MonoBehaviour:
   Tails:
   - {fileID: -1495587707, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
   - {fileID: 2130554539, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
-  hscripts:
-  - LichenSlugHead
-  - SharkatorHead
-  bscripts:
-  - LichenSlugBody
-  - SharkatorBody
-  tscripts:
-  - LichenSlugTail
-  - SharkatorTail
   Chimerafab: {fileID: 3093246287781483032, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
+  isDungeon: 1
 --- !u!1001 &572590434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4039,7 +4031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6365c8480abbc466ab291a30fd06df49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 600
+  speed: 300
 --- !u!50 &1632628123
 Rigidbody2D:
   serializedVersion: 5
@@ -5357,11 +5349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1258990404634441226, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.143543
+      value: 82.4
       objectReference: {fileID: 0}
     - target: {fileID: 1258990404634441226, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 54.978226
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 1258990404634441226, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: m_LocalPosition.z

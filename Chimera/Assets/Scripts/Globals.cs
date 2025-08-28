@@ -12,13 +12,7 @@ public class Globals : MonoBehaviour
     public Sprite[] Tails;
     public static List<ChimeraStats> Chimeras = new List<ChimeraStats>();
     //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
-    public static int[,] party = new int[5,3]{
-        {0,1,0},
-        {0,0,0},
-        {0,0,1},
-        {1,0,1},
-        {1,0,0}
-        };
+    public static List<ChimeraStats> party = new List<ChimeraStats>();
     public static string[] hscripts = new string[2]{"LichenSlugHead", "SharkatorHead"};
     public static string[] bscripts = new string[2]{"LichenSlugBody", "SharkatorBody"};
     public static string[] tscripts = new string[2]{"LichenSlugTail", "SharkatorTail"};
@@ -32,13 +26,18 @@ public class Globals : MonoBehaviour
         {
             //initialize all chimeras in party
             Vector3 add = new Vector3(10, 2, 0);
+            party = Chimeras; //temporary until we figure out party selection
             for (int i = 0; i < 5; i++)
             {
+                if (party.Count <= i)
+                {
+                    break;
+                }
                 GameObject newChimera = Instantiate(Chimerafab, add * i, Quaternion.identity);
                 Debug.Log("new chimera instantiated");
-                Type hscript = Type.GetType(hscripts[party[i, 0]]);
-                Type bscript = Type.GetType(bscripts[party[i, 1]]);
-                Type tscript = Type.GetType(tscripts[party[i, 2]]);
+                Type hscript = Type.GetType(hscripts[party[i].HeadInd]);
+                Type bscript = Type.GetType(bscripts[party[i].BodyInd]);
+                Type tscript = Type.GetType(tscripts[party[i].TailInd]);
                 GameObject headChild = newChimera.transform.GetChild(0).gameObject;
                 GameObject bodyChild = newChimera.transform.GetChild(1).gameObject;
                 GameObject tailChild = newChimera.transform.GetChild(2).gameObject;
@@ -60,6 +59,14 @@ public class Globals : MonoBehaviour
             temp = GameObject.Find("Main Camera").GetComponent<Globals>().Chimerafab;
         } else {
             return;
+        }
+        GameObject[] existing = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+        foreach (GameObject e in existing)
+        {
+            if (e.GetComponentInChildren<ChimeraScript>() != null)
+            {
+                Destroy(e);
+            }
         }
         GameObject newChimera = Instantiate(temp, Vector3.zero, Quaternion.identity);
         ChimeraStats create = new ChimeraStats(UnityEngine.Random.Range(0, numMonsters), UnityEngine.Random.Range(0, numMonsters), UnityEngine.Random.Range(0, numMonsters));
