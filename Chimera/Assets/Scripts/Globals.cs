@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System;
-
+//DO NOT EDIT!!!!! READ ONLY
 [DefaultExecutionOrder(-150)]
 public class Globals : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class Globals : MonoBehaviour
     public static List<ChimeraStats> Chimeras = new List<ChimeraStats>();
     //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
     public static List<ChimeraStats> party = new List<ChimeraStats>();
+    //These must match exactly the name of the scripts
     public static string[] hscripts = new string[2]{"LichenSlugHead", "SharkatorHead"};
     public static string[] bscripts = new string[2]{"LichenSlugBody", "SharkatorBody"};
     public static string[] tscripts = new string[2]{"LichenSlugTail", "SharkatorTail"};
