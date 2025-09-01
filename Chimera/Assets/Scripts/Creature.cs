@@ -71,6 +71,7 @@ public abstract class Creature : MonoBehaviour, Entity
 
     public bool takeDamage(int dmg) {
         Debug.Log(hostile ? "Enemy took damage" : "Ally took damage");
+        dmg = body.takeDamage(dmg);
         health -= dmg;
         float healthPercent = (float) health / (float) maxHealth;
         OnHealthChanged(healthPercent);
@@ -83,7 +84,7 @@ public abstract class Creature : MonoBehaviour, Entity
 
     public void Attack(Creature target) {
         Debug.Log(hostile ? "Enemy attacked" : "Ally attacked");
-        bool died = target.takeDamage(attack);
+        bool died = tail.Attack(target);
         if (died) {
             aggro = null;
             reAggro();
