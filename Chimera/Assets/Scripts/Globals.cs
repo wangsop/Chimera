@@ -14,12 +14,12 @@ public class Globals : MonoBehaviour
     //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
     public static List<ChimeraStats> party = new List<ChimeraStats>();
     //These must match exactly the name of the scripts
-    public static string[] hscripts = new string[2]{"LichenSlugHead", "SharkatorHead"};
-    public static string[] bscripts = new string[2]{"LichenSlugBody", "SharkatorBody"};
-    public static string[] tscripts = new string[2]{"LichenSlugTail", "SharkatorTail"};
+    public static string[] hscripts = new string[3]{"LichenSlugHead", "SharkatorHead", "NickHead"};
+    public static string[] bscripts = new string[3]{"LichenSlugBody", "SharkatorBody", "NickBody"};
+    public static string[] tscripts = new string[3]{"LichenSlugTail", "SharkatorTail", "NickTail"};
     public GameObject Chimerafab;
     public bool isDungeon = true;
-    public static int numMonsters = 2;
+    public static int numMonsters = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -83,6 +83,10 @@ public class Globals : MonoBehaviour
         Component headScript = headChild.AddComponent(hscript);
         Component bodyScript = bodyChild.AddComponent(bscript);
         Component tailScript = tailChild.AddComponent(tscript);
+        //force animations to be the chimera ones
+        headChild.GetComponent<Animator>().SetBool("IsChimera", true);
+        bodyChild.GetComponent<Animator>().SetBool("IsChimera", true);
+        tailChild.GetComponent<Animator>().SetBool("IsChimera", true);
     }
     /*public static void AddChimera(GameObject chimera)
     {
