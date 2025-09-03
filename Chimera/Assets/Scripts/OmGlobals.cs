@@ -66,15 +66,13 @@ public class OmGlobals : MonoBehaviour
     [CanBeNull]
     private static ChimeraStats GenerateGacha()
     {
-        var deck = Enumerable.Range(0, numMonsters).ToList();
+        var headInd = UnityEngine.Random.Range(0, hscripts.Length);
+        var bodyInd = UnityEngine.Random.Range(0, bscripts.Length);
+        var tailInd = UnityEngine.Random.Range(0, tscripts.Length);
 
-        var headInd = deck[UnityEngine.Random.Range(0, deck.Count)];
-        deck.RemoveAt(headInd);
-        var bodyInd = deck[UnityEngine.Random.Range(0, deck.Count)];
-        deck.RemoveAt(bodyInd);
-        var tailInd = deck[UnityEngine.Random.Range(0, deck.Count)];
+        if (headInd == bodyInd && bodyInd == tailInd) return null;
 
-        if (party.Cast<int>().Where((t, i) => party[i, 0] == headInd && party[i, 1] == bodyInd && party[i, 2] == tailInd).Any())
+        if (Chimeras.Any(t => t.BodyInd == bodyInd && t.HeadInd == headInd && t.TailInd == tailInd))
         {
             return null;
         }
