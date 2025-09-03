@@ -9,4 +9,8 @@ public abstract class Body : BodyPart
     protected override void Initialize(){
         image = GameObject.Find("Main Camera").GetComponent<Globals>().Bodies[index];
     }
+    public virtual int takeDamage(int damage)
+    {
+        return damage;
+    }
 }
