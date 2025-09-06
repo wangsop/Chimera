@@ -10,7 +10,14 @@ public class ChimeraScript : Creature
     new void Start()
     {
         //this throws an exception, sorry! please ignore for now
-        eyeball = GameObject.Find("Eyeball").transform;
+        try
+        {
+            eyeball = GameObject.Find("Eyeball").transform;
+        }
+        catch
+        {
+            eyeball = null;
+        }
         pos = transform.position;
         hostile = false;
         base.Start();
