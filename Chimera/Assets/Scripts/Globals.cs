@@ -14,12 +14,12 @@ public class Globals : MonoBehaviour
     //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
     public static List<ChimeraStats> party = new List<ChimeraStats>();
     //These must match exactly the name of the scripts
-    public static string[] hscripts = new string[4]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead"};
-    public static string[] bscripts = new string[4]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody"};
-    public static string[] tscripts = new string[4]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail"};
+    public static string[] hscripts = new string[5]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead"};
+    public static string[] bscripts = new string[5]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody"};
+    public static string[] tscripts = new string[5]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail"};
     public GameObject Chimerafab;
     public bool isDungeon = true;
-    public static int numMonsters = 4;
+    public static int numMonsters = hscripts.Length;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
