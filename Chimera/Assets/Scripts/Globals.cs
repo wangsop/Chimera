@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System;
+using System.Linq;
+using JetBrains.Annotations;
 //DO NOT EDIT!!!!! READ ONLY
 [DefaultExecutionOrder(-150)]
 public class Globals : MonoBehaviour
@@ -54,11 +56,37 @@ public class Globals : MonoBehaviour
     {
         
     }
-    public static void Gacha(){
+    [CanBeNull]
+    private static ChimeraStats GenerateGacha()
+    {
+        var headInd = UnityEngine.Random.Range(0, hscripts.Length);
+        var bodyInd = UnityEngine.Random.Range(0, bscripts.Length);
+        var tailInd = UnityEngine.Random.Range(0, tscripts.Length);
+
+        if (headInd == bodyInd && bodyInd == tailInd) return null;
+
+        if (Chimeras.Any(t => t.BodyInd == bodyInd && t.HeadInd == headInd && t.TailInd == tailInd))
+        {
+            return null;
+        }
+
+        return new ChimeraStats(headInd, bodyInd, tailInd);
+    }
+
+    public static void Gacha()
+    {
+        if (Chimeras.Count >= (Math.Pow(hscripts.Length, 3) - hscripts.Length))
+        {
+            Debug.Log("No chimeras left that can be created");
+            return;
+        }
         GameObject temp;
-        if (GameObject.Find("Main Camera").GetComponent<Globals>() != null) {
+        if (GameObject.Find("Main Camera").GetComponent<Globals>() != null)
+        {
             temp = GameObject.Find("Main Camera").GetComponent<Globals>().Chimerafab;
-        } else {
+        }
+        else
+        {
             return;
         }
         GameObject[] existing = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
@@ -69,24 +97,26 @@ public class Globals : MonoBehaviour
                 Destroy(e);
             }
         }
+
+        ChimeraStats generated = null;
+
+        while (generated == null) generated = GenerateGacha();
+
         GameObject newChimera = Instantiate(temp, Vector3.zero, Quaternion.identity);
-        ChimeraStats create = new ChimeraStats(UnityEngine.Random.Range(0, numMonsters), UnityEngine.Random.Range(0, numMonsters), UnityEngine.Random.Range(0, numMonsters));
-        Chimeras.Add(create);
-        Debug.Log("new chimera instantiated: "+create.HeadInd + create.BodyInd + create.TailInd);
+        Chimeras.Add(generated);
+
+        Debug.Log("new chimera instantiated: " + generated.HeadInd + generated.BodyInd + generated.TailInd);
         Type hscript = Type.GetType(hscripts[Chimeras[Chimeras.Count - 1].HeadInd]);
         Type bscript = Type.GetType(bscripts[Chimeras[Chimeras.Count - 1].BodyInd]);
         Type tscript = Type.GetType(tscripts[Chimeras[Chimeras.Count - 1].TailInd]);
-        //check for duplicates
+
         GameObject headChild = newChimera.transform.GetChild(0).gameObject;
         GameObject bodyChild = newChimera.transform.GetChild(1).gameObject;
         GameObject tailChild = newChimera.transform.GetChild(2).gameObject;
+
         Component headScript = headChild.AddComponent(hscript);
         Component bodyScript = bodyChild.AddComponent(bscript);
         Component tailScript = tailChild.AddComponent(tscript);
-        //force animations to be the chimera ones
-        headChild.GetComponent<Animator>().SetBool("IsChimera", true);
-        bodyChild.GetComponent<Animator>().SetBool("IsChimera", true);
-        tailChild.GetComponent<Animator>().SetBool("IsChimera", true);
     }
     /*public static void AddChimera(GameObject chimera)
     {
