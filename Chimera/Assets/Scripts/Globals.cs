@@ -15,6 +15,7 @@ public class Globals : MonoBehaviour
     public static List<ChimeraStats> Chimeras = new List<ChimeraStats>();
     //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
     public static List<ChimeraStats> party = new List<ChimeraStats>();
+    public List<GameObject> party_objs = new List<GameObject>();
     //These must match exactly the name of the scripts
     public static string[] hscripts = new string[3]{"LichenSlugHead", "SharkatorHead", "NickHead"};
     public static string[] bscripts = new string[3]{"LichenSlugBody", "SharkatorBody", "NickBody"};
@@ -22,11 +23,13 @@ public class Globals : MonoBehaviour
     public GameObject Chimerafab;
     public bool isDungeon = true;
     public static int numMonsters = 3;
+    public static int energy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (isDungeon)
         {
+            energy = 0;
             //initialize all chimeras in party
             Vector3 add = new Vector3(10, 2, 0);
             party = Chimeras; //temporary until we figure out party selection
@@ -47,6 +50,7 @@ public class Globals : MonoBehaviour
                 Component headScript = headChild.AddComponent(hscript);
                 Component bodyScript = bodyChild.AddComponent(bscript);
                 Component tailScript = tailChild.AddComponent(tscript);
+                party_objs.Add(newChimera);
             }
         } 
     } 
@@ -130,6 +134,43 @@ public class Globals : MonoBehaviour
     }*/
     public void Back(){
         SceneManager.LoadScene("Lab");
+    }
+    public void Ability1()
+    {
+        ChimeraAbility(0);
+    }
+    public void Ability2()
+    {
+        ChimeraAbility(1);
+    }
+    public void Ability3()
+    {
+        ChimeraAbility(2);
+    }
+    public void Ability4()
+    {
+        ChimeraAbility(3);
+    }
+    public void Ability5()
+    {
+        ChimeraAbility(4);
+    }
+    public void ChimeraAbility(int x){
+        if (party.Count > x){
+            Head h = party_objs[x].GetComponentInChildren<Head>();
+            if (h != null)
+            {
+                if (energy >= 10)
+                {
+                    h.UseAbility();
+                    energy -= 10;
+                }
+                else
+                {
+                    Debug.Log("Not enough energy!");
+                }
+            }
+        }
     }
 }
 public class ChimeraStats{

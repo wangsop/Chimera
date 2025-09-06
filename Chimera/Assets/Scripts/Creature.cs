@@ -60,10 +60,6 @@ public abstract class Creature : MonoBehaviour, Entity
                     attackCount++;
                     Debug.Log("Attacking");
                     Attack(aggro); //every second, while aggro is within attack range, attack aggro target
-                    if (attackCount > 5){
-                        attackCount = 0;
-                        head.UseAbility();
-                    }
                 }
             }
         }
@@ -88,6 +84,10 @@ public abstract class Creature : MonoBehaviour, Entity
         if (died) {
             aggro = null;
             reAggro();
+            if (this.hostile == false)
+            {
+                Globals.energy += 5;
+            }
         }
     } 
 
