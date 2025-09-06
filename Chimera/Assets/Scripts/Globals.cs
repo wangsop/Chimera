@@ -17,13 +17,14 @@ public class Globals : MonoBehaviour
     public static List<ChimeraStats> party = new List<ChimeraStats>();
     public List<GameObject> party_objs = new List<GameObject>();
     //These must match exactly the name of the scripts
-    public static string[] hscripts = new string[3]{"LichenSlugHead", "SharkatorHead", "NickHead"};
-    public static string[] bscripts = new string[3]{"LichenSlugBody", "SharkatorBody", "NickBody"};
-    public static string[] tscripts = new string[3]{"LichenSlugTail", "SharkatorTail", "NickTail"};
+    public static string[] hscripts = new string[5]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead"};
+    public static string[] bscripts = new string[5]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody"};
+    public static string[] tscripts = new string[5]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail"};
     public GameObject Chimerafab;
     public bool isDungeon = true;
-    public static int numMonsters = 3;
+    public static int numMonsters = hscripts.Length;
     public static int energy;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

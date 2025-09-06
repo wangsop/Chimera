@@ -273,14 +273,20 @@ MonoBehaviour:
   - {fileID: 2124760463, guid: f3b227cc739d34b568a4a4e52908d2c1, type: 3}
   - {fileID: -1874437084, guid: 61c6ecebe7f474caeb97030a89652390, type: 3}
   - {fileID: 1981419516, guid: 74854c699fd0d478b926b0857e338cbd, type: 3}
+  - {fileID: 858021901, guid: ae4ede9c8eb704f5380c70ba2c129dbb, type: 3}
+  - {fileID: 1060667223, guid: c490871209e5b4c1abef6515d8df8ec5, type: 3}
   Bodies:
   - {fileID: -727943162, guid: f3b227cc739d34b568a4a4e52908d2c1, type: 3}
   - {fileID: 2063918048, guid: 61c6ecebe7f474caeb97030a89652390, type: 3}
   - {fileID: -298091788, guid: 74854c699fd0d478b926b0857e338cbd, type: 3}
+  - {fileID: 2082781544, guid: ae4ede9c8eb704f5380c70ba2c129dbb, type: 3}
+  - {fileID: -1292993375, guid: c490871209e5b4c1abef6515d8df8ec5, type: 3}
   Tails:
   - {fileID: -2104495582, guid: f3b227cc739d34b568a4a4e52908d2c1, type: 3}
   - {fileID: 1073830833, guid: 61c6ecebe7f474caeb97030a89652390, type: 3}
   - {fileID: -1374920225, guid: 74854c699fd0d478b926b0857e338cbd, type: 3}
+  - {fileID: -1778101468, guid: ae4ede9c8eb704f5380c70ba2c129dbb, type: 3}
+  - {fileID: -1405425915, guid: c490871209e5b4c1abef6515d8df8ec5, type: 3}
   Chimerafab: {fileID: 3093246287781483032, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
   isDungeon: 0
 --- !u!1 &240879445
