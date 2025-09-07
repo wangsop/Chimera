@@ -17,9 +17,9 @@ public class Globals : MonoBehaviour
     public static List<ChimeraStats> party = new List<ChimeraStats>();
     public List<GameObject> party_objs = new List<GameObject>();
     //These must match exactly the name of the scripts
-    public static string[] hscripts = new string[5]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead"};
-    public static string[] bscripts = new string[5]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody"};
-    public static string[] tscripts = new string[5]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail"};
+    public static string[] hscripts = new string[7]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead", "PalacellHead", "ArtillipedeHead"};
+    public static string[] bscripts = new string[7]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody", "PalacellBody", "ArtillipedeBody"};
+    public static string[] tscripts = new string[7]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail", "PalacellTail", "ArtillipedeTail"};
     public GameObject Chimerafab;
     public bool isDungeon = true;
     public static int numMonsters = hscripts.Length;
