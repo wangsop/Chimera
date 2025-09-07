@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class ChimeraScript : Creature
 {
     public Transform eyeball;
+    public int spot = 0;
     [SerializeField] int maxDist = 1000;
     private Vector2 pos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,7 +27,7 @@ public class ChimeraScript : Creature
     // Update is called once per frame
     new void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && eyeball != null)
+        if (eyeball != null && (Input.GetKey(KeyCode.Space) || (Input.GetKey(KeyCode.Alpha1) && spot == 1) || (Input.GetKey(KeyCode.Alpha2) && spot == 2) || (Input.GetKey(KeyCode.Alpha3) && spot == 3) || (Input.GetKey(KeyCode.Alpha4) && spot == 4) || (Input.GetKey(KeyCode.Alpha5) && spot == 5)))
         {
             Vector2 EyePos = new Vector2(eyeball.position.x, eyeball.position.y);
             pos = (Vector2)transform.position;
