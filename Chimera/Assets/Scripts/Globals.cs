@@ -51,6 +51,8 @@ public class Globals : MonoBehaviour
                 Component headScript = headChild.AddComponent(hscript);
                 Component bodyScript = bodyChild.AddComponent(bscript);
                 Component tailScript = tailChild.AddComponent(tscript);
+                ChimeraScript cs = newChimera.GetComponentInChildren<ChimeraScript>();
+                cs.spot = i + 1;
                 party_objs.Add(newChimera);
             }
         } 
