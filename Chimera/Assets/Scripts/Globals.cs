@@ -142,7 +142,13 @@ public class Globals : MonoBehaviour
 
     public void Dungeon()
     {
-        SceneManager.LoadScene("Dungeon");
+        if (party_indexes.Count > 0)
+        {
+            SceneManager.LoadScene("Dungeon");
+        } else
+        {
+            Debug.Log("You must pick at least one Chimera before going into the dungeon!");
+        }
     }
 
     public void Ability1()
