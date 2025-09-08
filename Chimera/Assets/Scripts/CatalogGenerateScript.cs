@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class CatalogGenerateScript : MonoBehaviour
 {
@@ -47,6 +48,13 @@ public class CatalogGenerateScript : MonoBehaviour
         im3.sprite = globals.Tails[tailIndex];
         TMP_Text tmp = text.GetComponent<TMP_Text>();
         tmp.text = "      "+index;
+        try
+        {
+            newEntry.GetComponent<ClickableChimeraScript>().SetIndex(index - 1);
+        } catch (Exception)
+        {
+            Debug.Log("Warning: No Index Set");
+        }
         index++;
     }
 }
