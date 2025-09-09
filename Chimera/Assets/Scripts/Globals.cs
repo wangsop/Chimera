@@ -16,6 +16,8 @@ public class Globals : MonoBehaviour
     //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
     public static List<ChimeraStats> party = new List<ChimeraStats>();
     public List<GameObject> party_objs = new List<GameObject>();
+    public static List<int> party_indexes = new List<int>();
+    public const int PARTY_SIZE = 5;
     //These must match exactly the name of the scripts
     public static string[] hscripts = new string[7]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead", "PalacellHead", "ArtillipedeHead"};
     public static string[] bscripts = new string[7]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody", "PalacellBody", "ArtillipedeBody"};
@@ -33,13 +35,12 @@ public class Globals : MonoBehaviour
             energy = 0;
             //initialize all chimeras in party
             Vector3 add = new Vector3(10, 2, 0);
-            party = Chimeras; //temporary until we figure out party selection
-            for (int i = 0; i < 5; i++)
+            foreach (int index in party_indexes)
             {
-                if (party.Count <= i)
-                {
-                    break;
-                }
+                party.Add(Chimeras[index]);
+            }
+            for (int i = 0; i < party.Count; i++)
+            {
                 GameObject newChimera = Instantiate(Chimerafab, add * i, Quaternion.identity);
                 Debug.Log("new chimera instantiated");
                 Type hscript = Type.GetType(hscripts[party[i].HeadInd]);
@@ -138,6 +139,18 @@ public class Globals : MonoBehaviour
     public void Back(){
         SceneManager.LoadScene("Lab");
     }
+
+    public void Dungeon()
+    {
+        if (party_indexes.Count > 0)
+        {
+            SceneManager.LoadScene("Dungeon");
+        } else
+        {
+            Debug.Log("You must pick at least one Chimera before going into the dungeon!");
+        }
+    }
+
     public void Ability1()
     {
         ChimeraAbility(0);
@@ -174,6 +187,11 @@ public class Globals : MonoBehaviour
                 }
             }
         }
+    }
+
+    public static int AmountOfChimerasLeftToAddInParty()
+    {
+        return Globals.PARTY_SIZE - Globals.party_indexes.Count;
     }
 }
 public class ChimeraStats{

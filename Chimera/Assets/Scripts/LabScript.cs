@@ -15,7 +15,7 @@ public class LabScript : MonoBehaviour
         
     }
     public void Dungeon(){
-        SceneManager.LoadScene("Dungeon");
+        SceneManager.LoadScene("Chimera Select");
     }
     public void Gacha(){
         SceneManager.LoadScene("Gacha");
