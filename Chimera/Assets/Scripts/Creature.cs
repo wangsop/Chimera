@@ -60,10 +60,6 @@ public abstract class Creature : MonoBehaviour, Entity
                     attackCount++;
                     Debug.Log("Attacking");
                     Attack(aggro); //every second, while aggro is within attack range, attack aggro target
-                    if (attackCount > 5){
-                        attackCount = 0;
-                        head.UseAbility();
-                    }
                 }
             }
         }
@@ -71,6 +67,7 @@ public abstract class Creature : MonoBehaviour, Entity
 
     public bool takeDamage(int dmg) {
         Debug.Log(hostile ? "Enemy took damage" : "Ally took damage");
+        dmg = body.takeDamage(dmg);
         health -= dmg;
         float healthPercent = (float) health / (float) maxHealth;
         OnHealthChanged(healthPercent);
@@ -83,10 +80,14 @@ public abstract class Creature : MonoBehaviour, Entity
 
     public void Attack(Creature target) {
         Debug.Log(hostile ? "Enemy attacked" : "Ally attacked");
-        bool died = target.takeDamage(attack);
+        bool died = tail.Attack(target);
         if (died) {
             aggro = null;
             reAggro();
+            if (this.hostile == false)
+            {
+                Globals.energy += 5;
+            }
         }
     } 
 

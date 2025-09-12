@@ -9,4 +9,8 @@ public abstract class Tail : BodyPart
     public int getAttack(){
         return attack;
     }
+    public virtual bool Attack(Creature target)
+    {
+        return target.takeDamage(attack);
+    }
 }
