@@ -26,6 +26,9 @@ public class Globals : MonoBehaviour
     public bool isDungeon = true;
     public static int numMonsters = hscripts.Length;
     public static int energy;
+    public static string SceneSelection = "";
+    //should be held in game manager eventually maybe?
+    public static int highestClearedLevel = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -144,32 +147,41 @@ public class Globals : MonoBehaviour
     {
         if (party_indexes.Count > 0)
         {
-            SceneManager.LoadScene("Dungeon");
+            SceneManager.LoadScene(SceneSelection);
         } else
         {
             Debug.Log("You must pick at least one Chimera before going into the dungeon!");
         }
     }
-
-    public void Ability1()
+    public void PartySelect()
     {
-        ChimeraAbility(0);
+        if (SceneSelection != "")
+        {
+            SceneManager.LoadScene("Chimera Select");
+        }
+        else
+        {
+            Debug.Log("must select a level");
+        }
+        
     }
-    public void Ability2()
+    public void SelectDungeon(int d)
     {
-        ChimeraAbility(1);
-    }
-    public void Ability3()
-    {
-        ChimeraAbility(2);
-    }
-    public void Ability4()
-    {
-        ChimeraAbility(3);
-    }
-    public void Ability5()
-    {
-        ChimeraAbility(4);
+        if (d > highestClearedLevel)
+        {
+            Debug.Log("You have not unlocked this level yet!");
+        } else
+        {
+            if (d > 0)
+            {
+                SceneSelection = "Dungeon" + d;
+            }
+            else
+            {
+                SceneSelection = "Dungeon";
+            }
+            SceneManager.LoadScene("Chimera Select");
+        }
     }
     public void ChimeraAbility(int x){
         if (party.Count > x){
