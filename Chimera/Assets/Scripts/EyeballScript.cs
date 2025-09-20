@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
+using System;
 
 public class MoveScript : MonoBehaviour, Entity
 {
@@ -20,6 +21,11 @@ public class MoveScript : MonoBehaviour, Entity
     void Update()
     {
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        float magnitude = (float) Math.Sqrt(Math.Pow(input.x, 2) + Math.Pow(input.y, 2));
+        if (magnitude > 0)
+        {
+            input = input / magnitude;
+        }
         Vector2 newPos = rgb.position + (input * velocity * Time.deltaTime);
         rgb.MovePosition(newPos);
     }

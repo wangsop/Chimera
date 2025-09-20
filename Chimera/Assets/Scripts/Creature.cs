@@ -63,7 +63,8 @@ public abstract class Creature : MonoBehaviour, Entity
             }
         }
     }
-
+    //have to move takeDamage, Attack, and Die all out of Creature and into Entity
+    
     public bool takeDamage(int dmg) {
         Debug.Log(hostile ? "Enemy took damage" : "Ally took damage");
         dmg = body.takeDamage(dmg);
