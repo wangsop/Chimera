@@ -67,7 +67,6 @@ public abstract class Creature : MonoBehaviour, Entity
                 {
                     clock = 0;
                     attackCount++;
-                    Debug.Log("Attacking");
                     Attack(aggro); //every second, while aggro is within attack range, attack aggro target
                 }
             }
