@@ -5,9 +5,9 @@ using System.Collections;
 [DefaultExecutionOrder(-100)]
 public class EyeCandyHead : Head
 {
-    public static readonly UnityEvent<Creature, double> onEyeTrigger = new();
-    public static readonly UnityEvent<Creature, double> onEyeTriggerEnd = new();
-    [SerializeField] private static readonly double distractRadius = 5;
+    public static readonly UnityEvent<Creature, double> onEyeTriggerAggro = new(); 
+    public static readonly UnityEvent<Creature, double> onEyeTriggerDisableAggro = new();
+    [SerializeField] private static readonly double distractRadius = 200;
     [SerializeField] private static readonly float abilityDuration = 5;
     private Creature thisCreature;
 
@@ -15,7 +15,7 @@ public class EyeCandyHead : Head
     public override void UseAbility()
     {
         Debug.Log("Used Eye Candy Ability");
-        onEyeTrigger.Invoke(thisCreature, distractRadius);
+        onEyeTriggerAggro.Invoke(thisCreature, distractRadius);
         StartCoroutine(DelayStopAbility());
     }
 
@@ -23,7 +23,7 @@ public class EyeCandyHead : Head
     private IEnumerator DelayStopAbility()
     {
         yield return new WaitForSeconds(abilityDuration);
-        onEyeTriggerEnd.Invoke(thisCreature, distractRadius);
+        onEyeTriggerDisableAggro.Invoke(thisCreature, distractRadius);
     }
 
     protected override void Initialize()

@@ -38,8 +38,8 @@ public abstract class Creature : MonoBehaviour, Entity
         tail.GetComponent<Animator>().SetBool("IsChimera", !hostile);
 
         // event responses
-        EyeCandyHead.onEyeTrigger.AddListener(OnEyeTriggerResponse);
-        EyeCandyHead.onEyeTriggerEnd.AddListener(OnEyeTriggerEndResponse);
+        EyeCandyHead.onEyeTriggerAggro.AddListener(OnEyeTriggerResponse);
+        EyeCandyHead.onEyeTriggerDisableAggro.AddListener(OnEyeTriggerEndResponse);
     }
 
     // Update is called once per frame
@@ -161,15 +161,23 @@ public abstract class Creature : MonoBehaviour, Entity
     // Eye Candy's distract ability: adds the Eye Candy head's chimera to the front of this creature's inTrigger
     protected void OnEyeTriggerResponse(Creature eyeCandy, double distractRadius)
     {
-        Debug.Log($"{this} heard Eye Candy's ability");
+        // Debug.Log($"{this} heard Eye Candy's ability");
 
         // guard clause: on opposing teams
-        if (this.hostile == eyeCandy.IsHostile()) return;
+        if (this.hostile == eyeCandy.IsHostile())
+        {
+            // Debug.Log($"{this} is on the same side as Eye Candy");
+            return;
+        }
+
         // guard clause: close enough
-        if (DistanceTo(eyeCandy) > distractRadius) return;
+        if (DistanceTo(eyeCandy) > distractRadius) {
+            // Debug.Log($"{this} is too far away from Eye Candy");
+            return;
+        }
 
         // distract
-        Debug.Log($"{this} was distracted by Eye Candy");
+        // Debug.Log($"{this} was distracted by Eye Candy");
         inTrigger.Insert(0, eyeCandy);
         reAggro();
     }
@@ -177,14 +185,14 @@ public abstract class Creature : MonoBehaviour, Entity
     // Eye Candy's distract ability: removes the Eye Candy head's chimera from the front of this creature's inTrigger if present
     protected void OnEyeTriggerEndResponse(Creature eyeCandy, double distractRadius)
     {
-        Debug.Log($"{this} heard Eye Candy's ability end");
+        // Debug.Log($"{this} heard Eye Candy's ability end");
 
-        // if moving towards Eye Candy but not yet close enough to attack, stop targeting it
-        if (inTrigger.Count > 0 && inTrigger[0] == eyeCandy && DistanceTo(eyeCandy) > distractRadius)
+        // if moving towards Eye Candy, stop targeting it and pick a new target. Note: if close enough to Eye Candy, will probebly just select Eye Candy as target again.
+        if (inTrigger.Count > 0 && inTrigger[0] == eyeCandy)
         {
             Debug.Log($"{this} lost interest in Eye Candy");
             inTrigger = inTrigger.GetRange(1, inTrigger.Count - 1);
-            reAggro();
+            reAggro();s
         }
     }
 
