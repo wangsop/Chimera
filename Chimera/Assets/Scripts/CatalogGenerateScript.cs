@@ -25,23 +25,20 @@ public class CatalogGenerateScript : MonoBehaviour
                 Debug.Log("Chimeras[i] is null");
                 continue;
             }
-
             /*
-            GameObject prefHead = Resources.Load<GameObject>($"Prefabs/Heads/{chimera.Head.name}");
-
-            if (prefHead == null)
+            GameObject pref = (GameObject)Resources.Load(Globals.Chimeras[i]);
+            if (pref == null)
             {
                 Debug.Log("pref is null");
             } 
 
-            GameObject chimeraHeadPrefab = PrefabUtility.InstantiatePrefab(prefHead) as GameObject;
-
-            Debug.Log(chimeraHeadPrefab.GetComponentInChildren<Image>().name);
+            GameObject chimeraPrefab = PrefabUtility.InstantiatePrefab(pref) as GameObject;
             */
 
             currentY -= 160;
             newEntry.transform.SetParent(contentRect.transform, false);
             newEntry.transform.localScale = new Vector3(1, 1, 1);
+            theChimera.transform.position = new Vector3(10000, 0, 0);
             GameObject head = newEntry.transform.GetChild(0).gameObject;
             GameObject body = newEntry.transform.GetChild(1).gameObject;
             GameObject tail = newEntry.transform.GetChild(2).gameObject;
@@ -70,7 +67,6 @@ public class CatalogGenerateScript : MonoBehaviour
     void OnDestroy()
     {
         Debug.Log("Exiting chimera catalog.");
-        globals.isDungeon = true;
     }
 
 
