@@ -131,14 +131,14 @@ public class Globals : MonoBehaviour
             return;
         }
         GameObject newChimera = Instantiate(temp.Chimerafab, Vector3.zero, Quaternion.identity);
-        GameObject newHead = Instantiate(temp.Heads[generated.HeadInd], newChimera.transform.position, Quaternion.identity, newChimera.transform);
-        GameObject newBody = Instantiate(temp.Bodies[generated.BodyInd], newChimera.transform.position, Quaternion.identity, newChimera.transform);
-        GameObject newTail = Instantiate(temp.Tails[generated.TailInd], newChimera.transform.position, Quaternion.identity, newChimera.transform);
+        GameObject newHead = Instantiate(temp.Heads[generated.HeadInd], newChimera.transform);
+        GameObject newBody = Instantiate(temp.Bodies[generated.BodyInd], newChimera.transform);
+        GameObject newTail = Instantiate(temp.Tails[generated.TailInd], newChimera.transform);
         string localPath = "Assets/Resources/" + generated.HeadInd+""+generated.BodyInd+""+generated.TailInd + ".prefab";
         localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
         PrefabUtility.SaveAsPrefabAsset(newChimera, localPath);
 
-        Chimeras.Add(localPath.Substring(18));
+        Chimeras.Add(localPath.Substring(17));
 
         Debug.Log("new chimera instantiated: " + generated.HeadInd + generated.BodyInd + generated.TailInd);
         /*Type hscript = Type.GetType(hscripts[Chimeras[Chimeras.Count - 1].HeadInd]);
