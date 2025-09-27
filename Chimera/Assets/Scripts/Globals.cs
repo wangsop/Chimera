@@ -19,6 +19,7 @@ public class Globals : MonoBehaviour
     public static List<string> Chimeras = new List<string>();
     public static List<GameObject> party = new List<GameObject>();
     public List<GameObject> party_objs = new List<GameObject>();
+    public static List<NewChimeraStats> party_game_objs = new List<NewChimeraStats>();
     public static List<int> party_indexes = new List<int>();
     public const int PARTY_SIZE = 5;
     //These must match exactly the name of the scripts
@@ -26,9 +27,9 @@ public class Globals : MonoBehaviour
     public static string[] bscripts = new string[7]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody", "PalacellBody", "ArtillipedeBody"};
     public static string[] tscripts = new string[7]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail", "PalacellTail", "ArtillipedeTail"};*/
     public GameObject Chimerafab;
-    public GameObject[] Heads;
-    public GameObject[] Bodies;
-    public GameObject[] Tails;
+    //public GameObject[] Heads;
+    //public GameObject[] Bodies;
+    //public GameObject[] Tails;
     public bool isDungeon = true;
     //public static int numMonsters = 1;
     public static int energy;
@@ -72,99 +73,7 @@ public class Globals : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    [CanBeNull]
-    private static ChimeraStats GenerateGacha()
-    {
-        Globals temp = GameObject.Find("Main Camera").GetComponent<Globals>();
-        var headInd = UnityEngine.Random.Range(0, temp.Heads.Length);
-        var bodyInd = UnityEngine.Random.Range(0, temp.Bodies.Length);
-        var tailInd = UnityEngine.Random.Range(0, temp.Tails.Length);
-
-        //if (headInd == bodyInd && bodyInd == tailInd) return null;
-
-        /*if (Chimeras.Any(t => t.BodyInd == bodyInd && t.HeadInd == headInd && t.TailInd == tailInd))
-        {
-            return null;
-        }*/
-        //need to rework not allowing duplicates
-
-        return new ChimeraStats(headInd, bodyInd, tailInd);
-    }
-
-    public static void Gacha()
-    {
-        /*if (Chimeras.Count >= (Math.Pow(Heads.Length, 3) - Heads.Length))
-        {
-            Debug.Log("No chimeras left that can be created");
-            return;
-        }*/
-        Globals temp;
-        if (GameObject.Find("Main Camera").GetComponent<Globals>() != null)
-        {
-            temp = GameObject.Find("Main Camera").GetComponent<Globals>();
-        }
-        else
-        {
-            return;
-        }
-        GameObject[] existing = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
-        foreach (GameObject e in existing)
-        {
-            if (e.GetComponentInChildren<ChimeraScript>() != null)
-            {
-                Destroy(e);
-            }
-        }
-
-        ChimeraStats generated = null;
-        int stop = 0;
-        while (generated == null && stop < 15) //stop looping if it still can't find
-        {
-            generated = GenerateGacha();
-            stop++;
-        }
-        if (generated == null)
-        {
-            Debug.Log("Could not create unique chimera");
-            return;
-        }
-        GameObject newChimera = Instantiate(temp.Chimerafab, Vector3.zero, Quaternion.identity);
-        GameObject newHead = Instantiate(temp.Heads[generated.HeadInd], newChimera.transform.position, Quaternion.identity, newChimera.transform);
-        GameObject newBody = Instantiate(temp.Bodies[generated.BodyInd], newChimera.transform.position, Quaternion.identity, newChimera.transform);
-        GameObject newTail = Instantiate(temp.Tails[generated.TailInd], newChimera.transform.position, Quaternion.identity, newChimera.transform);
-        string localPath = "Assets/Resources/" + generated.HeadInd+""+generated.BodyInd+""+generated.TailInd + ".prefab";
-        localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
-        PrefabUtility.SaveAsPrefabAsset(newChimera, localPath);
-
-        Chimeras.Add(localPath.Substring(18));
-
-        Debug.Log("new chimera instantiated: " + generated.HeadInd + generated.BodyInd + generated.TailInd);
-        /*Type hscript = Type.GetType(hscripts[Chimeras[Chimeras.Count - 1].HeadInd]);
-        Type bscript = Type.GetType(bscripts[Chimeras[Chimeras.Count - 1].BodyInd]);
-        Type tscript = Type.GetType(tscripts[Chimeras[Chimeras.Count - 1].TailInd]);
-
-        GameObject headChild = newChimera.transform.GetChild(0).gameObject;
-        GameObject bodyChild = newChimera.transform.GetChild(1).gameObject;
-        GameObject tailChild = newChimera.transform.GetChild(2).gameObject;
-
-        Component headScript = headChild.AddComponent(hscript);
-        Component bodyScript = bodyChild.AddComponent(bscript);
-        Component tailScript = tailChild.AddComponent(tscript);*/
-    }
-    /*public static void AddChimera(GameObject chimera)
-    {
-        if (chimera.GetComponent<ChimeraScript>() == null)
-        {
-            Debug.LogWarning("Invalid Chimera " + chimera.name + "!");
-            return;
-        }
-        Chimeras.Add(chimera);
-        Debug.Log("Added a new chimera!");
-    }*/
-    public void Back(){
-        SceneManager.LoadScene("Lab");
+        party_game_objs = ChimeraParty.Chimeras;
     }
 
     public void Dungeon()
@@ -229,6 +138,7 @@ public class Globals : MonoBehaviour
     {
         return Globals.PARTY_SIZE - Globals.party_indexes.Count;
     }
+
 }
 public class ChimeraStats{
         public int HeadInd;
@@ -244,3 +154,25 @@ public class ChimeraStats{
             exp = 0;
         }
     }
+
+public class NewChimeraStats
+{
+    public GameObject Head;
+    public GameObject Body;
+    public GameObject Tail;
+    public int level;
+    public int exp;
+    public NewChimeraStats(GameObject h, GameObject b, GameObject t)
+    {
+        Head = h;
+        Body = b;
+        Tail = t;
+        level = 1;
+        exp = 0;
+    }
+
+    public override string ToString()
+    {
+        return "Chimera: {Head: " + Head.name + ", Body:" + Body.name + ", Tail:" + Tail.name + ", Level: " + level + ", XP: " + exp + "}";
+    }
+}

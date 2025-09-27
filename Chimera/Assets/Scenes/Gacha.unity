@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 115547622}
   - component: {fileID: 115547621}
   - component: {fileID: 115547624}
-  - component: {fileID: 115547625}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -257,27 +256,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &115547625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 115547620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b941411899e5ac4b8f8ecc1bae0bfe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  party_objs: []
-  Chimerafab: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
-  Heads:
-  - {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
-  Bodies:
-  - {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
-  Tails:
-  - {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
-  isDungeon: 0
 --- !u!1 &240879445
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,9 +554,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115547625}
-        m_TargetAssemblyTypeName: Globals, Assembly-CSharp
-        m_MethodName: Gacha
+      - m_Target: {fileID: 1603079647}
+        m_TargetAssemblyTypeName: GachaButtons, Assembly-CSharp
+        m_MethodName: Pull
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -762,6 +740,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219914860}
   m_CullTransparentMesh: 1
+--- !u!1 &1330130298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1330130300}
+  - component: {fileID: 1330130301}
+  m_Layer: 0
+  m_Name: CreatureGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1330130300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330130298}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -252.99345, y: 342.12973, z: -0.85010135}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1330130301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330130298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d695386dc2305484fae3fce3efc34949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chimerafab: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
+  Heads:
+  - {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+  Bodies:
+  - {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
+  Tails:
+  - {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
 --- !u!1 &1565109992
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,8 +874,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115547625}
-        m_TargetAssemblyTypeName: Globals, Assembly-CSharp
+      - m_Target: {fileID: 1603079647}
+        m_TargetAssemblyTypeName: GachaButtons, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:
@@ -907,6 +936,7 @@ GameObject:
   - component: {fileID: 1603079645}
   - component: {fileID: 1603079644}
   - component: {fileID: 1603079643}
+  - component: {fileID: 1603079647}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -998,10 +1028,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1603079647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603079642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c81206a37464663add7aaefdb0f49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1330130300}
   - {fileID: 115547623}
   - {fileID: 1603079646}
   - {fileID: 240879448}
