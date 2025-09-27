@@ -5,26 +5,32 @@ using UnityEngine.Events;
 using System;
 using System.Linq;
 using JetBrains.Annotations;
+using UnityEditor;
 //DO NOT EDIT!!!!! READ ONLY
 [DefaultExecutionOrder(-150)]
 public class Globals : MonoBehaviour
 {
-    public Sprite[] Heads;
+    /*public Sprite[] Heads;
     public Sprite[] Bodies;
     public Sprite[] Tails;
     public static List<ChimeraStats> Chimeras = new List<ChimeraStats>();
     //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
-    public static List<ChimeraStats> party = new List<ChimeraStats>();
+    public static List<ChimeraStats> party = new List<ChimeraStats>();*/
+    public static List<string> Chimeras = new List<string>();
+    public static List<GameObject> party = new List<GameObject>();
     public List<GameObject> party_objs = new List<GameObject>();
     public static List<int> party_indexes = new List<int>();
     public const int PARTY_SIZE = 5;
     //These must match exactly the name of the scripts
-    public static string[] hscripts = new string[7]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead", "PalacellHead", "ArtillipedeHead"};
+    /*public static string[] hscripts = new string[7]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead", "PalacellHead", "ArtillipedeHead"};
     public static string[] bscripts = new string[7]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody", "PalacellBody", "ArtillipedeBody"};
-    public static string[] tscripts = new string[7]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail", "PalacellTail", "ArtillipedeTail"};
+    public static string[] tscripts = new string[7]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail", "PalacellTail", "ArtillipedeTail"};*/
     public GameObject Chimerafab;
+    public GameObject[] Heads;
+    public GameObject[] Bodies;
+    public GameObject[] Tails;
     public bool isDungeon = true;
-    public static int numMonsters = hscripts.Length;
+    //public static int numMonsters = 1;
     public static int energy;
     public static string SceneSelection = "";
     //should be held in game manager eventually maybe?
@@ -40,13 +46,14 @@ public class Globals : MonoBehaviour
             Vector3 add = new Vector3(10, 2, 0);
             foreach (int index in party_indexes)
             {
-                party.Add(Chimeras[index]);
+                GameObject temp = (GameObject) Resources.Load(Chimeras[index]);
+                party.Add(temp);
             }
             for (int i = 0; i < party.Count; i++)
             {
-                GameObject newChimera = Instantiate(Chimerafab, add * i, Quaternion.identity);
+                GameObject newChimera = Instantiate(party[i], add * i, Quaternion.identity);
                 Debug.Log("new chimera instantiated");
-                Type hscript = Type.GetType(hscripts[party[i].HeadInd]);
+                /*Type hscript = Type.GetType(hscripts[party[i].HeadInd]);
                 Type bscript = Type.GetType(bscripts[party[i].BodyInd]);
                 Type tscript = Type.GetType(tscripts[party[i].TailInd]);
                 GameObject headChild = newChimera.transform.GetChild(0).gameObject;
@@ -54,7 +61,7 @@ public class Globals : MonoBehaviour
                 GameObject tailChild = newChimera.transform.GetChild(2).gameObject;
                 Component headScript = headChild.AddComponent(hscript);
                 Component bodyScript = bodyChild.AddComponent(bscript);
-                Component tailScript = tailChild.AddComponent(tscript);
+                Component tailScript = tailChild.AddComponent(tscript);*/
                 ChimeraScript cs = newChimera.GetComponentInChildren<ChimeraScript>();
                 cs.spot = i + 1;
                 party_objs.Add(newChimera);
@@ -70,31 +77,33 @@ public class Globals : MonoBehaviour
     [CanBeNull]
     private static ChimeraStats GenerateGacha()
     {
-        var headInd = UnityEngine.Random.Range(0, hscripts.Length);
-        var bodyInd = UnityEngine.Random.Range(0, bscripts.Length);
-        var tailInd = UnityEngine.Random.Range(0, tscripts.Length);
+        Globals temp = GameObject.Find("Main Camera").GetComponent<Globals>();
+        var headInd = UnityEngine.Random.Range(0, temp.Heads.Length);
+        var bodyInd = UnityEngine.Random.Range(0, temp.Bodies.Length);
+        var tailInd = UnityEngine.Random.Range(0, temp.Tails.Length);
 
-        if (headInd == bodyInd && bodyInd == tailInd) return null;
+        //if (headInd == bodyInd && bodyInd == tailInd) return null;
 
-        if (Chimeras.Any(t => t.BodyInd == bodyInd && t.HeadInd == headInd && t.TailInd == tailInd))
+        /*if (Chimeras.Any(t => t.BodyInd == bodyInd && t.HeadInd == headInd && t.TailInd == tailInd))
         {
             return null;
-        }
+        }*/
+        //need to rework not allowing duplicates
 
         return new ChimeraStats(headInd, bodyInd, tailInd);
     }
 
     public static void Gacha()
     {
-        if (Chimeras.Count >= (Math.Pow(hscripts.Length, 3) - hscripts.Length))
+        /*if (Chimeras.Count >= (Math.Pow(Heads.Length, 3) - Heads.Length))
         {
             Debug.Log("No chimeras left that can be created");
             return;
-        }
-        GameObject temp;
+        }*/
+        Globals temp;
         if (GameObject.Find("Main Camera").GetComponent<Globals>() != null)
         {
-            temp = GameObject.Find("Main Camera").GetComponent<Globals>().Chimerafab;
+            temp = GameObject.Find("Main Camera").GetComponent<Globals>();
         }
         else
         {
@@ -110,14 +119,29 @@ public class Globals : MonoBehaviour
         }
 
         ChimeraStats generated = null;
+        int stop = 0;
+        while (generated == null && stop < 15) //stop looping if it still can't find
+        {
+            generated = GenerateGacha();
+            stop++;
+        }
+        if (generated == null)
+        {
+            Debug.Log("Could not create unique chimera");
+            return;
+        }
+        GameObject newChimera = Instantiate(temp.Chimerafab, Vector3.zero, Quaternion.identity);
+        GameObject newHead = Instantiate(temp.Heads[generated.HeadInd], newChimera.transform.position, Quaternion.identity, newChimera.transform);
+        GameObject newBody = Instantiate(temp.Bodies[generated.BodyInd], newChimera.transform.position, Quaternion.identity, newChimera.transform);
+        GameObject newTail = Instantiate(temp.Tails[generated.TailInd], newChimera.transform.position, Quaternion.identity, newChimera.transform);
+        string localPath = "Assets/Resources/" + generated.HeadInd+""+generated.BodyInd+""+generated.TailInd + ".prefab";
+        localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
+        PrefabUtility.SaveAsPrefabAsset(newChimera, localPath);
 
-        while (generated == null) generated = GenerateGacha();
-
-        GameObject newChimera = Instantiate(temp, Vector3.zero, Quaternion.identity);
-        Chimeras.Add(generated);
+        Chimeras.Add(localPath.Substring(18));
 
         Debug.Log("new chimera instantiated: " + generated.HeadInd + generated.BodyInd + generated.TailInd);
-        Type hscript = Type.GetType(hscripts[Chimeras[Chimeras.Count - 1].HeadInd]);
+        /*Type hscript = Type.GetType(hscripts[Chimeras[Chimeras.Count - 1].HeadInd]);
         Type bscript = Type.GetType(bscripts[Chimeras[Chimeras.Count - 1].BodyInd]);
         Type tscript = Type.GetType(tscripts[Chimeras[Chimeras.Count - 1].TailInd]);
 
@@ -127,7 +151,7 @@ public class Globals : MonoBehaviour
 
         Component headScript = headChild.AddComponent(hscript);
         Component bodyScript = bodyChild.AddComponent(bscript);
-        Component tailScript = tailChild.AddComponent(tscript);
+        Component tailScript = tailChild.AddComponent(tscript);*/
     }
     /*public static void AddChimera(GameObject chimera)
     {
