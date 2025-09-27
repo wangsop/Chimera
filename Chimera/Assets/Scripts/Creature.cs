@@ -21,6 +21,8 @@ public abstract class Creature : MonoBehaviour, Entity
     protected Body body;
     protected Tail tail;
     public event Action<float> OnHealthChanged = delegate { };
+    // keeps track of creatures that cannot be aggroed. Mainly for Eye Candy's attract ability: once it ends, the eye candy will be added to this temporarily to allow the eye candy to escape
+    private readonly List<Creature> disabledAggroTargets = new();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
@@ -38,8 +40,10 @@ public abstract class Creature : MonoBehaviour, Entity
         tail.GetComponent<Animator>().SetBool("IsChimera", !hostile);
 
         // event responses
-        EyeCandyHead.onEyeTriggerAggro.AddListener(OnEyeTriggerResponse);
-        EyeCandyHead.onEyeTriggerDisableAggro.AddListener(OnEyeTriggerEndResponse);
+        EyeCandyHead.onEyeCandyTriggerAggro.AddListener(OnEyeCandyTriggerAggroResponse);
+        EyeCandyHead.onEyeCandyTriggerDisableAggro.AddListener(OnEyeCandyTriggerDisableAggroResponse);
+        EyeCandyHead.onEyeCandyTriggerReenableAggro.AddListener(OnEyeCandyTriggerReenableAggroResponse);
+        
     }
 
     // Update is called once per frame
@@ -148,20 +152,49 @@ public abstract class Creature : MonoBehaviour, Entity
             }
         }
     }
+
     protected void reAggro()
     {
         Debug.Log("New aggro");
         if (inTrigger.Count > 0)
         {
+            // if the first inTrigger element is disabled, search recursively for an enabled element
+            if (disabledAggroTargets.Contains(inTrigger[0]))
+            {
+                ReAggro(1);
+                return;
+            }
+
+            // default
             aggro = inTrigger[0]; //take off a Creature in the collider, make that new aggro target
             inTrigger.RemoveAt(0);
         }
+        else aggro = null;
     }
 
-    // Eye Candy's distract ability: adds the Eye Candy head's chimera to the front of this creature's inTrigger
-    protected void OnEyeTriggerResponse(Creature eyeCandy, double distractRadius)
+    // A recursive overload for use to select the first non-disabled member of inTrigger while not forgetting the other members: like normal reAggro, but checks at index numFrontDisabled instead of index 0
+    protected void ReAggro(int numFrontDisabled)
     {
-        // Debug.Log($"{this} heard Eye Candy's ability");
+        if (inTrigger.Count > numFrontDisabled)
+        {
+            // for disabled aggros
+            if (disabledAggroTargets.Contains(inTrigger[numFrontDisabled]))
+            {
+                ReAggro(numFrontDisabled + 1);
+                return;
+            }
+
+            // default
+            aggro = inTrigger[numFrontDisabled]; //take off a Creature in the collider, make that new aggro target
+            inTrigger.RemoveAt(numFrontDisabled);
+        }
+        else aggro = null;
+    }
+
+    // Event callback for Eye Candy's distract ability start of distract period: adds the Eye Candy head's chimera to the front of this creature's inTrigger
+    protected void OnEyeCandyTriggerAggroResponse(Creature eyeCandy, double distractRadius)
+    {
+        // Debug.Log($"{this} heard Eye Candy's ability start distract period"); 
 
         // guard clause: on opposing teams
         if (this.hostile == eyeCandy.IsHostile())
@@ -171,7 +204,8 @@ public abstract class Creature : MonoBehaviour, Entity
         }
 
         // guard clause: close enough
-        if (DistanceTo(eyeCandy) > distractRadius) {
+        if (DistanceTo(eyeCandy) > distractRadius)
+        {
             // Debug.Log($"{this} is too far away from Eye Candy");
             return;
         }
@@ -182,20 +216,49 @@ public abstract class Creature : MonoBehaviour, Entity
         reAggro();
     }
 
-    // Eye Candy's distract ability: removes the Eye Candy head's chimera from the front of this creature's inTrigger if present
-    protected void OnEyeTriggerEndResponse(Creature eyeCandy, double distractRadius)
+    // Event callback for Eye Candy's distract ability start of escape period: removes the Eye Candy head's chimera from the front of this creature's inTrigger if present
+    protected void OnEyeCandyTriggerDisableAggroResponse(Creature eyeCandy)
     {
-        // Debug.Log($"{this} heard Eye Candy's ability end");
+        // Debug.Log($"{this} heard Eye Candy's ability start escape period");
 
-        // if moving towards Eye Candy, stop targeting it and pick a new target. Note: if close enough to Eye Candy, will probebly just select Eye Candy as target again.
+        // if aggroing Eye Candy, stop, disable Eye Candy aggroing, and pick a new target
         if (inTrigger.Count > 0 && inTrigger[0] == eyeCandy)
         {
-            Debug.Log($"{this} lost interest in Eye Candy");
-            inTrigger = inTrigger.GetRange(1, inTrigger.Count - 1);
-            reAggro();s
+            // Debug.Log($"{this} lost interest in Eye Candy");
+            inTrigger.RemoveAt(0);
+            SetAggroable(eyeCandy, false);
+            reAggro();
         }
     }
 
+    // Event callback for Eye Candy's distract ability end: removes eyeCandy from current
+    protected void OnEyeCandyTriggerReenableAggroResponse(Creature eyeCandy)
+    {
+        SetAggroable(eyeCandy, true);
+        // Debug.Log($"{this} heard Eye Candy's ability end escape period");
+    }
+
+    // helper function: adds/removes given creature from list of unaggroable creatures based on bool false/true, respectively
+    private void SetAggroable(Creature c, bool b)
+    {
+        if (b)
+        {
+            // Debug.Log("Set aggroable");
+            for (int i = 0; i < disabledAggroTargets.Count; i++)
+            {
+                if (disabledAggroTargets[i] == c)
+                {
+                    disabledAggroTargets.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+        else
+        {
+            // Debug.Log("Set unaggroable");
+            disabledAggroTargets.Add(c);
+        }
+    }   
 
     // getter for hostile
     public bool IsHostile()
