@@ -16,11 +16,11 @@ public abstract class Creature : MonoBehaviour, Entity
      protected List<Creature> inTrigger;
     [SerializeField] protected int attackRange = 15;
     [SerializeField] protected int speed = 300;
-     int attackCount = 0;
-     protected Head head;
-     protected Body body;
-     protected Tail tail;
-     public event Action<float> OnHealthChanged = delegate { };
+    int attackCount = 0;
+    protected Head head;
+    protected Body body;
+    protected Tail tail;
+    public event Action<float> OnHealthChanged = delegate { };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
@@ -130,5 +130,10 @@ public abstract class Creature : MonoBehaviour, Entity
             aggro = inTrigger[0]; //take off a Creature in the collider, make that new aggro target
             inTrigger.RemoveAt(0);
         }
+    }
+
+    public override string ToString()
+    {
+        return "Creature {Head: " + head.name + ", Body: " + body.name + ", Tail: " + tail.name + ", isHostile: " + hostile + "}"; 
     }
 }
