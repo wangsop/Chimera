@@ -45,11 +45,13 @@ public class Globals : MonoBehaviour
             energy = 0;
             //initialize all chimeras in party
             Vector3 add = new Vector3(10, 2, 0);
+            /*
             foreach (int index in party_indexes)
             {
                 GameObject temp = (GameObject) Resources.Load(Chimeras[index]);
                 party.Add(temp);
             }
+            
             for (int i = 0; i < party.Count; i++)
             {
                 GameObject newChimera = Instantiate(party[i], add * i, Quaternion.identity);
@@ -62,12 +64,26 @@ public class Globals : MonoBehaviour
                 GameObject tailChild = newChimera.transform.GetChild(2).gameObject;
                 Component headScript = headChild.AddComponent(hscript);
                 Component bodyScript = bodyChild.AddComponent(bscript);
-                Component tailScript = tailChild.AddComponent(tscript);*/
+                Component tailScript = tailChild.AddComponent(tscript);
                 ChimeraScript cs = newChimera.GetComponentInChildren<ChimeraScript>();
                 cs.spot = i + 1;
                 party_objs.Add(newChimera);
+            }*/
+            for(int i = 0; i < party_indexes.Count; i++)
+            {
+                NewChimeraStats chimera = party_game_objs[party_indexes[i]];
+                GameObject newChimera = Instantiate(chimera.BaseObject, add * i, Quaternion.identity);
+                Debug.Log("new chimera instantiated");
+                ChimeraScript cs = newChimera.GetComponentInChildren<ChimeraScript>();
+                cs.spot = i + 1;
+                Vector3 spriteSize = new Vector3(chimera.Head.GetComponentInChildren<SpriteRenderer>().bounds.size.x, 0, 0);
+                GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - spriteSize, Quaternion.identity, newChimera.transform);
+                GameObject newBody = Instantiate(chimera.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
+                GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + spriteSize, Quaternion.identity, newChimera.transform);
+                party_objs.Add(newChimera);
             }
-        } 
+
+        }
     } 
 
     // Update is called once per frame
@@ -117,8 +133,8 @@ public class Globals : MonoBehaviour
         }
     }
     public void ChimeraAbility(int x){
-        if (party.Count > x){
-            Head h = party_objs[x].GetComponentInChildren<Head>();
+        if (party_game_objs.Count > x){
+            Head h = party_game_objs[x].Head.GetComponent<Head>();
             if (h != null)
             {
                 if (energy >= 10)
@@ -155,24 +171,4 @@ public class ChimeraStats{
         }
     }
 
-public class NewChimeraStats
-{
-    public GameObject Head;
-    public GameObject Body;
-    public GameObject Tail;
-    public int level;
-    public int exp;
-    public NewChimeraStats(GameObject h, GameObject b, GameObject t)
-    {
-        Head = h;
-        Body = b;
-        Tail = t;
-        level = 1;
-        exp = 0;
-    }
 
-    public override string ToString()
-    {
-        return "Chimera: {Head: " + Head.name + ", Body:" + Body.name + ", Tail:" + Tail.name + ", Level: " + level + ", XP: " + exp + "}";
-    }
-}

@@ -38,7 +38,6 @@ public class CatalogGenerateScript : MonoBehaviour
             currentY -= 160;
             newEntry.transform.SetParent(contentRect.transform, false);
             newEntry.transform.localScale = new Vector3(1, 1, 1);
-            theChimera.transform.position = new Vector3(10000, 0, 0);
             GameObject head = newEntry.transform.GetChild(0).gameObject;
             GameObject body = newEntry.transform.GetChild(1).gameObject;
             GameObject tail = newEntry.transform.GetChild(2).gameObject;

@@ -14,7 +14,7 @@ public abstract class BodyPart : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = image;
         animator = GetComponent<Animator>();
-        animator.SetInteger("Index", index);
+        //animator.SetInteger("Index", index);
     }
 
     protected abstract void Initialize();
@@ -27,5 +27,10 @@ public abstract class BodyPart : MonoBehaviour
     public int GetIndex()
     {
         return index;
+    }
+
+    public override bool Equals(object other)
+    {
+        return GetType() == other.GetType();
     }
 }

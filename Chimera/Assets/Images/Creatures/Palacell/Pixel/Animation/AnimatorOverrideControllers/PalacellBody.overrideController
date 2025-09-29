@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PalacellBody
+  m_Controller: {fileID: 9100000, guid: 14a451d346aa8485da324903629b8f98, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b4d3d772ce4284e39b88d98fb2b2702f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a2a9fd3bae8664c4c8d63f6a6df09e09, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 88a73b7b28fba40a5b267ec12865ee0a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c24af3d2b64f44c4a935eb583531985a, type: 2}

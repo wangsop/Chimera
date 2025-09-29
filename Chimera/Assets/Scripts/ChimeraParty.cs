@@ -21,4 +21,16 @@ public static class ChimeraParty
     {
         Chimeras.Add(chimera);
     }
+
+    public static bool IsChimeraInParty(NewChimeraStats newChimera)
+    {
+        foreach(NewChimeraStats chimera in Chimeras)
+        {
+            if (chimera.Equals(newChimera))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
