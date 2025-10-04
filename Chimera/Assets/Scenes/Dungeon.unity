@@ -287,12 +287,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   party_objs: []
   Chimerafab: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
-  Heads:
-  - {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
-  Bodies:
-  - {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
-  Tails:
-  - {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
   isDungeon: 1
 --- !u!114 &373190542
 MonoBehaviour:
@@ -508,10 +502,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TopMiddleMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 1992808610758496205, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: Monster
       value: 
-      objectReference: {fileID: 2108519325654532973, guid: b4b5efcbda5c44292a304ebde4f22101, type: 3}
+      objectReference: {fileID: 2714897321438028271, guid: da0e5d305e7d643459aadadfd411a4a3, type: 3}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: SpawnDelay
       value: 1
@@ -730,6 +728,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 1992808610758496205, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
+      propertyPath: Monster
+      value: 
+      objectReference: {fileID: 9054652579520429056, guid: 6c181a06ebd1c4106a57126f21eab1f2, type: 3}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: SpawnDelay
       value: 3
@@ -1225,7 +1231,7 @@ PrefabInstance:
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: Monster
       value: 
-      objectReference: {fileID: 1170609881565090506, guid: 404c7b2c1e5b14d5e9d1846e3df6db46, type: 3}
+      objectReference: {fileID: 606990119164908652, guid: 0882faef37d2c4758ae7ca11592c19a9, type: 3}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: SpawnDelay
       value: 1
@@ -5375,7 +5381,7 @@ PrefabInstance:
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: Monster
       value: 
-      objectReference: {fileID: 2820606437910827827, guid: e6cc8e46456a54b54a2c34c016722314, type: 3}
+      objectReference: {fileID: 7313375578454353807, guid: 1332c9a63a3654d1480dcfa7abd7ff13, type: 3}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: SpawnDelay
       value: 1
@@ -5458,10 +5464,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BottomMiddleMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 1992808610758496205, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: Monster
       value: 
-      objectReference: {fileID: 6853228478862158882, guid: 272d02b8953414b399d638d7a6458942, type: 3}
+      objectReference: {fileID: 1672410032746975923, guid: 48919ac73ff434e60bb827b343020aa9, type: 3}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: SpawnDelay
       value: 1
@@ -5551,7 +5561,7 @@ PrefabInstance:
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: Monster
       value: 
-      objectReference: {fileID: 4471103131147802035, guid: 98a32f309bcdd4e97b8d6d6b01555330, type: 3}
+      objectReference: {fileID: 7260827633149308826, guid: 0c80d4fce5f1d4323bd00dcdbfbfda58, type: 3}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: SpawnDelay
       value: 3
@@ -7159,7 +7169,7 @@ PrefabInstance:
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: Monster
       value: 
-      objectReference: {fileID: 9121029991162654454, guid: 2b5fac41662d542908e528a5d72ed287, type: 3}
+      objectReference: {fileID: 4185002086731159025, guid: 03f36ab121aac41cca7a6970e9a078a4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
