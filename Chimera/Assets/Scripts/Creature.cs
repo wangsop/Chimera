@@ -271,4 +271,9 @@ public abstract class Creature : MonoBehaviour, Entity
     {
         return (mb.GetComponent<Transform>().position - transform.position).magnitude;
     }
+
+    public override string ToString()
+    {
+        return "Creature {Head: " + head.name + ", Body: " + body.name + ", Tail: " + tail.name + ", isHostile: " + hostile + "}"; 
+    }
 }

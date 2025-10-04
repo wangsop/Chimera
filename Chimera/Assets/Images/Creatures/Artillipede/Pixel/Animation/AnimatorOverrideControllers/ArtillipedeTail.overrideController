@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ArtillipedeTail
+  m_Controller: {fileID: 9100000, guid: 397390dca5b8d48b7813575df8179e4c, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2791852892f2543d5b9b42bef6889597, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5ed4c606d51464004a2fa041d3fa7cd7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c60b5a8f0f985452e8581a278f54d0f3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b205765edb20e446abede56d3b6f33ed, type: 2}

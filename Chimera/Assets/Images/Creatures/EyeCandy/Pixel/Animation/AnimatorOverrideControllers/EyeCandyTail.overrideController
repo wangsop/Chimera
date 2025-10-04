@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EyeCandyTail
+  m_Controller: {fileID: 9100000, guid: 397390dca5b8d48b7813575df8179e4c, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 2791852892f2543d5b9b42bef6889597, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3e668e7a1b6de4ea4808f9338bb97d48, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c60b5a8f0f985452e8581a278f54d0f3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3c41d5d056cea49b0ac2f57bc0c39813, type: 2}

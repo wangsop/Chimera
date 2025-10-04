@@ -1523,33 +1523,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b941411899e5ac4b8f8ecc1bae0bfe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heads:
-  - {fileID: -379357398, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
-  - {fileID: 2045612333, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
-  - {fileID: 1981419516, guid: 74854c699fd0d478b926b0857e338cbd, type: 3}
-  - {fileID: 858021901, guid: ae4ede9c8eb704f5380c70ba2c129dbb, type: 3}
-  - {fileID: 1060667223, guid: c490871209e5b4c1abef6515d8df8ec5, type: 3}
-  - {fileID: -1024353190, guid: 44fa09fcb4dd44ae79fe1c61cdb3d918, type: 3}
-  - {fileID: 976801097, guid: e413f12a0974f4fcda54cd58adf08d77, type: 3}
-  Bodies:
-  - {fileID: -140096408, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
-  - {fileID: -2065295203, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
-  - {fileID: -298091788, guid: 74854c699fd0d478b926b0857e338cbd, type: 3}
-  - {fileID: 2082781544, guid: ae4ede9c8eb704f5380c70ba2c129dbb, type: 3}
-  - {fileID: -1292993375, guid: c490871209e5b4c1abef6515d8df8ec5, type: 3}
-  - {fileID: -81611203, guid: 44fa09fcb4dd44ae79fe1c61cdb3d918, type: 3}
-  - {fileID: 148196824, guid: e413f12a0974f4fcda54cd58adf08d77, type: 3}
-  Tails:
-  - {fileID: -1495587707, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
-  - {fileID: 2130554539, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
-  - {fileID: -1374920225, guid: 74854c699fd0d478b926b0857e338cbd, type: 3}
-  - {fileID: -1778101468, guid: ae4ede9c8eb704f5380c70ba2c129dbb, type: 3}
-  - {fileID: -1405425915, guid: c490871209e5b4c1abef6515d8df8ec5, type: 3}
-  - {fileID: 456413387, guid: 44fa09fcb4dd44ae79fe1c61cdb3d918, type: 3}
-  - {fileID: -895959204, guid: e413f12a0974f4fcda54cd58adf08d77, type: 3}
   party_objs: []
-  Chimerafab: {fileID: 3093246287781483032, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
-  isDungeon: 1
+  Chimerafab: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
+  Heads:
+  - {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+  Bodies:
+  - {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
+  Tails:
+  - {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
+  isDungeon: 0
 --- !u!1 &1889302475
 GameObject:
   m_ObjectHideFlags: 0
