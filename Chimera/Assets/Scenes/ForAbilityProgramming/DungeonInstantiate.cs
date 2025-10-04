@@ -11,13 +11,12 @@ public class DungeonInstantiate : MonoBehaviour
     [SerializeField] GameObject aBody;
     [SerializeField] GameObject aTail;
     [SerializeField] GameObject Eyeball;
-    [SerializeField] int index;
     private Head mostRecentChimera;
     public void onPressButton()
     {
         Vector3 add = new Vector3(10, 2, 0);
         GameObject newChimera = Instantiate(Chimerafab, add, Quaternion.identity);
-        //edit these values in braces [] to get the indexes you want! the indexes are in Globals, let team lead know once you've made your scripts!
+        //in Unity editor, add the head, body, and tail prefabs that you want for your chimera!
         GameObject newHead = Instantiate(aHead, newChimera.transform.position, Quaternion.identity, newChimera.transform);
         GameObject newBody = Instantiate(aBody, newChimera.transform.position, Quaternion.identity, newChimera.transform);
         GameObject newTail = Instantiate(aTail, newChimera.transform.position, Quaternion.identity, newChimera.transform);

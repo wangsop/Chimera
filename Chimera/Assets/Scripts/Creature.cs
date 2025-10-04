@@ -5,14 +5,16 @@ using System;
 public abstract class Creature : MonoBehaviour, Entity
 {
     protected bool hostile;
+    [SerializeField] GameObject Chimerafab;
     protected int health = 10;
     protected int maxHealth = 10;
     protected int attack = 1;
+    protected float attackSpeed = 0.7f; //attack speed in time between attacks
     //[SerializeField] protected Collider2D collisions;
     protected Rigidbody2D rgb;
     [SerializeField] protected Collider2D trig;
     protected Creature aggro;
-    protected int clock = 0;
+    protected float clock = 0;
     protected List<Creature> inTrigger;
     [SerializeField] protected int attackRange = 15;
     [SerializeField] protected int speed = 300;
@@ -43,7 +45,7 @@ public abstract class Creature : MonoBehaviour, Entity
         EyeCandyHead.onEyeCandyTriggerAggro.AddListener(OnEyeCandyTriggerAggroResponse);
         EyeCandyHead.onEyeCandyTriggerDisableAggro.AddListener(OnEyeCandyTriggerDisableAggroResponse);
         EyeCandyHead.onEyeCandyTriggerReenableAggro.AddListener(OnEyeCandyTriggerReenableAggroResponse);
-        
+        clock = Time.time;
     }
 
     // Update is called once per frame
@@ -54,7 +56,6 @@ public abstract class Creature : MonoBehaviour, Entity
         {
             Debug.Log("Overlap detected with: " + col.gameObject.name);
         }
-        clock++;
         if (aggro != null)
         {
             //head towards object of aggro
@@ -67,9 +68,9 @@ public abstract class Creature : MonoBehaviour, Entity
             }
             else
             {
-                if (clock > 1000)
+                if (Time.time - clock > attackSpeed)
                 {
-                    clock = 0;
+                    clock = Time.time;
                     attackCount++;
                     Attack(aggro); //every second, while aggro is within attack range, attack aggro target
                 }
@@ -109,6 +110,12 @@ public abstract class Creature : MonoBehaviour, Entity
 
     public void Die()
     {
+        if (this.hostile == false)
+        {
+            //find this creature in inventory and remove them
+            NewChimeraStats thisChimera = new NewChimeraStats(this.head.gameObject, this.body.gameObject, this.tail.gameObject, Chimerafab);
+            ChimeraParty.RemoveChimera(thisChimera);
+        }
         head.animator.SetBool("IsAlive", false);
         body.animator.SetBool("IsAlive", false);
         tail.animator.SetBool("IsAlive", false);

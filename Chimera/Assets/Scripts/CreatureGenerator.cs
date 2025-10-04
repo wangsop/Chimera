@@ -62,6 +62,14 @@ public class CreatureGenerator : MonoBehaviour
 
     public void Gacha()
     {
+        if (Globals.currency < 100)
+        {
+            Debug.Log("You cannot afford another chimera!");
+            return;
+        } else
+        {
+            Globals.currency -= 100;
+        }
         GameObject[] existing = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
         foreach (GameObject e in existing)
         {

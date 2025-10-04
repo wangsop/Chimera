@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 140215961}
   - component: {fileID: 140215960}
   - component: {fileID: 140215964}
-  - component: {fileID: 140215963}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -213,18 +212,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &140215963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140215959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 957e648c38b21d147b3096e07ad5e50a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &140215964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +497,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Dungeon
+          m_StringArgument: Level Select
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &445285803
