@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &5048318
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4968668291228252367, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_Name
+      value: LoadingManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2168252
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22927168
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.013030972
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
 --- !u!1 &229822514
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,12 +777,16 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ChimeraCatalogButtons, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
+      - m_Target: {fileID: 1353149350}
+        m_TargetAssemblyTypeName: LoadingManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Lab
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1165722985
@@ -766,6 +827,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165722982}
   m_CullTransparentMesh: 1
+--- !u!114 &1353149350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 256821061728241560, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+  m_PrefabInstance: {fileID: 5048318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5916fcfb98e3af78c9d423f3cd02ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1576459518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,3 +1494,4 @@ SceneRoots:
   - {fileID: 1751734261}
   - {fileID: 680254292}
   - {fileID: 1971225813}
+  - {fileID: 5048318}
