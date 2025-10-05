@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 203845908196129050}
   - component: {fileID: 5618464881902322915}
   m_Layer: 0
-  m_Name: SlugHeadPrefab
+  m_Name: LichenSlugHeadPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
