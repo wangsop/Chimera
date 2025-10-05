@@ -49,7 +49,7 @@ public class CatalogGenerateScript : MonoBehaviour
             Image im3 = tail.GetComponent<Image>();
             im3.sprite = chimera.Tail.GetComponentInChildren<SpriteRenderer>().sprite;
             TMP_Text tmp = text.GetComponent<TMP_Text>();
-            tmp.text = "      " + index;
+            tmp.text = "      " + index + " " + chimera.Name;
             try
             {
                 newEntry.GetComponent<ClickableChimeraScript>().SetIndex(index - 1);
