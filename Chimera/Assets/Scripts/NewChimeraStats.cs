@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class NewChimeraStats
 {
@@ -8,6 +9,7 @@ public class NewChimeraStats
     public GameObject Head;
     public GameObject Body;
     public GameObject Tail;
+    public string Name;
 
     /*
      * Holds the base of the chimera's object for the head, body, and tail.
@@ -29,6 +31,58 @@ public class NewChimeraStats
         BaseObject = baseobj;
         level = 1;
         exp = 0;
+        Name = $"{GetPartName(Head.name, 0)}-{GetPartName(Body.name, 1)}-{GetPartName(Tail.name, 2)}";
+    }
+
+    private string GetPartName(string name, int part)
+    {
+        // part: 0=head, 1=body, 2=tail
+        name = name.Replace("Prefab", "").Replace("Head", "").Replace("Body", "").Replace("Tail", "").Trim();
+        var names = SplitByUppercase(name);
+        if (names.Count == 2)
+        {
+            int index = names[0].Length > names[1].Length ? 0 : 1;
+            names.Insert(index + 1, names[index].Substring(names[index].Length / 2, names[index].Length - names[index].Length / 2));
+            names[index] = names[index].Substring(0, names[index].Length / 2 + 1);
+        }
+        else if (names.Count == 1)
+        {
+            int length = names[0].Length / 3;
+            if (length >= 2)
+            {
+                names.Insert(1, names[0].Substring(length, length));
+                names.Insert(2, names[0].Substring(length * 2, names[0].Length - length * 2));
+                names[0] = names[0].Substring(0, length);
+            }
+            else if (length == 1)
+            {
+                names.Insert(1, names[0].Substring(1, 2));
+                names.Insert(2, names[0].Substring(2, names[0].Length - 2));
+                names[0] = names[0].Substring(0, 2);
+            }
+        }
+
+        return part < names.Count ? names[part] : name;
+    }
+
+    private List<string> SplitByUppercase(string input)
+    {
+        if (string.IsNullOrEmpty(input))
+            return new List<string>();
+
+        var parts = new List<string>();
+        int wordStart = 0;
+
+        for (int i = 1; i < input.Length; i++)
+        {
+            if (char.IsUpper(input[i]))
+            {
+                parts.Add(input.Substring(wordStart, i - wordStart));
+                wordStart = i;
+            }
+        }
+        parts.Add(input.Substring(wordStart));
+        return parts;
     }
 
     #endregion

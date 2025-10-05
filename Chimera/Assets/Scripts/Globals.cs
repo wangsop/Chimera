@@ -133,7 +133,7 @@ public class Globals : MonoBehaviour
             SceneManager.LoadScene("Chimera Select");
         }
     }*/
-    public void ChimeraAbility(int x){
+    public static void ChimeraAbility(int x){
         if (party_game_objs.Count > x){
             Head h = party_game_objs[x].Head.GetComponent<Head>();
             if (h != null)
@@ -154,6 +154,15 @@ public class Globals : MonoBehaviour
     public static int AmountOfChimerasLeftToAddInParty()
     {
         return Globals.PARTY_SIZE - Globals.party_indexes.Count;
+    }
+
+    public static NewChimeraStats FindChimeraInPartyByIndex(int i)
+    {
+        if (i > party_indexes[i])
+        {
+            return null;
+        }
+        return party_game_objs[party_indexes[i]];
     }
 
 }
