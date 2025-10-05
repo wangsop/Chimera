@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 140215961}
   - component: {fileID: 140215960}
   - component: {fileID: 140215964}
-  - component: {fileID: 140215963}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -213,18 +212,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &140215963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140215959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 957e648c38b21d147b3096e07ad5e50a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &140215964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +394,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214566961}
   m_CullTransparentMesh: 1
+--- !u!114 &235095342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 256821061728241560, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+  m_PrefabInstance: {fileID: 1653229590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5916fcfb98e3af78c9d423f3cd02ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &445285800
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,16 +488,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140215963}
-        m_TargetAssemblyTypeName: LabScript, Assembly-CSharp
-        m_MethodName: Dungeon
-        m_Mode: 1
+      - m_Target: {fileID: 235095342}
+        m_TargetAssemblyTypeName: LoadingManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level Select
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &445285803
@@ -623,16 +621,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140215963}
-        m_TargetAssemblyTypeName: LabScript, Assembly-CSharp
-        m_MethodName: Catalog
-        m_Mode: 1
+      - m_Target: {fileID: 235095342}
+        m_TargetAssemblyTypeName: LoadingManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Chimera Catalog
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &610703202
@@ -860,16 +858,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 140215963}
-        m_TargetAssemblyTypeName: LabScript, Assembly-CSharp
-        m_MethodName: Gacha
-        m_Mode: 1
+      - m_Target: {fileID: 235095342}
+        m_TargetAssemblyTypeName: LoadingManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Gacha
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &866859175
@@ -1182,6 +1180,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423553078}
   m_CullTransparentMesh: 1
+--- !u!1001 &1653229590
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4968668291228252367, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_Name
+      value: LoadingManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2168252
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22927168
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.013030972
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810645672173054729, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a314e5c9185fb2a48a23e7bd603842c, type: 3}
 --- !u!1 &2127956342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,3 +1323,4 @@ SceneRoots:
   - {fileID: 140215962}
   - {fileID: 801894550}
   - {fileID: 2127956345}
+  - {fileID: 1653229590}

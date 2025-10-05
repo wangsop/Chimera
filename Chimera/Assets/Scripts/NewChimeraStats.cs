@@ -50,7 +50,7 @@ public class NewChimeraStats
     public override bool Equals(object obj)
     {
         NewChimeraStats newChimera = (NewChimeraStats)obj;
-        return newChimera.Head.Equals(Head) && newChimera.Body.Equals(Body) && newChimera.Tail.Equals(Tail);
+        return newChimera.Head.GetComponent<Head>().Equals(this.Head.GetComponent<Head>()) && newChimera.Body.GetComponent<Body>().Equals(this.Body.GetComponent<Body>()) && newChimera.Tail.GetComponent<Tail>().Equals(this.Tail.GetComponent<Tail>());
     }
 
     public override string ToString()

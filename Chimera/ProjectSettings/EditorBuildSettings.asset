@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level Select.unity
     guid: 4638046993cbb164eb245fab94506882
+  - enabled: 1
+    path: Assets/Scenes/Loading Screen.unity
+    guid: ae05629ceaffb36b29147a94eeb06adc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

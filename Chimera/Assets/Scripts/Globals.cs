@@ -22,6 +22,7 @@ public class Globals : MonoBehaviour
     public static List<NewChimeraStats> party_game_objs = new List<NewChimeraStats>();
     public static List<int> party_indexes = new List<int>();
     public const int PARTY_SIZE = 5;
+    public static int currency = 1000;
     //These must match exactly the name of the scripts
     /*public static string[] hscripts = new string[7]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead", "PalacellHead", "ArtillipedeHead"};
     public static string[] bscripts = new string[7]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody", "PalacellBody", "ArtillipedeBody"};
@@ -91,7 +92,7 @@ public class Globals : MonoBehaviour
     {
         party_game_objs = ChimeraParty.Chimeras;
     }
-
+    /*
     public void Dungeon()
     {
         if (party_indexes.Count > 0)
@@ -131,7 +132,7 @@ public class Globals : MonoBehaviour
             }
             SceneManager.LoadScene("Chimera Select");
         }
-    }
+    }*/
     public void ChimeraAbility(int x){
         if (party_game_objs.Count > x){
             Head h = party_game_objs[x].Head.GetComponent<Head>();

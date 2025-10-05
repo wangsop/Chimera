@@ -13,7 +13,7 @@ public class CatalogGenerateScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentY = 360;
+        currentY = 800;
         globals = GameObject.Find("Main Camera").GetComponent<Globals>();
         globals.isDungeon = false;
         for (int i = 0; i < ChimeraParty.Chimeras.Count; i++) {

@@ -33,4 +33,8 @@ public abstract class BodyPart : MonoBehaviour
     {
         return GetType() == other.GetType();
     }
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
 }
