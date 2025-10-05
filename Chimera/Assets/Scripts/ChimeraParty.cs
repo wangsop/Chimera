@@ -33,4 +33,17 @@ public static class ChimeraParty
         }
         return false;
     }
+    public static void RemoveChimera(NewChimeraStats deadChimera)
+    {
+        foreach (NewChimeraStats chimera in Chimeras)
+        {
+            if (chimera.Equals(deadChimera))
+            {
+                Chimeras.Remove(chimera);
+                Debug.Log("removed a chimera for dying");
+                return;
+            }
+        }
+        Debug.LogWarning("Didn't remove chimera; could not find ERROR");
+    }
 }
