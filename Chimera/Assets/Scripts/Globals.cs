@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using JetBrains.Annotations;
 using UnityEditor;
+using UnityEngine.Rendering.Universal.Internal;
 //DO NOT EDIT!!!!! READ ONLY
 [DefaultExecutionOrder(-150)]
 public class Globals : MonoBehaviour
@@ -34,6 +35,7 @@ public class Globals : MonoBehaviour
     public bool isDungeon = true;
     //public static int numMonsters = 1;
     public static int energy;
+    public const int maxEnergy = 100;
     public static string SceneSelection = "";
     //should be held in game manager eventually maybe?
     public static int highestClearedLevel = 0;
