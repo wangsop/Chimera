@@ -33,4 +33,13 @@ public class Exit : MonoBehaviour
         Time.timeScale = 1f;
         LoadingManager.LoadScene("Lab");
     }
+    public void Surrender()
+    {
+        Creature[] allChimeras = FindObjectsByType<Creature>(FindObjectsSortMode.None);
+        foreach (Creature c in allChimeras)
+        {
+            c.Die();
+        }
+        LoadingManager.LoadScene("Lab");
+    }
 }
