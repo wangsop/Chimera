@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEditor;
+using System.Collections.Generic;
+
 public class CatalogGenerateScript : MonoBehaviour
 {
     public GameObject prefab;
@@ -16,6 +18,7 @@ public class CatalogGenerateScript : MonoBehaviour
         currentY = 800;
         globals = GameObject.Find("Main Camera").GetComponent<Globals>();
         globals.isDungeon = false;
+        Globals.party_indexes = new List<int>(); //reset party indexes for player to reselect everything
         for (int i = 0; i < ChimeraParty.Chimeras.Count; i++) {
             //AddChimeraByObject(Globals.Chimeras[i]);
             GameObject newEntry = Instantiate(prefab, new Vector3(-280, currentY, 90), Quaternion.Euler(0, 0, 0)) as GameObject;
@@ -52,7 +55,7 @@ public class CatalogGenerateScript : MonoBehaviour
             tmp.text = "      " + index + " " + chimera.Name;
             try
             {
-                newEntry.GetComponent<ClickableChimeraScript>().SetIndex(index - 1);
+                newEntry.GetComponent<ClickableChimeraScript>().SetIndex(chimera);
             }
             catch (Exception)
             {

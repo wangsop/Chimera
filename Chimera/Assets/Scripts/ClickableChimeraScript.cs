@@ -24,9 +24,16 @@ public class ClickableChimeraScript : MonoBehaviour
         }
     }
 
-    public void SetIndex(int i)
+    public void SetIndex(NewChimeraStats chimera)
     {
-        index = (i > -1) ? i : index;
+        for (int i = 0; i < ChimeraParty.Chimeras.Count; i++)
+        {
+            if (chimera == ChimeraParty.Chimeras[i])
+            {
+                index = i;
+                break;
+            }
+        }
     }
 
     public void ChimeraClicked()

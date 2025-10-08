@@ -116,9 +116,9 @@ public abstract class Creature : MonoBehaviour, Entity
             NewChimeraStats thisChimera = new NewChimeraStats(this.head.gameObject, this.body.gameObject, this.tail.gameObject, Chimerafab);
             ChimeraParty.RemoveChimera(thisChimera);
         }
-        head.animator.SetBool("IsAlive", false);
-        body.animator.SetBool("IsAlive", false);
-        tail.animator.SetBool("IsAlive", false);
+        head.GetComponent<Animator>().SetBool("IsAlive", false);
+        body.GetComponent<Animator>().SetBool("IsAlive", false);
+        tail.GetComponent<Animator>().SetBool("IsAlive", false);
         Destroy(this.gameObject);
     }
 
