@@ -5,7 +5,8 @@ using System.Numerics;
 using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor.Rendering; //used for querying collections and in this case using orderby to extract subset using Guid which is a unique identifyer that we will assign to each value in the hashset then select the guids randomly.
+//using UnityEditor.Rendering; //used for querying collections and in this case using orderby to extract subset using Guid which is a unique identifyer that we will assign to each value in the hashset then select the guids randomly.
+
 
 public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator //we extend simplerandomwalk not abstract generator because we are going to use the RunRandomWalk for our corridor generation
 {
@@ -157,7 +158,8 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator /
     {
         HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>();
         int roomToCreateCount = Mathf.RoundToInt(potentialRoomPositions.Count * roomPercent);
-        List<Vector2Int> roomToCreate = potentialRoomPositions.OrderBy(x => Guid.NewGuid()).Take(roomToCreateCount).ToList();//Randomize which points on the roomPositions list actually generate a room what this line does is it randomly sorts the list by using the unique Guid for each item in the roomPositions hashset then takes the desired number using the take function then converts to a list so we can iterate through each point and create our room
+        //List<Vector2Int> roomToCreate = potentialRoomPositions.OrderBy(x => Guid.NewGuid()).Take(roomToCreateCount).ToList();//Randomize which points on the roomPositions list actually generate a room what this line does is it randomly sorts the list by using the unique Guid for each item in the roomPositions hashset then takes the desired number using the take function then converts to a list so we can iterate through each point and create our room
+        List<Vector2Int> roomToCreate = potentialRoomPositions.ToList(); //temporary bc the UnityEditor.Rendering is causing build issues
         foreach (var rooms in roomToCreate)
         {
             var roomFloor = RunRandomWalk(randomWalkParameters, rooms); //This is why we made it so this class inherits from simplerandomwalk because we wanted to use runrandomwalk and we wanted to also use the parameters in the randomwalk generator 
