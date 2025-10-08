@@ -7,6 +7,8 @@ using System.Linq;
 using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine.Rendering.Universal.Internal;
+using TMPro;
+using UnityEngine.UI;
 //DO NOT EDIT!!!!! READ ONLY
 [DefaultExecutionOrder(-150)]
 public class Globals : MonoBehaviour
@@ -28,6 +30,7 @@ public class Globals : MonoBehaviour
     /*public static string[] hscripts = new string[7]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead", "PalacellHead", "ArtillipedeHead"};
     public static string[] bscripts = new string[7]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody", "PalacellBody", "ArtillipedeBody"};
     public static string[] tscripts = new string[7]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail", "PalacellTail", "ArtillipedeTail"};*/
+    public TMP_Text currencyText;
     public GameObject Chimerafab;
     //public GameObject[] Heads;
     //public GameObject[] Bodies;
@@ -72,6 +75,7 @@ public class Globals : MonoBehaviour
                 cs.spot = i + 1;
                 party_objs.Add(newChimera);
             }*/
+            active_party_objs.Clear();
             for (int i = 0; i < party_indexes.Count; i++)
             {
                 NewChimeraStats chimera = party_game_objs[party_indexes[i]];
@@ -87,12 +91,20 @@ public class Globals : MonoBehaviour
             }
 
         }
+        if (currencyText != null)
+        {
+            currencyText.text = "" + currency + " Biogu";
+        }
     } 
 
     // Update is called once per frame
     void Update()
     {
         party_game_objs = ChimeraParty.Chimeras;
+        if (currencyText != null)
+        {
+            currencyText.text = "" + currency + " Biogu";
+        }
     }
     /*
     public void Dungeon()
