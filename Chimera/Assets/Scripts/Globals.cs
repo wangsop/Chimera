@@ -19,7 +19,7 @@ public class Globals : MonoBehaviour
     public static List<ChimeraStats> party = new List<ChimeraStats>();*/
     public static List<string> Chimeras = new List<string>();
     public static List<GameObject> party = new List<GameObject>();
-    public List<GameObject> party_objs = new List<GameObject>();
+    public static Dictionary<NewChimeraStats, GameObjectChimera> active_party_objs = new Dictionary<NewChimeraStats, GameObjectChimera>();
     public static List<NewChimeraStats> party_game_objs = new List<NewChimeraStats>();
     public static List<int> party_indexes = new List<int>();
     public const int PARTY_SIZE = 5;
@@ -72,7 +72,7 @@ public class Globals : MonoBehaviour
                 cs.spot = i + 1;
                 party_objs.Add(newChimera);
             }*/
-            for(int i = 0; i < party_indexes.Count; i++)
+            for (int i = 0; i < party_indexes.Count; i++)
             {
                 NewChimeraStats chimera = party_game_objs[party_indexes[i]];
                 GameObject newChimera = Instantiate(chimera.BaseObject, add * i, Quaternion.identity);
@@ -83,7 +83,7 @@ public class Globals : MonoBehaviour
                 GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - spriteSize, Quaternion.identity, newChimera.transform);
                 GameObject newBody = Instantiate(chimera.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
                 GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + spriteSize, Quaternion.identity, newChimera.transform);
-                party_objs.Add(newChimera);
+                active_party_objs.Add(chimera, new GameObjectChimera(newHead, newBody, newTail, newChimera));
             }
 
         }
@@ -137,11 +137,14 @@ public class Globals : MonoBehaviour
     }*/
     public static void ChimeraAbility(int x){
         if (party_game_objs.Count > x){
-            Head h = party_game_objs[x].Head.GetComponent<Head>();
+            NewChimeraStats chimera = party_game_objs[party_indexes[x]];
+            GameObject head_object = active_party_objs[chimera].Head;
+            Head h = head_object.GetComponent<Head>();
             if (h != null)
             {
                 if (energy >= 10)
                 {
+                    head_object.GetComponent<Animator>().SetTrigger("Ability");
                     h.UseAbility();
                     energy -= 10;
                 }
@@ -160,7 +163,7 @@ public class Globals : MonoBehaviour
 
     public static NewChimeraStats FindChimeraInPartyByIndex(int i)
     {
-        if (i > party_indexes[i])
+        if (i >= party_indexes.Count)
         {
             return null;
         }

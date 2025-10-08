@@ -33,7 +33,9 @@ public class NewChimeraStats
         exp = 0;
         Name = $"{GetPartName(Head.name, 0)}-{GetPartName(Body.name, 1)}-{GetPartName(Tail.name, 2)}";
     }
+    #endregion
 
+    #region Naming Chimera
     private string GetPartName(string name, int part)
     {
         // part: 0=head, 1=body, 2=tail
@@ -84,8 +86,8 @@ public class NewChimeraStats
         parts.Add(input.Substring(wordStart));
         return parts;
     }
-
     #endregion
+
 
     #region Override Methods
 
@@ -112,5 +114,24 @@ public class NewChimeraStats
         return "Chimera: {Head: " + Head.name + ", Body:" + Body.name + ", Tail:" + Tail.name + ", Level: " + level + ", XP: " + exp + "}";
     }
 
+    #endregion
+}
+
+public class GameObjectChimera
+{
+    public GameObject Head;
+    public GameObject Body;
+    public GameObject Tail;
+    public GameObject Parent;
+
+    #region Constructor
+
+    public GameObjectChimera(GameObject h, GameObject b, GameObject t, GameObject p)
+    {
+        Head = h;
+        Body = b;
+        Tail = t;
+        Parent = p;
+    }
     #endregion
 }
