@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6459207702016629428}
   - component: {fileID: 1980800956075708576}
   - component: {fileID: 386808412474369310}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LichenSlugBodyPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01d97ebbabfc0a448c42278e610eb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 386808412474369310}
 --- !u!95 &386808412474369310
 Animator:
   serializedVersion: 7

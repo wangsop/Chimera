@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class ClickableChimeraScript : MonoBehaviour
 {
 
+    public Color clickedColor = Color.blue;
+
     private Image chimeraBackground;
     private int index = -1;
     private bool isClicked = false;
-    private static Color clickedColor = Color.blue;
-    private static Color backgroundColor = new Color(229 / 255f, 197 / 255f, 143 / 255f);
+    private static Color backgroundColor;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +18,7 @@ public class ClickableChimeraScript : MonoBehaviour
         try
         {
             chimeraBackground = GetComponent<Image>();
+            backgroundColor = chimeraBackground.color;
         }
         catch (Exception)
         {
