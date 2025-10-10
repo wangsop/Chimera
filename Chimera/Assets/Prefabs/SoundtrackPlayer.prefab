@@ -45,7 +45,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6a13a6c85d2e94476ad5f55d70b955ba, type: 3}
   m_Resource: {fileID: 8300000, guid: 6a13a6c85d2e94476ad5f55d70b955ba, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
@@ -144,3 +144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
   textField: {fileID: 0}
+  combatTrack1: {fileID: 8300000, guid: b016175335603c74f8dc590bf6b0de4f, type: 3}
+  ninaTheme: {fileID: 8300000, guid: 6d9a07825f6407541bb3617885149314, type: 3}
+  combatTrack2: {fileID: 8300000, guid: b2bb29c25a9801a41b61a942bc32e6ed, type: 3}

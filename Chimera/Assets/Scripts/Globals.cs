@@ -73,6 +73,7 @@ public class Globals : MonoBehaviour
                 cs.spot = i + 1;
                 party_objs.Add(newChimera);
             }*/
+            active_party_objs.Clear();
             for (int i = 0; i < party_indexes.Count; i++)
             {
                 NewChimeraStats chimera = party_game_objs[party_indexes[i]];
@@ -147,7 +148,7 @@ public class Globals : MonoBehaviour
         }
     }*/
     public static void ChimeraAbility(int x){
-        if (party_game_objs.Count > x){
+        if (active_party_objs.Count > x){
             NewChimeraStats chimera = party_game_objs[party_indexes[x]];
             GameObject head_object = active_party_objs[chimera].Head;
             Head h = head_object.GetComponent<Head>();

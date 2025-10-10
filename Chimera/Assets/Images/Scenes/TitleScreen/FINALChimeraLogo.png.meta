@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FINALChimeraLogo_0: -2987916291171809157
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
