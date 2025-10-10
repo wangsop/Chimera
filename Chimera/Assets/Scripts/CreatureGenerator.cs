@@ -2,10 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using UnityEngine.UI;
+using System;
+using TMPro;
 
 public class CreatureGenerator : MonoBehaviour
 {
     public GameObject Chimerafab;
+    public GameObject Location;
+    public GameObject GachaButton;
+    public GameObject BioguUI;
     public List<GameObject> Heads = new List<GameObject>();
     public List<GameObject> Bodies = new List<GameObject>();
     public List<GameObject> Tails = new List<GameObject>();
@@ -13,11 +19,12 @@ public class CreatureGenerator : MonoBehaviour
     //holds all the monster's scripts, stored in a new SkeletonChimera class
     private List<SkeletonChimera> Monster_Scripts = new List<SkeletonChimera>();
     private bool isValid = true;
+    private TMP_Text biogu_text;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        isValid = !(Heads.Count == 0 || Bodies.Count == 0 || Tails.Count == 0);
+        isValid = !(Heads.Count == 0 || Bodies.Count == 0 || Tails.Count == 0) && Location != null;
 
         //save the scripts of the monsters off for later comparisons
         foreach (GameObject monster in Monsters)
@@ -27,6 +34,15 @@ public class CreatureGenerator : MonoBehaviour
             Tail monster_tail_script = monster.GetComponentInChildren<Tail>();
 
             Monster_Scripts.Add(new SkeletonChimera(monster_head_script, monster_body_script, monster_tail_script));
+        }
+
+        try
+        {
+            biogu_text = BioguUI.GetComponentInChildren<TMP_Text>();
+            biogu_text.text = "Biogu: " + Globals.currency;
+        } catch (Exception e)
+        {
+            Debug.Log("Could not find Biogu!");
         }
     }
 
@@ -69,6 +85,22 @@ public class CreatureGenerator : MonoBehaviour
         } else
         {
             Globals.currency -= 100;
+            if (Globals.currency < 100)
+            {
+                Globals.currency = 0;
+                try
+                {
+                    GachaButton.GetComponentInChildren<TMP_Text>().text = "Out of Biogu";
+                    GachaButton.GetComponentInChildren<Button>().interactable = false;
+                } catch (Exception e)
+                {
+                    Debug.Log("Could not find Gacha Button Text!");
+                }
+            }
+        }
+        if (biogu_text != null)
+        {
+            biogu_text.text = "Biogu: " + Globals.currency.ToString();
         }
         GameObject[] existing = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
         foreach (GameObject e in existing)
@@ -97,11 +129,10 @@ public class CreatureGenerator : MonoBehaviour
             return;
         }
         Vector3 spriteSize = new Vector3(generated.Head.GetComponentInChildren<SpriteRenderer>().bounds.size.x, 0, 0);
-        GameObject newChimera = Instantiate(generated.BaseObject, Vector3.zero, Quaternion.identity);
+        GameObject newChimera = Instantiate(generated.BaseObject, new Vector3(Location.transform.position.x, Location.transform.position.y, 0), Quaternion.identity);
         GameObject newHead = Instantiate(generated.Head, newChimera.transform.position - spriteSize, Quaternion.identity, newChimera.transform);
         GameObject newBody = Instantiate(generated.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
         GameObject newTail = Instantiate(generated.Tail, newChimera.transform.position + spriteSize, Quaternion.identity, newChimera.transform);
-
         Debug.Log("new chimera instantiated: " + generated.Head.name + generated.Body.name + generated.Tail.name);
 
         ChimeraParty.AddChimeraToParty(generated);

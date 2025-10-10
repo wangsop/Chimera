@@ -90,7 +90,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5255346425337322033, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_Name
-      value: ChimeraEntry Variant
+      value: ChimeraEntryClickable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470884167074844134, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470884167074844134, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.47603872
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470884167074844134, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.45323068
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -120,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99fca93416ef14ab0be3ef638832c07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickedColor: {r: 0.22352941, g: 0.23921569, b: 0.5411765, a: 1}
 --- !u!114 &509245029694381372
 MonoBehaviour:
   m_ObjectHideFlags: 0
