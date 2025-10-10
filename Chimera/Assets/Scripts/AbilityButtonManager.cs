@@ -12,7 +12,7 @@ public class AbilityButtonManager : MonoBehaviour
         {
             if (childButtons[i].CompareTag("Ability"))
             {
-                if (i < Globals.party_game_objs.Count)
+                if (i < Globals.party_indexes.Count)
                 {
                     //childButtons[i].onClick.AddListener(() => Globals.ChimeraAbility(i));
                     childButtons[i].GetComponentInChildren<TMP_Text>().text = Globals.FindChimeraInPartyByIndex(i).Name + " Ability";

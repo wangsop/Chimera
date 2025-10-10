@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MusicClass : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class MusicClass : MonoBehaviour
     [SerializeField] private TMP_Text textField;
 
     private AudioSource audioSource;
+    public AudioClip combatTrack1;
+    public AudioClip ninaTheme;
+    public AudioClip combatTrack2;
 
     private void Reset()
     {
@@ -24,11 +28,30 @@ public class MusicClass : MonoBehaviour
     {
         DontDestroyOnLoad(transform.gameObject);
         audioSource = GetComponent<AudioSource>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    public void PlayMusic()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (audioSource.isPlaying) return;
+        switch (scene.name)
+        {
+            case "Dungeon":
+                PlayMusic(combatTrack1);
+                break;
+            case "Title":
+                PlayMusic(ninaTheme);
+                break;
+            default:
+                PlayMusic(combatTrack2);
+                break;
+        }
+    }
+
+    public void PlayMusic(AudioClip a)
+    {
+        if (a == audioSource.clip && audioSource.isPlaying) return;
+        audioSource.Stop();
+        audioSource.clip = a;
         audioSource.Play();
     }
 

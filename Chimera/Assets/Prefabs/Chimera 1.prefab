@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b292e842f0bde44d1b98e829c795186d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Chimerafab: {fileID: 0}
   trig: {fileID: 3322994467588331629}
   attackRange: 30
   speed: 300

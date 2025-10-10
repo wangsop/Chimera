@@ -1,13 +1,19 @@
 using UnityEngine;
+using TMPro;
+using System;
 
 public class Exit : MonoBehaviour
 {
     public GameObject playCanvas;
     public GameObject endCanvas;
+    public TMP_Text bioguEarned;
+    private int startNum;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         endCanvas.SetActive(false);
+        //startNum = FindObjectsByType<MonsterScript>(FindObjectsSortMode.None).Length;
+        startNum = 64; //fix later
     }
 
     // Update is called once per frame
@@ -26,7 +32,11 @@ public class Exit : MonoBehaviour
         //display end-of-game stats
         endCanvas.SetActive(true);
         playCanvas.SetActive(false);
-        Globals.currency += 500;
+        int monstersKilled = startNum - FindObjectsByType<MonsterScript>(FindObjectsSortMode.None).Length;
+        int biogu = Math.Min(50 * monstersKilled + 100, 750);
+        biogu = Math.Max(biogu, 100);
+        bioguEarned.text = "+" + biogu+" biogu";
+        Globals.currency += biogu;
     }
     public void Continue()
     {
