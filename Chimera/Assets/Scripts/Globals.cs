@@ -48,6 +48,7 @@ public class Globals : MonoBehaviour
             energy = 0;
             //initialize all chimeras in party
             Vector3 add = new Vector3(10, 2, 0);
+            Vector3 adjust = new Vector3(0, 0, -1);
             /*
             foreach (int index in party_indexes)
             {
@@ -75,11 +76,11 @@ public class Globals : MonoBehaviour
             for (int i = 0; i < party_indexes.Count; i++)
             {
                 NewChimeraStats chimera = party_game_objs[party_indexes[i]];
-                GameObject newChimera = Instantiate(chimera.BaseObject, add * i, Quaternion.identity);
+                GameObject newChimera = Instantiate(chimera.BaseObject, add * i + adjust, Quaternion.identity);
                 Debug.Log("new chimera instantiated");
                 ChimeraScript cs = newChimera.GetComponentInChildren<ChimeraScript>();
                 cs.spot = i + 1;
-                Vector3 spriteSize = new Vector3(chimera.Head.GetComponentInChildren<SpriteRenderer>().bounds.size.x, 0, 1);
+                Vector3 spriteSize = new Vector3(chimera.Head.GetComponentInChildren<SpriteRenderer>().bounds.size.x, 0, 0);
                 GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - spriteSize, Quaternion.identity, newChimera.transform);
                 GameObject newBody = Instantiate(chimera.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
                 GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + spriteSize, Quaternion.identity, newChimera.transform);
@@ -93,6 +94,16 @@ public class Globals : MonoBehaviour
     void Update()
     {
         party_game_objs = ChimeraParty.Chimeras;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
+    }
+
+    private void QuitGame()
+    {
+        Debug.Log("Quitting game! This would've quit in an actual build.");
+        Application.Quit(); // only works when built
     }
     /*
     public void Dungeon()
