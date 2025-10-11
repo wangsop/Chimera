@@ -75,6 +75,9 @@ public abstract class Creature : MonoBehaviour, Entity
                     Attack(aggro); //every second, while aggro is within attack range, attack aggro target
                 }
             }
+        } else
+        {
+            rgb.linearVelocity = Vector2.zero;
         }
     }
 

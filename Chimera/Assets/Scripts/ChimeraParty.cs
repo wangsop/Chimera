@@ -14,7 +14,6 @@ public static class ChimeraParty
         }
     }
     */
-
     public static List<NewChimeraStats> Chimeras = new List<NewChimeraStats>();
 
     public static void AddChimeraToParty(NewChimeraStats chimera)

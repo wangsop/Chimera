@@ -10,12 +10,13 @@ public class CatalogGenerateScript : MonoBehaviour
     public GameObject prefab;
     public GameObject contentRect;
     Globals globals;
-    int currentY = 360;
+    float currentY = 1000.0f;
     int index = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentY = 800;
+        currentY = -contentRect.GetComponent<RectTransform>().offsetMin.y/2.0f - 100;
+        Debug.Log(currentY);
         globals = GameObject.Find("Main Camera").GetComponent<Globals>();
         globals.isDungeon = false;
         Globals.party_indexes = new List<int>(); //reset party indexes for player to reselect everything
