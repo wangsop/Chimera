@@ -47,11 +47,11 @@ public class CatalogGenerateScript : MonoBehaviour
             GameObject tail = newEntry.transform.GetChild(2).gameObject;
             GameObject text = newEntry.transform.GetChild(3).gameObject;
             Image im1 = head.GetComponent<Image>();
-            im1.sprite = chimera.Head.GetComponentInChildren<SpriteRenderer>().sprite;
+            im1.sprite = chimera.Head.GetComponentInChildren<Head>().splash;
             Image im2 = body.GetComponent<Image>();
-            im2.sprite = chimera.Body.GetComponentInChildren<SpriteRenderer>().sprite;
+            im2.sprite = chimera.Body.GetComponentInChildren<Body>().splash;
             Image im3 = tail.GetComponent<Image>();
-            im3.sprite = chimera.Tail.GetComponentInChildren<SpriteRenderer>().sprite;
+            im3.sprite = chimera.Tail.GetComponentInChildren<Tail>().splash;
             TMP_Text tmp = text.GetComponent<TMP_Text>();
             tmp.text = "      " + index + " " + chimera.Name;
             try

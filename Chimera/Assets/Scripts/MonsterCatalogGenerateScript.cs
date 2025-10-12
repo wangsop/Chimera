@@ -31,11 +31,11 @@ public class MonsterCatalogGenerateScript : MonoBehaviour
             GameObject tail = newEntry.transform.GetChild(2).gameObject;
             GameObject text = newEntry.transform.GetChild(3).gameObject;
             Image im1 = head.GetComponent<Image>();
-            im1.sprite = monster_head.GetComponentInChildren<SpriteRenderer>().sprite;
+            im1.sprite = monster_head.GetComponentInChildren<Head>().splash;
             Image im2 = body.GetComponent<Image>();
-            im2.sprite = monster_body.GetComponentInChildren<SpriteRenderer>().sprite;
+            im2.sprite = monster_body.GetComponentInChildren<Body>().splash;
             Image im3 = tail.GetComponent<Image>();
-            im3.sprite = monster_tail.GetComponentInChildren<SpriteRenderer>().sprite;
+            im3.sprite = monster_tail.GetComponentInChildren<Tail>().splash;
             TMP_Text tmp = text.GetComponent<TMP_Text>();
 
             tmp.text = monster.name.Substring(0, monster.name.IndexOf("Monster"));
