@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class TilemapVisualizer : MonoBehaviour
 {
     [SerializeField]
-    private Tilemap floorTilemap, wallTileMap, groundLevelDecor, tallDecor; //We can use this visualizer to draw to different tilemaps/layers within the one tilemap
+    private Tilemap floorTilemap, waterTileMap, wallTileMap, groundLevelDecor, tallDecor; //We can use this visualizer to draw to different tilemaps/layers within the one tilemap
     public Tilemap FloorTileMap {
         get { return floorTilemap; }
         private set { floorTilemap = value; }
@@ -20,7 +20,8 @@ public class TilemapVisualizer : MonoBehaviour
 
     public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions) //We use IEnurable with generic vector2int just in case we are using different collections because we want to be as general as possible for good code
     {
-        PaintTiles(floorPositions, floorTilemap, floorTile);
+        //PaintTiles(floorPositions, floorTilemap, floorTile);
+        PaintTiles(floorPositions, waterTileMap, floorTile);
     }
 
     private void PaintTiles(IEnumerable<Vector2Int> positions, Tilemap tilemap, TileBase tile)
@@ -40,6 +41,7 @@ public class TilemapVisualizer : MonoBehaviour
     public void Clear()
     {
         floorTilemap.ClearAllTiles();
+        waterTileMap.ClearAllTiles();
         wallTileMap.ClearAllTiles();
         groundLevelDecor.ClearAllTiles();
         tallDecor.ClearAllTiles();
