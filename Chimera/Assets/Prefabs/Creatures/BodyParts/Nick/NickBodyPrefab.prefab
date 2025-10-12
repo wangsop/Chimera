@@ -14,12 +14,16 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: ca4088c68e17d4fba901ccbf8eb10e9b, type: 2}
     - target: {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Name
-      value: SlugBodyPrefab Variant
+      value: NickBodyPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 6459207702016629428, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -298091788, guid: 74854c699fd0d478b926b0857e338cbd, type: 3}
+    - target: {fileID: 6459207702016629428, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7146530029275477528, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -126,4 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc443a9a9473d4608bb76b9f990e46a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  splash: {fileID: -2019432994, guid: d2480ae8421074d99bc4bbe8f184e7d4, type: 3}

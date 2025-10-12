@@ -14,12 +14,16 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: 008dbdfa3b9d545549425321023cbf1d, type: 2}
     - target: {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Name
-      value: SlugBodyPrefab Variant
+      value: SharkatorBodyPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 6459207702016629428, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2065295203, guid: 297f89d82a3fd45d887697ffafeb3f74, type: 3}
+    - target: {fileID: 6459207702016629428, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7146530029275477528, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -126,4 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1caf2dbbee6114f1a8713a90c709cda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  splash: {fileID: 1903471447, guid: 65813e68706354b73a483822363db513, type: 3}
