@@ -20,7 +20,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _SpecularThreshold
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -60,13 +60,14 @@ Material:
     m_Floats:
     - _Alpha: 0.75
     - _CausticDepth: 0.18
-    - _CausticFaderMultiplier: 0.09
-    - _CausticFaderScale: 8.34
+    - _CausticFaderMultiplier: 1
+    - _CausticFaderScale: 0.1
     - _CausticHighlightsBlend: 0.08
     - _CausticMovementAmount: 0.006
     - _CausticMovementScale: 0.4
     - _CausticScale: 0.08
     - _CausticSpeed: 0.8
+    - _CausticStrength: 0.8
     - _Pixelization: 16
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -80,8 +81,8 @@ Material:
     - _CausticColor: {r: 0.721, g: 0.961, b: 1, a: 1}
     - _CausticHighlightsColor: {r: 0.973, g: 0.996, b: 1, a: 1}
     - _DeepColor: {r: 0.078, g: 0.357, b: 0.58, a: 1}
-    - _GridMin: {r: -146, g: -18, b: 0, a: 0}
-    - _GridSize: {r: 202, g: 269, b: 0, a: 0}
+    - _GridMin: {r: -30, g: -182, b: 0, a: 0}
+    - _GridSize: {r: 224, g: 230, b: 0, a: 0}
     - _ShallowColor: {r: 0.596, g: 0.851, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 0.992, b: 0.957, a: 1}
     - _TileSize: {r: 1, g: 1, b: 0, a: 0}

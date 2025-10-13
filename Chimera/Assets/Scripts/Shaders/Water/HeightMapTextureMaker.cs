@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public static class HeightMapTextureMaker
 {
-    private static int gradientLength = 10;
+    private static int gradientLength = 16;
 
     public static void WaterGeneration(HashSet<Vector2Int> floor, Material waterMaterial, Texture2D caustic, Texture2D causticHighlights)
     {
@@ -32,6 +32,9 @@ public static class HeightMapTextureMaker
         waterMaterial.SetFloat("_CausticMovementScale", 0.4f);
         waterMaterial.SetFloat("_CausticMovementAmount", 0.006f);
         waterMaterial.SetFloat("_CausticHighlightsBlend", 0.08f);
+        waterMaterial.SetFloat("_CausticFaderScale", 0.1f);
+        waterMaterial.SetFloat("_CausticFaderMultiplier", 1f);
+        waterMaterial.SetFloat("_CausticStrength", 0.8f);
         waterMaterial.SetFloat("_Pixelization", 16f);
         waterMaterial.SetFloat("_SquashAmount", 1.4f);
         waterMaterial.SetFloat("_SpecularBlend", 0.1f);
