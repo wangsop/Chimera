@@ -11,6 +11,12 @@ using Unity.VisualScripting;
 public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator //we extend simplerandomwalk not abstract generator because we are going to use the RunRandomWalk for our corridor generation
 {
     [SerializeField]
+    Material waterMaterial;
+    [SerializeField]
+    Texture2D caustic;
+    [SerializeField]
+    Texture2D causticHighlights;
+    [SerializeField]
     private int corridorLength = 14;
     [SerializeField]
     private int corridorCount = 5;
@@ -45,8 +51,10 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkDungeonGenerator /
             floorPositions.UnionWith(corridors[i]);
 
         }
-        tilemapVisualizer.PaintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);
+        HeightMapTextureMaker.WaterGeneration(floorPositions, waterMaterial, caustic, causticHighlights);
+        tilemapVisualizer.PaintFloorTiles(floorPositions);
+        
     }
 
     /// <summary>
