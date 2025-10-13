@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1778101468, guid: ae4ede9c8eb704f5380c70ba2c129dbb, type: 3}
+    - target: {fileID: 1007029508609862533, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1162556046649117497, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -98,10 +102,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
       propertyPath: m_Name
-      value: SlugTailPrefab Variant
+      value: EyeCandyTailPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 120810147822268939, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4823575670268467279}
   m_SourcePrefab: {fileID: 100100000, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
+--- !u!1 &7323395320805424300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
+  m_PrefabInstance: {fileID: 5119990137739079184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4823575670268467279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323395320805424300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206b1ef753aec48c29b9bddaff04b39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splash: {fileID: 1202773264, guid: 4ed984d950f15402d936ae7ce46fa76b, type: 3}

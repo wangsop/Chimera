@@ -2,6 +2,8 @@ using UnityEngine;
 
 public abstract class BodyPart : MonoBehaviour
 {
+    public Sprite splash;
+
     protected Sprite image;
     protected SpriteRenderer spriteRenderer;
     protected int index;

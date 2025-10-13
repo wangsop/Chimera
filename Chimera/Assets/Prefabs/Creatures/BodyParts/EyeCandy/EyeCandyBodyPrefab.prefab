@@ -12,14 +12,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 466b7243c06324b92b7df2767b127694, type: 2}
+    - target: {fileID: 1980800956075708576, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
+      propertyPath: splash
+      value: 
+      objectReference: {fileID: -1013760684, guid: 4ed984d950f15402d936ae7ce46fa76b, type: 3}
     - target: {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Name
-      value: SlugBodyPrefab Variant
+      value: EyeCandyBodyPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 6459207702016629428, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2082781544, guid: ae4ede9c8eb704f5380c70ba2c129dbb, type: 3}
+    - target: {fileID: 6459207702016629428, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7146530029275477528, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -100,8 +108,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1980800956075708576, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3040902880505335527}
   m_SourcePrefab: {fileID: 100100000, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
+--- !u!1 &3311970242052931183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
+  m_PrefabInstance: {fileID: 7995021255379213223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3040902880505335527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311970242052931183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca0a63c2fdd54c228bfb005f582a594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splash: {fileID: -1013760684, guid: 4ed984d950f15402d936ae7ce46fa76b, type: 3}

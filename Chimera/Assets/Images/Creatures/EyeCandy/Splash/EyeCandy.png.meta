@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 353a3a6450478484da6a53c622d11ee8
+guid: 4ed984d950f15402d936ae7ce46fa76b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6735680045012541317
-    second: Nick_0
+      213: -5800494075257886206
+    second: Eye_Candy Splashart (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nick_0
+      name: EyeCandy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98447f4ca94f2449f9021a955f2d989b
-      internalID: -783846919
+      spriteID: a274a6fe1de62470baa3742bd95fa39e
+      internalID: 856124881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nick_1
+      name: EyeCandy_1
       rect:
         serializedVersion: 2
         x: 216
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e5e80fc8b4ab41088471ee54f75fb03
-      internalID: -2019432994
+      spriteID: 1b061e97e66424082b235ed85d5bea04
+      internalID: -1013760684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nick_2
+      name: EyeCandy_2
       rect:
         serializedVersion: 2
         x: 432
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09ba00e67752f4eb584298b4083ad535
-      internalID: -623300762
+      spriteID: 75df98b898e46448ca213516e4e658a5
+      internalID: 1202773264
       vertices: []
       indices: 
       edges: []
@@ -169,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8ea9c0062536f458dbd3c5f219e7f3e7
+    spriteID: 5f03acd18b4fa4667b892d12a70f1396
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +179,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Nick_0: -783846919
-      Nick_1: -2019432994
-      Nick_2: -623300762
+      EyeCandy_0: 856124881
+      EyeCandy_1: -1013760684
+      EyeCandy_2: 1202773264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

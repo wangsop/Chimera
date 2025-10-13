@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb009ad2962a244fb78ddbdfb5cc132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splash: {fileID: -677169109488044968, guid: 97aeb6ff585ed4d24b50fc2537dcad08, type: 3}
   whirlpool: {fileID: 1056708880341682872, guid: 6dc36af42fcdc1c47a7ed20935fd8ee5, type: 3}
   whirlpoolSpawnPoint: {fileID: 7283615903444272085}
 --- !u!212 &203845908196129050
