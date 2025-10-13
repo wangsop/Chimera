@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: 64ee1026da11345a998befb38d59a8e5, type: 2}
     - target: {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Name
-      value: SlugBodyPrefab Variant
+      value: PalacellBody
       objectReference: {fileID: 0}
     - target: {fileID: 6459207702016629428, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Sprite
@@ -130,4 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c862bf5432e48bb9ef215396afcf9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  splash: {fileID: -1644399650, guid: 3032b15a1b90e4f6dbeae545aa54a8ab, type: 3}

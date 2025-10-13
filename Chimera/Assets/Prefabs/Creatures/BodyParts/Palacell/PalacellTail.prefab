@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
       propertyPath: m_Name
-      value: SlugTailPrefab Variant
+      value: PalacellTail
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 120810147822268939, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
@@ -130,4 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea075c2cef334d8fbc4f276f1d40dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  splash: {fileID: 2067856062, guid: 3032b15a1b90e4f6dbeae545aa54a8ab, type: 3}

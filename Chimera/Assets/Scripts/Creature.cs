@@ -22,6 +22,7 @@ public abstract class Creature : MonoBehaviour, Entity
     protected Head head;
     protected Body body;
     protected Tail tail;
+    public int level = 1;
     public event Action<float> OnHealthChanged = delegate { };
     // keeps track of creatures that cannot be aggroed. Mainly for Eye Candy's attract ability: once it ends, the eye candy will be added to this temporarily to allow the eye candy to escape
     private readonly List<Creature> disabledAggroTargets = new();
@@ -143,7 +144,7 @@ public abstract class Creature : MonoBehaviour, Entity
     }
     protected void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collision");
+        //Debug.Log("Collision");
     }
     //so right now, the first enemy to enter trigger is aggro'd onto until it dies or leaves the trigger (when eyeball moves)
     protected void OnTriggerExit2D(Collider2D other)

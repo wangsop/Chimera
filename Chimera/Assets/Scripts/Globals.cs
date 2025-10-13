@@ -24,6 +24,7 @@ public class Globals : MonoBehaviour
     public static List<int> party_indexes = new List<int>();
     public const int PARTY_SIZE = 5;
     public static int currency = 1000;
+    public static int levelSelected = 0;
     //These must match exactly the name of the scripts
     /*public static string[] hscripts = new string[7]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead", "PalacellHead", "ArtillipedeHead"};
     public static string[] bscripts = new string[7]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody", "PalacellBody", "ArtillipedeBody"};
@@ -81,6 +82,8 @@ public class Globals : MonoBehaviour
                 Debug.Log("new chimera instantiated");
                 ChimeraScript cs = newChimera.GetComponentInChildren<ChimeraScript>();
                 cs.spot = i + 1;
+                cs.level = chimera.level;
+                Debug.Log("Current chimera's level: "+cs.level+"  EXP: "+ chimera.exp);
                 Vector3 spriteSize = new Vector3(chimera.Head.GetComponentInChildren<SpriteRenderer>().bounds.size.x, 0, 0);
                 GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - spriteSize, Quaternion.identity, newChimera.transform);
                 GameObject newBody = Instantiate(chimera.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);

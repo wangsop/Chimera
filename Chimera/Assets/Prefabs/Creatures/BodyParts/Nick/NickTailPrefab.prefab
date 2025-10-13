@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1374920225, guid: 74854c699fd0d478b926b0857e338cbd, type: 3}
+    - target: {fileID: 1007029508609862533, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1162556046649117497, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -98,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
       propertyPath: m_Name
-      value: SlugTailPrefab Variant
+      value: NickTailPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 120810147822268939, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
@@ -126,4 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e37bed4e3e944eab314bbacc47a5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  splash: {fileID: -623300762, guid: d2480ae8421074d99bc4bbe8f184e7d4, type: 3}

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1981419516, guid: 74854c699fd0d478b926b0857e338cbd, type: 3}
+    - target: {fileID: 203845908196129050, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5618464881902322915, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_Controller
       value: 
@@ -98,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_Name
-      value: SlugHeadPrefab Variant
+      value: NickHeadPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3785852519710649892, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
@@ -126,4 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c2b640f68ae4346a5673002ed80e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  splash: {fileID: -783846919, guid: d2480ae8421074d99bc4bbe8f184e7d4, type: 3}
