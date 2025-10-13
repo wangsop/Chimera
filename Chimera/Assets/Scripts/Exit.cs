@@ -8,6 +8,7 @@ public class Exit : MonoBehaviour
     public GameObject endCanvas;
     public TMP_Text bioguEarned;
     private int startNum;
+    private bool ended = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +29,10 @@ public class Exit : MonoBehaviour
         {
             return;
         }
+        if (ended)
+        {
+            return; //return if a chimera has already exited
+        }
         Time.timeScale = 0f; //pause the game
         //display end-of-game stats
         endCanvas.SetActive(true);
@@ -37,6 +42,11 @@ public class Exit : MonoBehaviour
         biogu = Math.Max(biogu, 100);
         bioguEarned.text = "+" + biogu+" biogu";
         Globals.currency += biogu;
+        ended = true;
+        foreach (NewChimeraStats c in Globals.active_party_objs.Keys)
+        {
+            c.addExp(50 + (10 * Globals.levelSelected));
+        }
     }
     public void Continue()
     {
