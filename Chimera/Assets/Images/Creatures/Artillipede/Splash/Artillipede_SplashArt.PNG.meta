@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5ff0da21a1b544d2bb66a4c264c92306
+guid: b4b9e467a013242ccbdf4d4f5d4aec67
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6735680045012541317
-    second: Nick_0
+      213: 6328936261450349411
+    second: Artillipede_SplashArt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nick_0
+      name: Artillipede_SplashArt_0
       rect:
         serializedVersion: 2
         x: 0
@@ -113,16 +113,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 98447f4ca94f2449f9021a955f2d989b
-      internalID: -783846919
+      spriteID: 36b36d56ff5e4d750800000000000000
+      internalID: 6328936261450349411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nick_1
+      name: Artillipede_SplashArt_1
       rect:
         serializedVersion: 2
         x: 216
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e5e80fc8b4ab41088471ee54f75fb03
-      internalID: -2019432994
+      spriteID: eb781934029c643b8b1548081e93ee6a
+      internalID: 1273404703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nick_2
+      name: Artillipede_SplashArt_2
       rect:
         serializedVersion: 2
         x: 432
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09ba00e67752f4eb584298b4083ad535
-      internalID: -623300762
+      spriteID: b5da2a555bfa34975806ac3e98eef3e6
+      internalID: 1312323314
       vertices: []
       indices: 
       edges: []
@@ -169,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8ea9c0062536f458dbd3c5f219e7f3e7
+    spriteID: 0825387d497b94c8caab3462a7934050
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +179,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Nick_0: -783846919
-      Nick_1: -2019432994
-      Nick_2: -623300762
+      Artillipede_SplashArt_0: 6328936261450349411
+      Artillipede_SplashArt_1: 1273404703
+      Artillipede_SplashArt_2: 1312323314
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
