@@ -18,6 +18,7 @@ public class NewChimeraStats
     public GameObject BaseObject;
     public int level;
     public int exp;
+    //exp scales linearly; every level costs 100 more exp to gain
 
     #endregion
 
@@ -114,6 +115,17 @@ public class NewChimeraStats
         return "Chimera: {Head: " + Head.name + ", Body:" + Body.name + ", Tail:" + Tail.name + ", Level: " + level + ", XP: " + exp + "}";
     }
 
+    #endregion
+    #region Getters, Setters
+    public void addExp(int xp)
+    {
+        this.exp += xp;
+        if (this.exp >= 100*level)
+        {
+            this.exp -= 100*level;
+            level++;
+        }
+    }
     #endregion
 }
 

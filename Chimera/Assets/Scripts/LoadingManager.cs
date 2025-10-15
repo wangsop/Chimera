@@ -27,6 +27,7 @@ public class LoadingManager : MonoBehaviour
             if (SelectedLevel > 0)
             {
                 NextSceneToLoad = "Dungeon" + SelectedLevel;
+                Globals.levelSelected = SelectedLevel;
             }
             else
             {

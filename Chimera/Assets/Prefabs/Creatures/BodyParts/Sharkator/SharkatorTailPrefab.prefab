@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2130554539, guid: 297f89d82a3fd45d887697ffafeb3f74, type: 3}
+    - target: {fileID: 1007029508609862533, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1162556046649117497, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -98,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
       propertyPath: m_Name
-      value: SlugTailPrefab Variant
+      value: SharkatorTailPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 120810147822268939, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
@@ -126,4 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4730ade5959ab43eda552a7c199ad1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  splash: {fileID: -339103003, guid: 65813e68706354b73a483822363db513, type: 3}
