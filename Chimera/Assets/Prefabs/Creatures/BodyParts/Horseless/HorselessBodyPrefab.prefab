@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6130105178893742226
+--- !u!1001 &5796546335823506332
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,15 +11,15 @@ PrefabInstance:
     - target: {fileID: 386808412474369310, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 76ffb7a700e86429c8610e455d050db5, type: 2}
+      objectReference: {fileID: 22100000, guid: 6526cd9a3c703465990969cb279e270f, type: 2}
     - target: {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Name
-      value: ArtillipedeBodyPrefab
+      value: HorselessBodyPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 6459207702016629428, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 148196824, guid: e413f12a0974f4fcda54cd58adf08d77, type: 3}
+      objectReference: {fileID: 2057757632, guid: a80135ed6b4964e1ea9192122bc2567f, type: 3}
     - target: {fileID: 6459207702016629428, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -74,23 +74,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7146530029275477528, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7146530029275477528, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7146530029275477528, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7146530029275477528, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.2
+      value: 2.0939496
       objectReference: {fileID: 0}
     - target: {fileID: 7146530029275477528, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.7
+      value: 0.9155719
       objectReference: {fileID: 0}
     - target: {fileID: 7146530029275477528, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -111,23 +111,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 742755396015563611}
+      addedObject: {fileID: 5990731110947875898}
   m_SourcePrefab: {fileID: 100100000, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
---- !u!1 &1590047975795037530 stripped
+--- !u!1 &1401470735967571540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
-  m_PrefabInstance: {fileID: 6130105178893742226}
+  m_PrefabInstance: {fileID: 5796546335823506332}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &742755396015563611
+--- !u!114 &5990731110947875898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590047975795037530}
+  m_GameObject: {fileID: 1401470735967571540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb3b55658b3204d6c88a220eb893e427, type: 3}
+  m_Script: {fileID: 11500000, guid: 25bdcf828dc724298b2a153e58bac3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splash: {fileID: 1273404703, guid: b4b9e467a013242ccbdf4d4f5d4aec67, type: 3}
+  splash: {fileID: 430565162, guid: 5a351498ffc5b408081163401ff53dda, type: 3}

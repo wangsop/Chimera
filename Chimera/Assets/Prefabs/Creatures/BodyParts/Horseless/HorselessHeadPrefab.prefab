@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2923792389558622400
+--- !u!1001 &8118719850475271923
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 203845908196129050, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1024353190, guid: 44fa09fcb4dd44ae79fe1c61cdb3d918, type: 3}
+      objectReference: {fileID: 5714293030727817668, guid: a80135ed6b4964e1ea9192122bc2567f, type: 3}
     - target: {fileID: 203845908196129050, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -19,7 +19,7 @@ PrefabInstance:
     - target: {fileID: 5618464881902322915, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: a8853cd760fe64e5b81092234b00e06e, type: 2}
+      objectReference: {fileID: 22100000, guid: 586b57822bacf4a30bae9af671e65327, type: 2}
     - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -70,23 +70,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.783949
+      value: -5.8899994
       objectReference: {fileID: 0}
     - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1
+      value: 1.615572
       objectReference: {fileID: 0}
     - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_Name
-      value: PalacellHead
+      value: HorselessHeadPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3785852519710649892, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
@@ -112,23 +112,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4009500013015321819}
+      addedObject: {fileID: 5874050819361465727}
   m_SourcePrefab: {fileID: 100100000, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
---- !u!1 &5319478121424356025 stripped
+--- !u!1 &1290998404589710474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
-  m_PrefabInstance: {fileID: 2923792389558622400}
+  m_PrefabInstance: {fileID: 8118719850475271923}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4009500013015321819
+--- !u!114 &5874050819361465727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5319478121424356025}
+  m_GameObject: {fileID: 1290998404589710474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6336129f0f3124f1b811aea47adb1b06, type: 3}
+  m_Script: {fileID: 11500000, guid: 04e318312db31464a8ad3ca75e2a0f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splash: {fileID: 109129339, guid: 3032b15a1b90e4f6dbeae545aa54a8ab, type: 3}
+  splash: {fileID: -8088246769733027536, guid: 5a351498ffc5b408081163401ff53dda, type: 3}

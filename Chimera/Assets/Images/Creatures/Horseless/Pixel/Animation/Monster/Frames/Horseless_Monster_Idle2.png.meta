@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5ff0da21a1b544d2bb66a4c264c92306
+guid: 12d82422077b444c1af47fce2b9d9483
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6735680045012541317
-    second: Nick_0
+      213: 7452497390677436455
+    second: Horseless_Chimera_Idle2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nick_0
+      name: Horseless_Monster_Idle2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 216
-        height: 480
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,20 +115,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98447f4ca94f2449f9021a955f2d989b
-      internalID: -783846919
+      spriteID: 2ebebca101fb949d4b5e5552c9c6b2e0
+      internalID: 1665709634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nick_1
+      name: Horseless_Monster_Idle2_1
       rect:
         serializedVersion: 2
-        x: 216
+        x: 128
         y: 0
-        width: 216
-        height: 480
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e5e80fc8b4ab41088471ee54f75fb03
-      internalID: -2019432994
+      spriteID: d6851734a84a54e40943e701b664a7e0
+      internalID: 71677344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nick_2
+      name: Horseless_Monster_Idle2_2
       rect:
         serializedVersion: 2
-        x: 432
+        x: 256
         y: 0
-        width: 216
-        height: 480
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09ba00e67752f4eb584298b4083ad535
-      internalID: -623300762
+      spriteID: fbf9808ca678e41a8b6356dbc24e11a7
+      internalID: -606232267
       vertices: []
       indices: 
       edges: []
@@ -169,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8ea9c0062536f458dbd3c5f219e7f3e7
+    spriteID: 8869d282cad544ba796bd8b89bf5f799
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +179,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Nick_0: -783846919
-      Nick_1: -2019432994
-      Nick_2: -623300762
+      Horseless_Monster_Idle2_0: 1665709634
+      Horseless_Monster_Idle2_1: 71677344
+      Horseless_Monster_Idle2_2: -606232267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
