@@ -723,7 +723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.48925656, y: 0.19048302}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.69200134, y: -4.067993}
+  m_AnchoredPosition: {x: 0.6919861, y: -4.067993}
   m_SizeDelta: {x: 51.289993, y: 28.937988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1174858892
@@ -984,7 +984,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.35
+  m_fontSize: 41.65
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1092,6 +1092,7 @@ MonoBehaviour:
   - {fileID: 5319478121424356025, guid: 79c78234c6e364e17bafffb2a2f3f876, type: 3}
   - {fileID: 4549342685362041209, guid: 39ed4fd6fd905415ab2261083d35869e, type: 3}
   - {fileID: 608986430754512878, guid: d317cdf8a04e248db9075763edafcf26, type: 3}
+  - {fileID: 1290998404589710474, guid: a3e7f56a432f346eeb8e0840ba73eff0, type: 3}
   Bodies:
   - {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
   - {fileID: 6132199212722008716, guid: 5784c445e27da4435beec5793a054557, type: 3}
@@ -1100,6 +1101,7 @@ MonoBehaviour:
   - {fileID: 988916519305192420, guid: 1676d77effdf7476185e41b1961ebbcc, type: 3}
   - {fileID: 3478940405516498343, guid: 379f9037493d845bca627e8fe56ecc6c, type: 3}
   - {fileID: 3311970242052931183, guid: fc76471132a4d4705a87e6307bad077d, type: 3}
+  - {fileID: 1401470735967571540, guid: 3d570050e976947c995565700ce7a3ea, type: 3}
   Tails:
   - {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
   - {fileID: 7875629217057729115, guid: a58b479eda25a427d8bcbea4562b8f7d, type: 3}
@@ -1108,6 +1110,7 @@ MonoBehaviour:
   - {fileID: 8654532417961682586, guid: 7395854be6ad747808db47f802532f89, type: 3}
   - {fileID: 8067158184053193067, guid: e81da87dba5de46538c1ce2a9cd25b74, type: 3}
   - {fileID: 7323395320805424300, guid: 12652487cc74643b38746a94587b5d66, type: 3}
+  - {fileID: 6074296988162736562, guid: c653ffe67a5ae401aa2e26e8bb38a3d2, type: 3}
   Monsters:
   - {fileID: 7313375578454353807, guid: 1332c9a63a3654d1480dcfa7abd7ff13, type: 3}
   - {fileID: 606990119164908652, guid: 0882faef37d2c4758ae7ca11592c19a9, type: 3}
@@ -1116,6 +1119,7 @@ MonoBehaviour:
   - {fileID: 1672410032746975923, guid: 48919ac73ff434e60bb827b343020aa9, type: 3}
   - {fileID: 2714897321438028271, guid: da0e5d305e7d643459aadadfd411a4a3, type: 3}
   - {fileID: 4185002086731159025, guid: 03f36ab121aac41cca7a6970e9a078a4, type: 3}
+  - {fileID: 355352760381618177, guid: 405c4aa57a669475e83d68e5e68617c1, type: 3}
 --- !u!1 &1465414692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,7 +1509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.032851312, y: 0.07510341}
   m_AnchorMax: {x: 0.5837026, y: 0.8118966}
-  m_AnchoredPosition: {x: -5.529999, y: -18.723999}
+  m_AnchoredPosition: {x: -5.5300293, y: -18.723999}
   m_SizeDelta: {x: 29.965, y: 13.417}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1846601729

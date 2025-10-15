@@ -980,7 +980,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1576459519}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.5977944
+  m_Size: 0.58324033
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1198,6 +1198,7 @@ MonoBehaviour:
   - {fileID: 1672410032746975923, guid: 48919ac73ff434e60bb827b343020aa9, type: 3}
   - {fileID: 7260827633149308826, guid: 0c80d4fce5f1d4323bd00dcdbfbfda58, type: 3}
   - {fileID: 9054652579520429056, guid: 6c181a06ebd1c4106a57126f21eab1f2, type: 3}
+  - {fileID: 355352760381618177, guid: 405c4aa57a669475e83d68e5e68617c1, type: 3}
 --- !u!1 &1889302475
 GameObject:
   m_ObjectHideFlags: 0
