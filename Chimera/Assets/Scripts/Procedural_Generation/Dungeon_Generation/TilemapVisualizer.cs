@@ -16,9 +16,15 @@ public class TilemapVisualizer : MonoBehaviour
     private TileBase floorTile, wallTop, wallSideRight, wallSideLeft, wallBottom, wallFull,
         wallInnerCornerDownLeft, wallInnerCornerDownRight, wallDiagonalCornerDownRight, wallDiagonalCornerDownLeft,
         wallDiagonalCornerUpRight, wallDiagonalCornerUpLeft; //for variation just make scriptable object/array and just randomly select from it
-    
+
 
     public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions) //We use IEnurable with generic vector2int just in case we are using different collections because we want to be as general as possible for good code
+    {
+        //PaintTiles(floorPositions, floorTilemap, floorTile);
+        PaintTiles(floorPositions, floorTilemap, floorTile);
+    }
+    
+    public void PaintWaterTiles(IEnumerable<Vector2Int> floorPositions) //We use IEnurable with generic vector2int just in case we are using different collections because we want to be as general as possible for good code
     {
         //PaintTiles(floorPositions, floorTilemap, floorTile);
         PaintTiles(floorPositions, waterTileMap, floorTile);

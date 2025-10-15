@@ -8,41 +8,43 @@ public static class HeightMapTextureMaker
 {
     private static int gradientLength = 16;
 
-    public static void WaterGeneration(HashSet<Vector2Int> floor, Material waterMaterial, Texture2D caustic, Texture2D causticHighlights)
+    public static void WaterGeneration(HashSet<Vector2Int> floor, Material waterMaterial, Texture2D heightMap, Texture2D noCaustics, Texture2D caustic, Texture2D causticHighlights, Texture2D seaFoam, int shoreLength)
     {
         var bounds = ComputeBounds(floor);
         var wallTiles = FindEdgeWalls(floor, Direction2D.eightDirectionsList);
-        Debug.Log("Meep");
-
-        Texture2D heightTex = CreateHeightMapTexture(floor, wallTiles, bounds);
-        //RuntimeTexPeek.Show(heightTex, 256); testng to check the heightmap;
-        waterMaterial.SetTexture("_HeightTex", heightTex);
+        var noCausticsSet = FindCausticsMask(floor, wallTiles, Direction2D.eightDirectionsList, shoreLength);
+        heightMap = CreateHeightMapTexture(floor, wallTiles, bounds);
+        noCaustics = CreateWhiteTransparent_BlackOpaqueTexture(noCausticsSet, bounds);
+        //RuntimeTexPeek.Show(noCausticArea, 256);
+        var gridMin  = new Vector4(bounds.minX, bounds.minY, 0, 0);
+        var gridSize = new Vector4(bounds.width, bounds.height, 0, 0);
+        var tileSize = new Vector4(1, 1, 0, 0);
+        waterMaterial.SetTexture("_HeightTex", heightMap);
+        waterMaterial.SetFloat("_Pixelization", 16f);
         waterMaterial.SetVector("_GridMin",  new Vector4(bounds.minX, bounds.minY, 0, 0));
         waterMaterial.SetVector("_GridSize", new Vector4(bounds.width, bounds.height, 0, 0));
         waterMaterial.SetVector("_TileSize", new Vector4(1, 1, 0, 0));
-        waterMaterial.SetColor("_ShallowColor", new Color(0.596f, 0.851f, 1f));   // #98D9FF
-        waterMaterial.SetColor("_DeepColor", new Color(0.078f, 0.357f, 0.580f, 1.000f)); // #0C2E5B
-        waterMaterial.SetTexture("_CausticTexture", caustic);
-        waterMaterial.SetTexture("_CausticHighlights", causticHighlights);
-        waterMaterial.SetColor("_CausticColor", new Color(0.721f, 0.961f, 1.000f, 1.000f));
-        waterMaterial.SetColor("_CausticHighlightsColor", new Color(0.973f, 0.996f, 1.000f, 1.000f));
+        waterMaterial.SetColor("_ShallowColor", new Color(0.247f, 0.851f, 0.820f, 1.0f)/*new Color(0.247f, 0.475f, 0.659f, 1f)*/); // #3F79A8
+        waterMaterial.SetColor("_DeepColor", new Color(0.016f, 0.184f, 0.239f, 1.0f)/*new Color(0.039f, 0.133f, 0.239f, 1f)*/); // #0A223D
+        waterMaterial.SetTexture("_noCaustics", noCaustics);
+        waterMaterial.SetColor("_CausticColor", new Color(0.310f, 1.000f, 0.878f, 1.0f)/*new Color(0.290f, 0.561f, 0.722f, 1.000f)*/); // #4A8FB8
+        waterMaterial.SetColor("_CausticHighlightsColor", new Color(0.722f, 1.000f, 0.976f, 1.0f)/*new Color(0.851f, 0.953f, 1.000f, 1.000f)*/); // #D9F3FF
+        waterMaterial.SetFloat("_SquashAmount", 1.4f);
         waterMaterial.SetFloat("_CausticScale", 0.08f);
         waterMaterial.SetFloat("_CausticDepth", 0.18f);
         waterMaterial.SetFloat("_CausticSpeed", 0.8f);
-        waterMaterial.SetFloat("_CausticMovementScale", 0.4f);
-        waterMaterial.SetFloat("_CausticMovementAmount", 0.006f);
+        waterMaterial.SetFloat("_CausticMovementScale", 0.5f);
+        waterMaterial.SetFloat("_CausticMovementAmount", 0.04f);
         waterMaterial.SetFloat("_CausticHighlightsBlend", 0.08f);
         waterMaterial.SetFloat("_CausticFaderScale", 0.1f);
         waterMaterial.SetFloat("_CausticFaderMultiplier", 1f);
         waterMaterial.SetFloat("_CausticStrength", 0.8f);
-        waterMaterial.SetFloat("_Pixelization", 16f);
-        waterMaterial.SetFloat("_SquashAmount", 1.4f);
         waterMaterial.SetFloat("_SpecularBlend", 0.1f);
         waterMaterial.SetFloat("_SpecularScale", 3f);
         waterMaterial.SetFloat("_SpecularScale2", 10f);
         waterMaterial.SetFloat("_SpecularSpeed", 0.2f);
         waterMaterial.SetFloat("_SpecularThreshold", -0.8f);
-        waterMaterial.SetColor("_SpecularColor", new Color(1.000f, 0.992f, 0.957f, 1.000f));
+        waterMaterial.SetColor("_SpecularColor", new Color(0.910f, 0.984f, 1.000f, 1.0f)/*new Color(1.000f, 0.992f, 0.957f, 1.000f)*/);
         waterMaterial.SetGradient(
             new GradientColorKey[]
             {
@@ -57,7 +59,30 @@ public static class HeightMapTextureMaker
             }
             // optional: , "_GradientTex", 256
         );
+        waterMaterial.SetColor("_FoamColor", new Color(0.486f, 0.812f, 0.769f, 1.000f));
+
         waterMaterial.SetFloat("_Alpha", 0.75f);
+    }
+
+    
+    private static HashSet<Vector2Int> FindCausticsMask(HashSet<Vector2Int> floor, HashSet<Vector2Int> edges, List<Vector2Int> eightDirectionsList, int length)
+    {
+        HashSet<Vector2Int> noCaustics = new HashSet<Vector2Int>();
+        foreach (var pos in edges)
+        {
+            for (int i = 1; i <= length; i++)
+            {
+                foreach (var dir in eightDirectionsList)
+                {
+                    var neighbour = pos + (dir * i);
+                    if (floor.Contains(neighbour))
+                    {
+                        noCaustics.Add(neighbour);
+                    }
+                }
+            }
+        }
+        return noCaustics;
     }
 
     private static Texture2D CreateHeightMapTexture(
@@ -75,7 +100,7 @@ public static class HeightMapTextureMaker
     {
         var distances = MultiSourceBFS(floorTiles, wallTiles, Direction2D.eightDirectionsList, bounds);
         var normalized = Normalization(distances);
-        foreach(var (x,y) in normalized)
+        foreach (var (x, y) in normalized)
         {
             //Debug.Log((x,y));
         }
@@ -111,6 +136,42 @@ public static class HeightMapTextureMaker
         tex.Apply(false);
         return tex;
     }
+    private static Texture2D CreateWhiteTransparent_BlackOpaqueTexture(
+            HashSet<Vector2Int> whitePositions,
+            GridBounds bounds,
+            FilterMode filter = FilterMode.Point,
+            TextureWrapMode wrap = TextureWrapMode.Clamp
+        )
+    {
+        Texture2D tex = new Texture2D(bounds.width, bounds.height, TextureFormat.RGBA32, false);
+        tex.filterMode = filter;
+        tex.wrapMode = wrap;
+        tex.anisoLevel = 0;
+
+        // Start black, fully opaque (caustics allowed)
+        Color[] pixels = new Color[bounds.width * bounds.height];
+        for (int i = 0; i < pixels.Length; i++) pixels[i] = new Color(0f, 0f, 0f, 1f);
+
+        if (whitePositions != null)
+        {
+            foreach (var pos in whitePositions)
+            {
+                // Skip anything outside the overall bounds just in case
+                if (pos.x < bounds.minX || pos.x >= bounds.minX + bounds.width ||
+                    pos.y < bounds.minY || pos.y >= bounds.minY + bounds.height) continue;
+
+                Vector2Int tp = ToTexXY(pos, bounds);
+                int idx = tp.y * bounds.width + tp.x;
+                pixels[idx] = new Color(1f, 1f, 1f, 0f); // white, fully transparent (block caustics)
+            }
+        }
+
+        tex.SetPixels(pixels);
+        tex.Apply(false);
+        return tex;
+    }
+
+
 
     /// <summary>
     /// 
@@ -149,7 +210,7 @@ public static class HeightMapTextureMaker
         return distances;
     }
 
-    
+
 
 
     private static HashSet<Vector2Int> FindEdgeWalls(HashSet<Vector2Int> floorPositions, List<Vector2Int> directionList)
