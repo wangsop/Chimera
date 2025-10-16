@@ -13,7 +13,7 @@ public class HorselessHead : Head
     private Creature thisCreature;
 
 
-    // ABILITY ("Puppet Master"): every enemy within a radius of 75 becomes unable to move for 5 seconds. Every second during that time, they take 1 damage.
+    // ABILITY ("Puppet Master"): every enemy within a radius of 75, along with Horseless itself, becomes unable to move for 5 seconds. Every second during that time, the enemies take 1 damage.
     public override void UseAbility(){
         Debug.Log("Used Horseless Ability");
         onHorselessAbility.Invoke(thisCreature, ABILITY_RADIUS, ABILITY_DURATION, ABILITY_DAMAGE_PER_SECOND);

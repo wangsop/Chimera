@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 
@@ -26,6 +27,10 @@ public abstract class Creature : MonoBehaviour, Entity
     public event Action<float> OnHealthChanged = delegate { };
     // keeps track of creatures that cannot be aggroed. Mainly for Eye Candy's attract ability: once it ends, the eye candy will be added to this temporarily to allow the eye candy to escape
     private readonly List<Creature> disabledAggroTargets = new();
+    // if this is false, the creature will not move or attack
+    protected bool canMove = true;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
@@ -59,7 +64,7 @@ public abstract class Creature : MonoBehaviour, Entity
         {
             Debug.Log("Overlap detected with: " + col.gameObject.name);
         }
-        if (aggro != null)
+        if (aggro != null && this.canMove)
         {
             //head towards object of aggro
             Vector2 aggPos = new Vector2(aggro.gameObject.GetComponent<Transform>().position.x, aggro.gameObject.GetComponent<Transform>().position.y);
@@ -295,13 +300,53 @@ public abstract class Creature : MonoBehaviour, Entity
         // Debug.Log($"{this} heard Eye Candy's ability end escape period");
     }
 
-    
-    // Event callback for Horseless's ability
+
+    // Event callback for Horseless's ability: behaves differently for the chimera that triggered the event, nearby chimeras, and nearby enemies
     protected void OnHorselessAbilityResponse(Creature horseless, int radius, int duration, int damage)
     {
         Debug.Log("Heard horseless ability");
+
+        // guard clause: must be in range
+        if (!((this.transform.position - horseless.transform.position).magnitude <= radius))
+        {
+            return;
+        }
+
+        // if on opposing team or triggered the event, disable movement for duration
+        if (this.hostile == !horseless.hostile || this == horseless)
+        {
+            StartCoroutine(FreezeForSeconds(duration));
+        }
+
+        // if on opposing team, take damage
+        if (this.hostile == !horseless.hostile)
+        {
+            StartCoroutine(TakeDamageEverySecond(duration, damage));
+        }
+    }
+    // enables movement after a given delay in seconds
+    private IEnumerator FreezeForSeconds(int seconds)
+    {
+        this.canMove = false;
+        yield return new WaitForSeconds(seconds);
+        this.canMove = true;
     }
 
+    // takes the given amount of damage every second for the given duration in seconds (recursive)
+    private IEnumerator TakeDamageEverySecond(int duration, int damage)
+    {
+        bool dead = false;
+        if (duration > 0)
+        {
+            dead = this.takeDamage(damage);
+        } 
+        yield return new WaitForSeconds(1);
+        if (!dead && duration > 1)
+        {
+            StartCoroutine(TakeDamageEverySecond(duration - 1, damage));
+        }
+
+    }
 
 
 }
