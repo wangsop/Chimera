@@ -46,6 +46,8 @@ public abstract class Creature : MonoBehaviour, Entity
         EyeCandyHead.onEyeCandyTriggerAggro.AddListener(OnEyeCandyTriggerAggroResponse);
         EyeCandyHead.onEyeCandyTriggerDisableAggro.AddListener(OnEyeCandyTriggerDisableAggroResponse);
         EyeCandyHead.onEyeCandyTriggerReenableAggro.AddListener(OnEyeCandyTriggerReenableAggroResponse);
+        HorselessHead.onHorselessAbility.AddListener(OnHorselessAbilityResponse);
+
         clock = Time.time;
     }
 
@@ -76,7 +78,8 @@ public abstract class Creature : MonoBehaviour, Entity
                     Attack(aggro); //every second, while aggro is within attack range, attack aggro target
                 }
             }
-        } else
+        }
+        else
         {
             rgb.linearVelocity = Vector2.zero;
         }
@@ -202,6 +205,49 @@ public abstract class Creature : MonoBehaviour, Entity
         else aggro = null;
     }
 
+    // helper function: adds/removes given creature from list of unaggroable creatures based on bool false/true, respectively
+    private void SetAggroable(Creature c, bool b)
+    {
+        if (b)
+        {
+            // Debug.Log("Set aggroable");
+            for (int i = 0; i < disabledAggroTargets.Count; i++)
+            {
+                if (disabledAggroTargets[i] == c)
+                {
+                    disabledAggroTargets.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+        else
+        {
+            // Debug.Log("Set unaggroable");
+            disabledAggroTargets.Add(c);
+        }
+    }
+
+    // getter for hostile
+    public bool IsHostile()
+    {
+        return hostile;
+    }
+
+    // helper function: distance from this to a game obj
+    private double DistanceTo(MonoBehaviour mb)
+    {
+        return (mb.GetComponent<Transform>().position - transform.position).magnitude;
+    }
+
+    public override string ToString()
+    {
+        return "Creature {Head: " + head.name + ", Body: " + body.name + ", Tail: " + tail.name + ", isHostile: " + hostile + "}";
+    }
+
+
+
+    // FOR ABILITIES
+
     // Event callback for Eye Candy's distract ability start of distract period: adds the Eye Candy head's chimera to the front of this creature's inTrigger
     protected void OnEyeCandyTriggerAggroResponse(Creature eyeCandy, double distractRadius)
     {
@@ -249,42 +295,13 @@ public abstract class Creature : MonoBehaviour, Entity
         // Debug.Log($"{this} heard Eye Candy's ability end escape period");
     }
 
-    // helper function: adds/removes given creature from list of unaggroable creatures based on bool false/true, respectively
-    private void SetAggroable(Creature c, bool b)
+    
+    // Event callback for Horseless's ability
+    protected void OnHorselessAbilityResponse(Creature horseless, int radius, int duration, int damage)
     {
-        if (b)
-        {
-            // Debug.Log("Set aggroable");
-            for (int i = 0; i < disabledAggroTargets.Count; i++)
-            {
-                if (disabledAggroTargets[i] == c)
-                {
-                    disabledAggroTargets.RemoveAt(i);
-                    i--;
-                }
-            }
-        }
-        else
-        {
-            // Debug.Log("Set unaggroable");
-            disabledAggroTargets.Add(c);
-        }
-    }   
-
-    // getter for hostile
-    public bool IsHostile()
-    {
-        return hostile;
+        Debug.Log("Heard horseless ability");
     }
 
-    // helper function: distance from this to a game obj
-    private double DistanceTo(MonoBehaviour mb)
-    {
-        return (mb.GetComponent<Transform>().position - transform.position).magnitude;
-    }
 
-    public override string ToString()
-    {
-        return "Creature {Head: " + head.name + ", Body: " + body.name + ", Tail: " + tail.name + ", isHostile: " + hostile + "}"; 
-    }
+
 }
