@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      height_islands_0: -1641016567547688907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
