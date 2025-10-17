@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 
@@ -26,6 +27,10 @@ public abstract class Creature : MonoBehaviour, Entity
     public event Action<float> OnHealthChanged = delegate { };
     // keeps track of creatures that cannot be aggroed. Mainly for Eye Candy's attract ability: once it ends, the eye candy will be added to this temporarily to allow the eye candy to escape
     private readonly List<Creature> disabledAggroTargets = new();
+    // if this is false, the creature will not move or attack
+    protected bool canMove = true;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
@@ -46,6 +51,8 @@ public abstract class Creature : MonoBehaviour, Entity
         EyeCandyHead.onEyeCandyTriggerAggro.AddListener(OnEyeCandyTriggerAggroResponse);
         EyeCandyHead.onEyeCandyTriggerDisableAggro.AddListener(OnEyeCandyTriggerDisableAggroResponse);
         EyeCandyHead.onEyeCandyTriggerReenableAggro.AddListener(OnEyeCandyTriggerReenableAggroResponse);
+        HorselessHead.onHorselessAbility.AddListener(OnHorselessAbilityResponse);
+
         clock = Time.time;
     }
 
@@ -57,7 +64,7 @@ public abstract class Creature : MonoBehaviour, Entity
         {
             Debug.Log("Overlap detected with: " + col.gameObject.name);
         }
-        if (aggro != null)
+        if (aggro != null && this.canMove)
         {
             //head towards object of aggro
             Vector2 aggPos = new Vector2(aggro.gameObject.GetComponent<Transform>().position.x, aggro.gameObject.GetComponent<Transform>().position.y);
@@ -76,7 +83,8 @@ public abstract class Creature : MonoBehaviour, Entity
                     Attack(aggro); //every second, while aggro is within attack range, attack aggro target
                 }
             }
-        } else
+        }
+        else
         {
             rgb.linearVelocity = Vector2.zero;
         }
@@ -202,6 +210,49 @@ public abstract class Creature : MonoBehaviour, Entity
         else aggro = null;
     }
 
+    // helper function: adds/removes given creature from list of unaggroable creatures based on bool false/true, respectively
+    private void SetAggroable(Creature c, bool b)
+    {
+        if (b)
+        {
+            // Debug.Log("Set aggroable");
+            for (int i = 0; i < disabledAggroTargets.Count; i++)
+            {
+                if (disabledAggroTargets[i] == c)
+                {
+                    disabledAggroTargets.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+        else
+        {
+            // Debug.Log("Set unaggroable");
+            disabledAggroTargets.Add(c);
+        }
+    }
+
+    // getter for hostile
+    public bool IsHostile()
+    {
+        return hostile;
+    }
+
+    // helper function: distance from this to a game obj
+    private double DistanceTo(MonoBehaviour mb)
+    {
+        return (mb.GetComponent<Transform>().position - transform.position).magnitude;
+    }
+
+    public override string ToString()
+    {
+        return "Creature {Head: " + head.name + ", Body: " + body.name + ", Tail: " + tail.name + ", isHostile: " + hostile + "}";
+    }
+
+
+
+    // FOR ABILITIES
+
     // Event callback for Eye Candy's distract ability start of distract period: adds the Eye Candy head's chimera to the front of this creature's inTrigger
     protected void OnEyeCandyTriggerAggroResponse(Creature eyeCandy, double distractRadius)
     {
@@ -249,42 +300,53 @@ public abstract class Creature : MonoBehaviour, Entity
         // Debug.Log($"{this} heard Eye Candy's ability end escape period");
     }
 
-    // helper function: adds/removes given creature from list of unaggroable creatures based on bool false/true, respectively
-    private void SetAggroable(Creature c, bool b)
+
+    // Event callback for Horseless's ability: behaves differently for the chimera that triggered the event, nearby chimeras, and nearby enemies
+    protected void OnHorselessAbilityResponse(Creature horseless, int radius, int duration, int damage)
     {
-        if (b)
+        Debug.Log("Heard horseless ability");
+
+        // guard clause: must be in range
+        if (!((this.transform.position - horseless.transform.position).magnitude <= radius))
         {
-            // Debug.Log("Set aggroable");
-            for (int i = 0; i < disabledAggroTargets.Count; i++)
-            {
-                if (disabledAggroTargets[i] == c)
-                {
-                    disabledAggroTargets.RemoveAt(i);
-                    i--;
-                }
-            }
+            return;
         }
-        else
+
+        // if on opposing team or triggered the event, disable movement for duration
+        if (this.hostile == !horseless.hostile || this == horseless)
         {
-            // Debug.Log("Set unaggroable");
-            disabledAggroTargets.Add(c);
+            StartCoroutine(FreezeForSeconds(duration));
         }
-    }   
 
-    // getter for hostile
-    public bool IsHostile()
+        // if on opposing team, take damage
+        if (this.hostile == !horseless.hostile)
+        {
+            StartCoroutine(TakeDamageEverySecond(duration, damage));
+        }
+    }
+    // enables movement after a given delay in seconds
+    private IEnumerator FreezeForSeconds(int seconds)
     {
-        return hostile;
+        this.canMove = false;
+        yield return new WaitForSeconds(seconds);
+        this.canMove = true;
     }
 
-    // helper function: distance from this to a game obj
-    private double DistanceTo(MonoBehaviour mb)
+    // takes the given amount of damage every second for the given duration in seconds (recursive)
+    private IEnumerator TakeDamageEverySecond(int duration, int damage)
     {
-        return (mb.GetComponent<Transform>().position - transform.position).magnitude;
+        bool dead = false;
+        if (duration > 0)
+        {
+            dead = this.takeDamage(damage);
+        } 
+        yield return new WaitForSeconds(1);
+        if (!dead && duration > 1)
+        {
+            StartCoroutine(TakeDamageEverySecond(duration - 1, damage));
+        }
+
     }
 
-    public override string ToString()
-    {
-        return "Creature {Head: " + head.name + ", Body: " + body.name + ", Tail: " + tail.name + ", isHostile: " + hostile + "}"; 
-    }
+
 }
