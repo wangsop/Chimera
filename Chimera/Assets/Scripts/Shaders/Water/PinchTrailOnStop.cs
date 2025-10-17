@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Animations;
 
 /// Pinches the FRONT of a TrailRenderer based on its current length,
 /// so when the trail collapses it narrows instead of staying wide.
 [RequireComponent(typeof(TrailRenderer))]
 public class PinchTrailOnStop : MonoBehaviour
 {
+
     [Header("Tip width limits")]
     public float smallestTipWidth = 0.02f;   // when trail is tiny / collapsing
     public float largestTipWidth  = 0.45f;   // when trail is long
@@ -17,6 +19,7 @@ public class PinchTrailOnStop : MonoBehaviour
     public float tailTipWidth = 0.02f;      // tail end width
 
     TrailRenderer tr;
+    BoxCollider2D box;
     AnimationCurve workingCurve;
 
     // Reuse a buffer for positions to avoid allocs
@@ -25,7 +28,7 @@ public class PinchTrailOnStop : MonoBehaviour
     void Awake()
     {
         tr = GetComponent<TrailRenderer>();
-
+        box = transform.parent.GetComponent<BoxCollider2D>();
         // Make an initial curve: front tip (key 0), body (key ~0.2, 0.8), tail tip (key 1)
         workingCurve = new AnimationCurve(
             new Keyframe(0.00f, smallestTipWidth), // this one we’ll overwrite each frame
