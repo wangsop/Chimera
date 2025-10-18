@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 //using System.Numerics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using System;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -16,6 +18,10 @@ public class Player_Controller : MonoBehaviour
     //finally utilize current state variable for can move or can exit animation for current animation substate
     [SerializeField] private bool canMove; //Another implementation of the status effect system would involve a header function that based on the bools would set moveforce accordingly. 
     private Coroutine _afflictionRoutine;
+    public event Action MovePressed;   // fired when input goes from zero -> non-zero
+    public event Action MoveReleased;  // fired when input goes from non-zero -> zero
+
+    private bool _wasMoving = false;   // ADD: to detect transitions
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,14 +37,19 @@ public class Player_Controller : MonoBehaviour
 
     private void FixedUpdate() //On fixed update unity assigns a force to the velocity of the rigid body physics based functions in fixed update
     {
-        Debug.Log(MoveForce);
+//        Debug.Log(MoveForce);
         Vector2 moveVector = _axisInput * MoveForce * Time.fixedDeltaTime; //fixed delta time updates consistently and you can change this update interval in the project setting but overall consistent independent of framerate
         rb.AddForce(moveVector);
     }
     private void OnMove(InputValue value) // we need input here keep in mind for invoke unity events we need to use callback.context which they take but for send messages they take the input value
     {
         _axisInput = value.Get<Vector2>();
-
+        bool moving = _axisInput.sqrMagnitude > 0f;
+        if (moving && !_wasMoving)
+            MovePressed?.Invoke();
+        else if (!moving && _wasMoving)
+            MoveReleased?.Invoke();
+        _wasMoving = moving;
     }
 
     public void OnAfflicted(bool stunned, bool slowed, float speedReduction, float duration)
