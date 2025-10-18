@@ -13,6 +13,6 @@ public class SharkatorTail : Tail
     }
     public override void Attack(Creature target)
     {
-        target.Hit(attack, Globals.default_kb, fire_effect);
+        target.Hit(attack, Globals.default_kb, fire_effect, true);
     }
 }

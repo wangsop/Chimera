@@ -10,15 +10,14 @@ public class Damageable_Testing : MonoBehaviour
     Animator animator;
     private int _maxHealth = 100;
     [SerializeField] private bool _isAlive = true;
-    [SerializeField] private bool isInvincible = false;
+    private bool isInvincible = false;
     [SerializeField] private float timeSinceHit = 0;
-    [SerializeField] private float invincibilityTimer = 1f; //play around with this time to make sure you dont get hit multiple times
+    [SerializeField] private float invincibilityTimer = 0.2f; //play around with this time to make sure you dont get hit multiple times
     private int health;
     [SerializeField] private bool afflicted;
     [SerializeField] private int damageTicksLeft = 0;
     [SerializeField] private float timeSinceLastTick;
     [SerializeField] private Status_Effect status_effect;
-    private static readonly Vector2 default_kb = new Vector2(0.5f, 0.5f);
     public int DamageTicksLeft
     {
         get
@@ -141,6 +140,7 @@ public class Damageable_Testing : MonoBehaviour
             if (apply_effect && !Afflicted)
             {
                 DamageTicksLeft += effect.TotalDamageTicks;
+                Debug.Log("Status effect has been applied");
                 Afflicted = true;
                 damegableAfflicted?.Invoke(effect.Stunned, effect.Slowed, effect.SpeedReduction, effect.EffectDuration);
             }
