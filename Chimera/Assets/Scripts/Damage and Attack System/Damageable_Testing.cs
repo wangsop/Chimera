@@ -8,16 +8,17 @@ public class Damageable_Testing : MonoBehaviour
     public UnityEvent<int, Vector2> damageableHit;
     public UnityEvent<bool, bool, float, float> damegableAfflicted;
     Animator animator;
-    [SerializeField] private int _maxHealth = 100;
+    private int _maxHealth = 100;
     [SerializeField] private bool _isAlive = true;
-    [SerializeField] private bool isInvincible;
+    [SerializeField] private bool isInvincible = false;
     [SerializeField] private float timeSinceHit = 0;
     [SerializeField] private float invincibilityTimer = 1f; //play around with this time to make sure you dont get hit multiple times
-    [SerializeField] private int health;
+    private int health;
     [SerializeField] private bool afflicted;
     [SerializeField] private int damageTicksLeft = 0;
     [SerializeField] private float timeSinceLastTick;
     [SerializeField] private Status_Effect status_effect;
+    private static readonly Vector2 default_kb = new Vector2(0.5f, 0.5f);
     public int DamageTicksLeft
     {
         get
@@ -128,12 +129,12 @@ public class Damageable_Testing : MonoBehaviour
         }
     }
 
-    public void Hit(int damage, Vector2 knockback, Status_Effect effect, bool apply_effect)
+    public void Hit(int damage, Vector2 knockback, Status_Effect effect=null, bool apply_effect=false)
     {
         if (IsAlive && !isInvincible)
         {
             CurrentHealth -= damage;
-            isInvincible = true;
+            //isInvincible = true;
             LockVelocity = true;
             
             status_effect = effect;

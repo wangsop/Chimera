@@ -40,6 +40,7 @@ public class Globals : MonoBehaviour
     public static string SceneSelection = "";
     //should be held in game manager eventually maybe?
     public static int highestClearedLevel = 0;
+    public static Vector2 default_kb = new Vector2(0.5f, 0.5f);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -90,7 +91,6 @@ public class Globals : MonoBehaviour
                 GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + spriteSize, Quaternion.identity, newChimera.transform);
                 active_party_objs.Add(chimera, new GameObjectChimera(newHead, newBody, newTail, newChimera));
             }
-
         }
     } 
 

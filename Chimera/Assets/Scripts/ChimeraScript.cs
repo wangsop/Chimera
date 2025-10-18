@@ -22,9 +22,9 @@ public class ChimeraScript : Creature
         pos = transform.position;
         hostile = false;
         base.Start();
-        this.health /= level;
+        this.CurrentHealth /= level;
         this.attack *= level;
-        this.maxHealth /= level;
+        this.MaxHealth /= level;
     }
 
     // Update is called once per frame
