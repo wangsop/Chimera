@@ -14,10 +14,12 @@ public class Damageable_Testing : MonoBehaviour
     [SerializeField] private float timeSinceHit = 0;
     [SerializeField] private float invincibilityTimer = 0.2f; //play around with this time to make sure you dont get hit multiple times
     private int health;
-    [SerializeField] private bool afflicted;
-    [SerializeField] private int damageTicksLeft = 0;
-    [SerializeField] private float timeSinceLastTick;
-    [SerializeField] private Status_Effect status_effect;
+    [SerializeField] private bool afflicted = false;
+    [SerializeField] protected int damageTicksLeft = 0;
+    [SerializeField] protected float timeSinceLastTick;
+    [SerializeField] protected Status_Effect status_effect;
+    protected float duration = 0;
+    protected float timeSinceStart = 0.0f;
     public int DamageTicksLeft
     {
         get
@@ -69,7 +71,7 @@ public class Damageable_Testing : MonoBehaviour
             if (health <= 0)
             {
                 IsAlive = false;
-                Afflicted = false;
+                afflicted = false;
             }
         }
     }
@@ -103,6 +105,7 @@ public class Damageable_Testing : MonoBehaviour
     {
         health = _maxHealth;
         animator = GetComponent<Animator>();
+        Afflicted = false;
     }
 
     private void Update()
@@ -116,16 +119,6 @@ public class Damageable_Testing : MonoBehaviour
             }
             timeSinceHit += Time.deltaTime;
         }
-        if (Afflicted)
-        {
-            if (timeSinceLastTick > status_effect.TimeBetweenTicks && DamageTicksLeft > 0)
-            {
-                Hit(status_effect.TickDamage, Vector2.zero, status_effect, false);
-                DamageTicksLeft -= 1;
-                timeSinceLastTick = 0;
-            }
-            timeSinceLastTick += Time.deltaTime;
-        }
     }
 
     public void Hit(int damage, Vector2 knockback, Status_Effect effect=null, bool apply_effect=false)
@@ -135,13 +128,14 @@ public class Damageable_Testing : MonoBehaviour
             CurrentHealth -= damage;
             //isInvincible = true;
             LockVelocity = true;
-            
-            status_effect = effect;
-            if (apply_effect && !Afflicted)
+            if (apply_effect && effect != null)
             {
-                DamageTicksLeft += effect.TotalDamageTicks;
+                DamageTicksLeft = effect.TotalDamageTicks;
                 Debug.Log("Status effect has been applied");
                 Afflicted = true;
+                status_effect = effect;
+                timeSinceStart = 0.0f;
+                duration = effect.EffectDuration;
                 damegableAfflicted?.Invoke(effect.Stunned, effect.Slowed, effect.SpeedReduction, effect.EffectDuration);
             }
         }

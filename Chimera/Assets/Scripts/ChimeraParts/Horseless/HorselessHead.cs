@@ -19,6 +19,7 @@ public class HorselessHead : Head
     public override void UseAbility(){
         Debug.Log("Used Horseless Ability");
         onHorselessAbility.Invoke(thisCreature, ABILITY_RADIUS, ABILITY_DURATION, ABILITY_DAMAGE_PER_SECOND);
+        //thisCreature.Hit(0, Globals.default_kb, this.freeze_effect, true);
     }
     protected override void Initialize(){
         index = 4;

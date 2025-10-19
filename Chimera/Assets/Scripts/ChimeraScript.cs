@@ -30,7 +30,7 @@ public class ChimeraScript : Creature
     // Update is called once per frame
     new void Update()
     {
-        if (eyeball != null && (Input.GetKey(KeyCode.Space) || (Input.GetKey(KeyCode.Alpha1) && spot == 1) || (Input.GetKey(KeyCode.Alpha2) && spot == 2) || (Input.GetKey(KeyCode.Alpha3) && spot == 3) || (Input.GetKey(KeyCode.Alpha4) && spot == 4) || (Input.GetKey(KeyCode.Alpha5) && spot == 5)) && canMove)
+        if (eyeball != null && canMove && (Input.GetKey(KeyCode.Space) || (Input.GetKey(KeyCode.Alpha1) && spot == 1) || (Input.GetKey(KeyCode.Alpha2) && spot == 2) || (Input.GetKey(KeyCode.Alpha3) && spot == 3) || (Input.GetKey(KeyCode.Alpha4) && spot == 4) || (Input.GetKey(KeyCode.Alpha5) && spot == 5)) && canMove)
         {
             Vector2 EyePos = new Vector2(eyeball.position.x, eyeball.position.y);
             pos = (Vector2)transform.position;
@@ -39,7 +39,8 @@ public class ChimeraScript : Creature
                 Vector2 newPos = Vector2.MoveTowards(transform.position, EyePos, speed * Time.deltaTime);
                 rgb.MovePosition(newPos);
             }
-        } else {
+        }
+        else {
             base.Update();
         }
     }

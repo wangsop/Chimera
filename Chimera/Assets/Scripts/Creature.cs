@@ -1,8 +1,9 @@
-using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public abstract class Creature : Damageable_Testing, Entity
 {
@@ -30,8 +31,41 @@ public abstract class Creature : Damageable_Testing, Entity
     private readonly List<Creature> disabledAggroTargets = new();
     // if this is false, the creature will not move or attack
     protected bool canMove = true;
+    protected bool canAttack = true;
+    private Coroutine _stunRoutine;
+    private Coroutine _slowRoutine;
 
-
+    public void OnAfflicted(bool stunned, bool slowed, float speedReduction, float duration)
+    {
+        if (stunned)
+        {   
+            if (_stunRoutine != null) StopCoroutine(_stunRoutine);
+            _stunRoutine = StartCoroutine(Stun(duration));
+        }
+        if (slowed)
+        {
+            int original = speed;
+            int temp = (int)(speed * speedReduction);
+            if (_slowRoutine != null) StopCoroutine(_slowRoutine);
+            _slowRoutine = StartCoroutine(ApplyTempMoveForce(original, temp, duration));
+        }
+    }
+    private IEnumerator ApplyTempMoveForce(int original, int temp, float duration)
+    {
+        speed = temp;
+        yield return new WaitForSeconds(duration);
+        speed = original;
+        _slowRoutine = null;
+    }
+    private IEnumerator Stun(float duration)
+    {
+        canMove = false;
+        canAttack = false;
+        yield return new WaitForSeconds(duration);
+        canMove = true;
+        canAttack = true;
+        _stunRoutine = null;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
@@ -93,15 +127,40 @@ public abstract class Creature : Damageable_Testing, Entity
                 {
                     clock = Time.time;
                     attackCount++;
-                    tail.Attack(aggro); //every second, while aggro is within attack range, attack aggro target
+                    if (canAttack)
+                    {
+                        tail.Attack(aggro); //every second, while aggro is within attack range, attack aggro target
+                    }
                 }
             }
         }
-        else if (this.canMove) {
+        else if (this.canMove && inTrigger.Count != 0) {
             reAggro();
-        } else
+        } else if (!this.canMove)
         {
             rgb.linearVelocity = Vector2.zero;
+            rgb.MovePosition(this.transform.position);
+        }
+        else
+        {
+            //do patrol behaviors for monster, stay still for chimera
+        }
+        if (Afflicted)
+        {
+            if (timeSinceLastTick > status_effect.TimeBetweenTicks && DamageTicksLeft > 0)
+            {
+                Hit(status_effect.TickDamage, Vector2.zero, status_effect, false);
+                Debug.Log("Took tick damage");
+                DamageTicksLeft -= 1;
+                timeSinceLastTick = 0;
+            }
+            timeSinceLastTick += Time.deltaTime;
+            if (timeSinceStart > duration)
+            {
+                Debug.Log("effect ended");
+                Afflicted = false;
+            }
+            timeSinceStart += Time.deltaTime;
         }
     }
 
@@ -326,16 +385,15 @@ public abstract class Creature : Damageable_Testing, Entity
     // Event callback for Horseless's ability: behaves differently for the chimera that triggered the event, nearby chimeras, and nearby enemies
     protected void OnHorselessAbilityResponse(Creature horseless, int radius, int duration, int damage)
     {
-        Debug.Log("Heard horseless ability");
 
         // guard clause: must be in range
         if (!((this.transform.position - horseless.transform.position).magnitude <= radius))
         {
             return;
         }
-
+        Debug.Log("Heard horseless ability");
         // if on opposing team or triggered the event, disable movement for duration
-        if (this.hostile == !horseless.hostile || this == horseless)
+        if (this.hostile == !horseless.hostile || this.Equals(horseless))
         {
             this.Hit(0, Globals.default_kb, ((HorselessHead)horseless.head).freeze_effect, true);
             //StartCoroutine(FreezeForSeconds(duration));
