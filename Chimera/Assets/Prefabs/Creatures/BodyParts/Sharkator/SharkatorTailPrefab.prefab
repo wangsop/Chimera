@@ -131,3 +131,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splash: {fileID: -339103003, guid: 65813e68706354b73a483822363db513, type: 3}
+  fire_effect: {fileID: 11400000, guid: 9c38d56083f5afc4ebcddd30cde67b9c, type: 2}

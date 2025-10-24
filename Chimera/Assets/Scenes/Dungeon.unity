@@ -624,7 +624,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.8
+  m_fontSize: 40.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.75
+  m_fontSize: 43.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.15
+  m_fontSize: 31.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.25
+  m_fontSize: 26.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1524,7 +1524,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 7.5, y: 7.5, z: 0}
+  m_ChunkCullingBounds: {x: 4.5, y: 4.5, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -9332,7 +9332,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 7.5, y: 7.5, z: 0}
+  m_ChunkCullingBounds: {x: 4.5, y: 4.5, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -68614,7 +68614,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
+  m_fontSize: 31.15
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -68750,7 +68750,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.8
+  m_fontSize: 31.1
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -69238,7 +69238,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 31.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -69290,6 +69290,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034923523}
   m_CullTransparentMesh: 1
+--- !u!1 &1077317459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6114886328534412007, guid: 8e71e2b1ac567964d9479a019b0c26c2, type: 3}
+  m_PrefabInstance: {fileID: 2254430847018327382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1116246675
 GameObject:
   m_ObjectHideFlags: 0
@@ -69686,7 +69691,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.85
+  m_fontSize: 31.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -73582,6 +73587,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7742853086790196366, guid: 8e71e2b1ac567964d9479a019b0c26c2, type: 3}
   m_PrefabInstance: {fileID: 2254430847018327382}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1632628126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077317459}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b91de5ddeb063f409f88dee53abd91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MoveForce>k__BackingField: 5
+  canMove: 1
 --- !u!1001 &1665197139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74239,7 +74258,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.1
+  m_fontSize: 27
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -75722,7 +75741,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6079705111837231999, guid: 8e71e2b1ac567964d9479a019b0c26c2, type: 3}
       propertyPath: speed
-      value: 600
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6079705111837231999, guid: 8e71e2b1ac567964d9479a019b0c26c2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6114886328534412007, guid: 8e71e2b1ac567964d9479a019b0c26c2, type: 3}
       propertyPath: m_Name
@@ -75771,7 +75794,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6114886328534412007, guid: 8e71e2b1ac567964d9479a019b0c26c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1632628126}
   m_SourcePrefab: {fileID: 100100000, guid: 8e71e2b1ac567964d9479a019b0c26c2, type: 3}
 --- !u!1001 &3266389097590737774
 PrefabInstance:

@@ -7,6 +7,8 @@ public class HorselessHead : Head
     private static readonly int ABILITY_RADIUS = 75;
     private static readonly int ABILITY_DURATION = 5;
     private static readonly int ABILITY_DAMAGE_PER_SECOND = 1;
+    public Status_Effect freeze_effect;
+    public Status_Effect dot_effect;
     // params: thisCreature, radius, duration, damage per second
     public static readonly UnityEvent<Creature, int, int, int> onHorselessAbility = new();
 
@@ -17,6 +19,7 @@ public class HorselessHead : Head
     public override void UseAbility(){
         Debug.Log("Used Horseless Ability");
         onHorselessAbility.Invoke(thisCreature, ABILITY_RADIUS, ABILITY_DURATION, ABILITY_DAMAGE_PER_SECOND);
+        //thisCreature.Hit(0, Globals.default_kb, this.freeze_effect, true);
     }
     protected override void Initialize(){
         index = 4;

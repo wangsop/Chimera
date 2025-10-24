@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 330585548}
   - component: {fileID: 330585549}
   - component: {fileID: 330585550}
-  - component: {fileID: 330585552}
   - component: {fileID: 330585551}
   m_Layer: 0
   m_Name: Main Camera
@@ -317,16 +316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b941411899e5ac4b8f8ecc1bae0bfe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heads:
-  - {fileID: -379357398, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
-  - {fileID: 2045612333, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
-  Bodies:
-  - {fileID: -140096408, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
-  - {fileID: -2065295203, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
-  Tails:
-  - {fileID: -1495587707, guid: 9517a4f9700784cf3bc98cffdfb5cf62, type: 3}
-  - {fileID: 2130554539, guid: 8f6a9b9ce3af547fcb763628e92b2325, type: 3}
-  party_objs: []
   Chimerafab: {fileID: 3093246287781483032, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
   isDungeon: 1
 --- !u!114 &330585551
@@ -336,29 +325,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa9fad41c1a70f4aa12998b51f3d4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Chimerafab: {fileID: 3093246287781483032, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
+  Chimerafab: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
+  aHead: {fileID: 1290998404589710474, guid: a3e7f56a432f346eeb8e0840ba73eff0, type: 3}
+  aBody: {fileID: 1401470735967571540, guid: 3d570050e976947c995565700ce7a3ea, type: 3}
+  aTail: {fileID: 6074296988162736562, guid: c653ffe67a5ae401aa2e26e8bb38a3d2, type: 3}
   Eyeball: {fileID: 1632628119}
-  index: 0
---- !u!114 &330585552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdcfc1f1612331243b88b5e538f471c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Chimerafab: {fileID: 3093246287781483032, guid: 16404424c61738548a9d9d6695a24e1e, type: 3}
-  Eyeball: {fileID: 1632628119}
-  index: 3
 --- !u!1 &498354129
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
+      propertyPath: Monster
+      value: 
+      objectReference: {fileID: 606990119164908652, guid: 0882faef37d2c4758ae7ca11592c19a9, type: 3}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: SpawnDelay
       value: 3
@@ -6072,7 +6052,7 @@ PrefabInstance:
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: Monster
       value: 
-      objectReference: {fileID: 9121029991162654454, guid: 2b5fac41662d542908e528a5d72ed287, type: 3}
+      objectReference: {fileID: 7313375578454353807, guid: 1332c9a63a3654d1480dcfa7abd7ff13, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

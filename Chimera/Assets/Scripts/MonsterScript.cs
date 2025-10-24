@@ -5,11 +5,11 @@ public class MonsterScript : Creature
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     new void Start()
     {
-        health = 8;
+        this.CurrentHealth = 8;
         hostile = true;
         base.Start();
-        health *= Globals.levelSelected+1;
-        maxHealth *= Globals.levelSelected+1; //monster health scales with dungeon difficulty, but not their attack
+        this.CurrentHealth *= Globals.levelSelected+1;
+        this.MaxHealth *= Globals.levelSelected+1; //monster health scales with dungeon difficulty, but not their attack
 
     }
 
