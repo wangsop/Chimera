@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 857bc0e2d281d4b86a64011829c05213
+guid: dc175b945d91f034aa141e09dc7d1381
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7034826670299716538
-    second: Catalog Backdrop_0
+      213: -567012310486463971
+    second: quitbutton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Catalog Backdrop_0
+      name: quitbutton_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 46
+        y: 26
+        width: 520
+        height: 213
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: abb98a3a599b0a160800000000000000
-      internalID: 7034826670299716538
+      spriteID: d1a4e2ace419128f0800000000000000
+      internalID: -567012310486463971
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Catalog Backdrop_0: 7034826670299716538
+      quitbutton_0: -567012310486463971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
