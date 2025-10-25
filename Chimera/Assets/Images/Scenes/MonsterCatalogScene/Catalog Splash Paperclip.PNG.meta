@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Catalog Splash Paperclip_0: 7070503937650240357
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
