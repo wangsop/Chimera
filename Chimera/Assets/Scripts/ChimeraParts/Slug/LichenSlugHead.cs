@@ -20,6 +20,8 @@ public class LichenSlugHead : Head
     protected override void Initialize()
     {
         index = 0;
+        ability_description = "Slug >:)";
+        scientist_description = "Wow a lad";
         base.Initialize();
     }
 

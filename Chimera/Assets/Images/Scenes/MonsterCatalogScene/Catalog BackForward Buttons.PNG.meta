@@ -106,20 +106,20 @@ TextureImporter:
       name: Catalog BackForward Buttons_0
       rect:
         serializedVersion: 2
-        x: 276
-        y: 74
-        width: 40
-        height: 40
+        x: 278
+        y: 75
+        width: 37
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 541d344a86f7994a0800000000000000
-      internalID: -6586092892643405499
+      spriteID: 0d4ed58f2b0a64b71b102b86276ee979
+      internalID: 364367485
       vertices: []
       indices: 
       edges: []
@@ -128,20 +128,20 @@ TextureImporter:
       name: Catalog BackForward Buttons_1
       rect:
         serializedVersion: 2
-        x: 1611
-        y: 74
-        width: 46
-        height: 40
+        x: 1612
+        y: 75
+        width: 43
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c4f0fdeadb92821e0800000000000000
-      internalID: -2222480521447927988
+      spriteID: 3e59ed2ad97234a50bbbad34f69c2b73
+      internalID: 1239575445
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8dbcea9b675e94af1af9c82906572706
     internalID: 0
     vertices: []
     indices: 
@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Catalog BackForward Buttons_0: 364367485
+      Catalog BackForward Buttons_1: 1239575445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
