@@ -4,13 +4,16 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject container;
-    void Update()
+
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            container.SetActive(true);
-            Time.timeScale = 0;
-        }
+        container.SetActive(false);
+    }
+
+    public void PauseButton()
+    {
+        container.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void ResumeButton()
@@ -26,6 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitButton()
         {
+            Debug.Log("Quitting game! This would've quit in an actual build.");
             Application.Quit();
         }
     }
