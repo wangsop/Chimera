@@ -32,11 +32,12 @@ public class MonsterCatalogGenerateScript : MonoBehaviour
             });
             Destroy(monster);
         }
-
+        /*
         foreach (KeyValuePair<string, Dictionary<string, string>> entry in catalogInfo)
         {
             Debug.Log(entry.Key + "- {attack: " + entry.Value["attack"] + ", health: " + entry.Value["health"] + ", ability: " + entry.Value["ability"] + ", description: " + entry.Value["description"] + "}");
         }
+        */
         UpdateMonsterCatalog();
     }
 

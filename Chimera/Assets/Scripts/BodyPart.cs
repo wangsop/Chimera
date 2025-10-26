@@ -9,7 +9,7 @@ public abstract class BodyPart : MonoBehaviour
     protected int index;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    protected void Start()
+    protected void Awake()
     {
         Initialize();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();

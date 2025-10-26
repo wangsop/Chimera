@@ -95,9 +95,9 @@ MonoBehaviour:
   m_fontSize: 15
   m_fontSizeBase: 15
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 5
+  m_fontSizeMax: 15
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 24.468956, y: 3.1699677, z: 6.9331207, w: -38.29551}
+  m_margin: {x: 29.937912, y: 3.1699677, z: 15.820206, w: -38.29551}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -170,7 +170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 215.5, y: -88.3}
+  m_AnchoredPosition: {x: 215.5, y: -63.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4087221899669285721
@@ -231,9 +231,9 @@ MonoBehaviour:
   m_fontSize: 15
   m_fontSizeBase: 15
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 5
+  m_fontSizeMax: 15
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 37.110806, z: 29.994286, w: -58.028534}
+  m_margin: {x: 6.136917, y: 37.110806, z: 38.43259, w: -83.29152}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -367,9 +367,9 @@ MonoBehaviour:
   m_fontSize: 15
   m_fontSizeBase: 15
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 5
+  m_fontSizeMax: 15
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 3.1699677, z: 29.994286, w: -92.758705}
+  m_margin: {x: 7.671135, y: 3.1699677, z: 39.199734, w: -70.6536}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -554,7 +554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 14.55
       objectReference: {fileID: 0}
     - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_margin.w
@@ -562,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_margin.x
-      value: 24.532494
+      value: 29.982346
       objectReference: {fileID: 0}
     - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_margin.y
@@ -570,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_margin.z
-      value: 6.399788
+      value: 13.484596
       objectReference: {fileID: 0}
     - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_fontColor.b
@@ -585,8 +585,20 @@ PrefabInstance:
       value: 0.15803786
       objectReference: {fileID: 0}
     - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_fontSizeBase
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6055932226471608034, guid: 06261ff1f4292e34ab7911462e988ac5, type: 3}
       propertyPath: m_fontColor32.rgba
