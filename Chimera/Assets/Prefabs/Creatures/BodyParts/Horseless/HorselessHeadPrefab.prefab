@@ -132,5 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splash: {fileID: -8088246769733027536, guid: 5a351498ffc5b408081163401ff53dda, type: 3}
+  ability_description: Ability description has not been implemented yet
+  scientist_description: Scientist description not been implemented yet
+  rarity: 3
   freeze_effect: {fileID: 11400000, guid: a838f0d5be95cad4bbbcdf420062ad22, type: 2}
   dot_effect: {fileID: 11400000, guid: 20330819b6aba0d4f859c06f315908f5, type: 2}
