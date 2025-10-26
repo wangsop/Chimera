@@ -136,3 +136,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splash: {fileID: 856124881, guid: 4ed984d950f15402d936ae7ce46fa76b, type: 3}
+  ability_description: Ability description has not been implemented yet
+  scientist_description: Scientist description not been implemented yet
+  rarity: 2

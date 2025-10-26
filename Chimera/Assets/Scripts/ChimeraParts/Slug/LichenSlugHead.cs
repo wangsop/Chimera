@@ -7,6 +7,7 @@ public class LichenSlugHead : Head
     [SerializeField] private Transform whirlpoolSpawnPoint;
 
     private GameObject whirlpoolInstance;
+    //public override int rarity { get; set; } = 2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void UseAbility()
