@@ -8,6 +8,7 @@ public class EyeCandyHead : Head
     public static readonly UnityEvent<Creature, double> onEyeCandyTriggerAggro = new(); 
     public static readonly UnityEvent<Creature> onEyeCandyTriggerDisableAggro = new();
     public static readonly UnityEvent<Creature> onEyeCandyTriggerReenableAggro = new();
+    //public override int rarity { get; set; } = 2;
     [SerializeField] private static readonly double distractRadius = 200;
     [SerializeField] private static readonly float abilityActiveDuration = 5;
     [SerializeField] private static readonly float abilityDisableAggroDuration = 5;
