@@ -30,7 +30,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private Dictionary<Vector2Int, Dictionary<Vector2Int, HashSet<Vector2Int>>> adjacencyGraph = new Dictionary<Vector2Int, Dictionary<Vector2Int, HashSet<Vector2Int>>>();
     private HashSet<Vector2Int> corridors;
     
-    protected override void RunProceduralGeneration()
+    public override void RunProceduralGeneration()
     {
         CreateRooms();
     }
