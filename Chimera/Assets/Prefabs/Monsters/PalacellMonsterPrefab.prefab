@@ -254,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3902956181355501211, guid: 2ee376ac036ef4f30808287a7c2685d2, type: 3}
       propertyPath: m_Name
-      value: MonsterPrefab Variant
+      value: PalacellMonsterPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
