@@ -24,15 +24,8 @@ public class LoadingManager : MonoBehaviour
         } 
         else
         {
-            if (SelectedLevel > 0)
-            {
-                NextSceneToLoad = "Dungeon" + SelectedLevel;
-                Globals.levelSelected = SelectedLevel;
-            }
-            else
-            {
-                NextSceneToLoad = "Dungeon";
-            }
+            NextSceneToLoad = "ProLevel" + SelectedLevel;
+            Globals.levelSelected = SelectedLevel;
             Debug.Log("Selected " + NextSceneToLoad);
             SceneManager.LoadScene("Chimera Select");
         }

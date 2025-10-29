@@ -17,6 +17,12 @@ public static class DecorandHarvestableGeneration
         CreateHarvestables(spotsForHarvestables, harvestables, visualizer);
         CreateDecorations(spotsToDecorate, visualizer);
     }
+    public static void CreateObjects(HashSet<Vector2Int> floorPositions, List<GameObject> objects, PlaceableObject placeableObject, Dictionary<Vector2Int, HashSet<Vector2Int>> roomMapsDictionary, HashSet<Vector2Int> corridors, TilemapVisualizer visualizer)
+    {
+        HashSet<Vector2Int> roomsNoCorridors = floorPositions.Except(corridors).ToHashSet();
+        var spotsForHarvestables = FindSpotForHarvestables(roomMapsDictionary, corridors, roomsNoCorridors, objects, placeableObject);
+        CreateHarvestables(spotsForHarvestables, objects, visualizer);
+    }
 
     private static void CreateHarvestables(List<Vector2Int> spotsForHarvestables, List<GameObject> harvestables, TilemapVisualizer visualizer)
     {
@@ -46,6 +52,7 @@ public static class DecorandHarvestableGeneration
 
                 // (Optional) offset to center of tile
                 worldPos += visualizer.FloorTileMap.cellSize / 2;
+                worldPos.z = -1;
 
                 // Instantiate
                 Object.Instantiate(prefab, worldPos, Quaternion.identity, Harvest_Nodes.transform);
