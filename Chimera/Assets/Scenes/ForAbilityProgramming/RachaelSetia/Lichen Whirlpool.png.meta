@@ -1,0 +1,1131 @@
+fileFormatVersion: 2
+guid: 00308da5de5544844a68a1caf4c9606d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8081983054396407042
+    second: Lichen Whirlpool_0
+  - first:
+      213: 2371569414790667211
+    second: Lichen Whirlpool_1
+  - first:
+      213: 5305881728605480037
+    second: Lichen Whirlpool_2
+  - first:
+      213: 1118720819107801902
+    second: Lichen Whirlpool_3
+  - first:
+      213: 3012708654127937227
+    second: Lichen Whirlpool_4
+  - first:
+      213: 609530237208395207
+    second: Lichen Whirlpool_5
+  - first:
+      213: -779338269008115330
+    second: Lichen Whirlpool_6
+  - first:
+      213: 3617010235290841715
+    second: Lichen Whirlpool_7
+  - first:
+      213: 7402311060102676683
+    second: Lichen Whirlpool_8
+  - first:
+      213: -8650852400273947560
+    second: Lichen Whirlpool_9
+  - first:
+      213: 1690456433366545796
+    second: Lichen Whirlpool_10
+  - first:
+      213: 2815308071111946527
+    second: Lichen Whirlpool_11
+  - first:
+      213: -5863990809251281547
+    second: Lichen Whirlpool_12
+  - first:
+      213: -9080620708272857286
+    second: Lichen Whirlpool_13
+  - first:
+      213: 4664790876557152145
+    second: Lichen Whirlpool_14
+  - first:
+      213: -3526487223470425822
+    second: Lichen Whirlpool_15
+  - first:
+      213: -8144100553881393447
+    second: Lichen Whirlpool_16
+  - first:
+      213: -4110142116258751109
+    second: Lichen Whirlpool_17
+  - first:
+      213: -306898922380065275
+    second: Lichen Whirlpool_18
+  - first:
+      213: -6302617812353393145
+    second: Lichen Whirlpool_19
+  - first:
+      213: 8021342867943355176
+    second: Lichen Whirlpool_20
+  - first:
+      213: -5268610357300923623
+    second: Lichen Whirlpool_21
+  - first:
+      213: -5873315129868556565
+    second: Lichen Whirlpool_22
+  - first:
+      213: -2156331790506842559
+    second: Lichen Whirlpool_23
+  - first:
+      213: 4640841906874964033
+    second: Lichen Whirlpool_24
+  - first:
+      213: -2792290349800661857
+    second: Lichen Whirlpool_25
+  - first:
+      213: 6737880322445023720
+    second: Lichen Whirlpool_26
+  - first:
+      213: 7547897471545076187
+    second: Lichen Whirlpool_27
+  - first:
+      213: 7810104390389735473
+    second: Lichen Whirlpool_28
+  - first:
+      213: 3058938914420241790
+    second: Lichen Whirlpool_29
+  - first:
+      213: -6324347810919610951
+    second: Lichen Whirlpool_30
+  - first:
+      213: 7299077951738004525
+    second: Lichen Whirlpool_31
+  - first:
+      213: -1513279042297825420
+    second: Lichen Whirlpool_32
+  - first:
+      213: 8206680776929527396
+    second: Lichen Whirlpool_33
+  - first:
+      213: -1086649372758209145
+    second: Lichen Whirlpool_34
+  - first:
+      213: 8480991637082821971
+    second: Lichen Whirlpool_35
+  - first:
+      213: 7526625911900324444
+    second: Lichen Whirlpool_36
+  - first:
+      213: 1326444413381366919
+    second: Lichen Whirlpool_37
+  - first:
+      213: -2616439630027395368
+    second: Lichen Whirlpool_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lichen Whirlpool_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 209
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d360e84c8f82070800000000000000
+      internalID: 8081983054396407042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 224
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb57c051d189e020800000000000000
+      internalID: 2371569414790667211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 229
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 564e3c5025742a940800000000000000
+      internalID: 5305881728605480037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_3
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b21c168ae768f00800000000000000
+      internalID: 1118720819107801902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_4
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 209
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc67a051f8a4fc920800000000000000
+      internalID: 3012708654127937227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 214
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd7aa4758c757800800000000000000
+      internalID: 609530237208395207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 199
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7947e339fb3f25f0800000000000000
+      internalID: -779338269008115330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_7
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 199
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372767f25a3323230800000000000000
+      internalID: 3617010235290841715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 204
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc08d56a0ba4ab660800000000000000
+      internalID: 7402311060102676683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 189
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854065d739ff1f780800000000000000
+      internalID: -8650852400273947560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 194
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48536137b25b57710800000000000000
+      internalID: 1690456433366545796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_11
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 174
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f11fae746cbf11720800000000000000
+      internalID: 2815308071111946527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_12
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 174
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5750c608d6bee9ea0800000000000000
+      internalID: -5863990809251281547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_13
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 159
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f1757b3972bf180800000000000000
+      internalID: -9080620708272857286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_14
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 174
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f0cac469aacb040800000000000000
+      internalID: 4664790876557152145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_15
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229771ced866f0fc0800000000000000
+      internalID: -3526487223470425822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_16
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 159
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d666de02b75afe80800000000000000
+      internalID: -8144100553881393447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 149
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d56009587d5f6c0800000000000000
+      internalID: -4110142116258751109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_18
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 149
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506069d5e0dadbbf0800000000000000
+      internalID: -306898922380065275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_19
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 139
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e50ab0e7a9888a0800000000000000
+      internalID: -6302617812353393145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_20
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 134
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8237069e6d8815f60800000000000000
+      internalID: 8021342867943355176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_21
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 129
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91372295bc222e6b0800000000000000
+      internalID: -5268610357300923623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_22
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 129
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6e14ee10bcd7ea0800000000000000
+      internalID: -5873315129868556565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_23
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 119
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14625f849ab2312e0800000000000000
+      internalID: -2156331790506842559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_24
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 119
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14857064025976040800000000000000
+      internalID: 4640841906874964033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_25
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 104
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9c516698bacf39d0800000000000000
+      internalID: -2792290349800661857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_26
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 94
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e91e665472c18d50800000000000000
+      internalID: 6737880322445023720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_27
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 99
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd9638882c48fb860800000000000000
+      internalID: 7547897471545076187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_28
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 79
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13026e73090136c60800000000000000
+      internalID: 7810104390389735473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_29
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 79
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7533a75cb8837a20800000000000000
+      internalID: 3058938914420241790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_30
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 84
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b50e1e7c276b38a0800000000000000
+      internalID: -6324347810919610951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_31
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 64
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24ca3599b88b4560800000000000000
+      internalID: 7299077951738004525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_32
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 49
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4777bcd8ab0cffae0800000000000000
+      internalID: -1513279042297825420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_33
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 54
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46649ed8facf3e170800000000000000
+      internalID: 8206680776929527396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_34
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 49
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d885d17227be0f0800000000000000
+      internalID: -1086649372758209145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_35
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 39
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355516fa5f882b570800000000000000
+      internalID: 8480991637082821971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_36
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 14
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c52c11c9362f37860800000000000000
+      internalID: 7526625911900324444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_37
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 29
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 784d5e98a2a786210800000000000000
+      internalID: 1326444413381366919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lichen Whirlpool_38
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 4
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de66fbd40a80bbd0800000000000000
+      internalID: -2616439630027395368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Lichen Whirlpool_0: 8081983054396407042
+      Lichen Whirlpool_1: 2371569414790667211
+      Lichen Whirlpool_10: 1690456433366545796
+      Lichen Whirlpool_11: 2815308071111946527
+      Lichen Whirlpool_12: -5863990809251281547
+      Lichen Whirlpool_13: -9080620708272857286
+      Lichen Whirlpool_14: 4664790876557152145
+      Lichen Whirlpool_15: -3526487223470425822
+      Lichen Whirlpool_16: -8144100553881393447
+      Lichen Whirlpool_17: -4110142116258751109
+      Lichen Whirlpool_18: -306898922380065275
+      Lichen Whirlpool_19: -6302617812353393145
+      Lichen Whirlpool_2: 5305881728605480037
+      Lichen Whirlpool_20: 8021342867943355176
+      Lichen Whirlpool_21: -5268610357300923623
+      Lichen Whirlpool_22: -5873315129868556565
+      Lichen Whirlpool_23: -2156331790506842559
+      Lichen Whirlpool_24: 4640841906874964033
+      Lichen Whirlpool_25: -2792290349800661857
+      Lichen Whirlpool_26: 6737880322445023720
+      Lichen Whirlpool_27: 7547897471545076187
+      Lichen Whirlpool_28: 7810104390389735473
+      Lichen Whirlpool_29: 3058938914420241790
+      Lichen Whirlpool_3: 1118720819107801902
+      Lichen Whirlpool_30: -6324347810919610951
+      Lichen Whirlpool_31: 7299077951738004525
+      Lichen Whirlpool_32: -1513279042297825420
+      Lichen Whirlpool_33: 8206680776929527396
+      Lichen Whirlpool_34: -1086649372758209145
+      Lichen Whirlpool_35: 8480991637082821971
+      Lichen Whirlpool_36: 7526625911900324444
+      Lichen Whirlpool_37: 1326444413381366919
+      Lichen Whirlpool_38: -2616439630027395368
+      Lichen Whirlpool_4: 3012708654127937227
+      Lichen Whirlpool_5: 609530237208395207
+      Lichen Whirlpool_6: -779338269008115330
+      Lichen Whirlpool_7: 3617010235290841715
+      Lichen Whirlpool_8: 7402311060102676683
+      Lichen Whirlpool_9: -8650852400273947560
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

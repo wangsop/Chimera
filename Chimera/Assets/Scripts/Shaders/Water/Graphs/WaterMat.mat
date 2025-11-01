@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterMat
+  m_Shader: {fileID: -6465566751694194690, guid: 5cc1a6a9e44265c45bf2a5e439643524, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: _SpecularThreshold
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _CausticGraph_9a42b8b29fdc4a6b942e240f6ce6ec33_CausticHighlights_2771657541_Texture2D:
+        m_Texture: {fileID: 2800000, guid: eb9518bdd7e23674cb64760be71df369, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CausticGraph_9a42b8b29fdc4a6b942e240f6ce6ec33_CausticTexture_1010600299_Texture2D:
+        m_Texture: {fileID: 2800000, guid: e07584f3e5e826b4494143d22f61df92, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CausticHighlights:
+        m_Texture: {fileID: 2800000, guid: eb9518bdd7e23674cb64760be71df369, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CausticTexture:
+        m_Texture: {fileID: 2800000, guid: e07584f3e5e826b4494143d22f61df92, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamTexture:
+        m_Texture: {fileID: 2800000, guid: 843cad73207fc414a92656251015ddb4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _noCaustics:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 0.75
+    - _CausticDepth: 0.18
+    - _CausticFaderMultiplier: 1
+    - _CausticFaderScale: 0.1
+    - _CausticHighlightsBlend: 0.08
+    - _CausticMovementAmount: 0.04
+    - _CausticMovementScale: 0.5
+    - _CausticScale: 0.08
+    - _CausticSpeed: 0.8
+    - _CausticStrength: 0.8
+    - _FoamScale: 1
+    - _Pixelization: 16
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _SpecularBlend: 0.1
+    - _SpecularScale: 3
+    - _SpecularScale2: 10
+    - _SpecularSpeed: 0.2
+    - _SpecularThreshold: -0.8
+    - _SquashAmount: 1.4
+    m_Colors:
+    - _CausticColor: {r: 0.31, g: 1, b: 0.878, a: 1}
+    - _CausticHighlightsColor: {r: 0.722, g: 1, b: 0.976, a: 1}
+    - _DeepColor: {r: 0.016, g: 0.184, b: 0.239, a: 1}
+    - _GridMin: {r: -58, g: -74, b: 0, a: 0}
+    - _GridSize: {r: 361, g: 231, b: 0, a: 0}
+    - _SeaFoamColor: {r: 0.9470549, g: 0.9874212, b: 0.9867875, a: 0}
+    - _ShallowColor: {r: 0.247, g: 0.851, b: 0.82, a: 1}
+    - _SpecularColor: {r: 0.91, g: 0.984, b: 1, a: 1}
+    - _TileSize: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &5801546118074989448
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9

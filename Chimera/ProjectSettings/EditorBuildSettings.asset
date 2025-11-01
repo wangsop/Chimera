@@ -20,6 +20,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chimera Catalog.unity
     guid: 1ebe88df4434ae54c9ec12be863161d4
+  - enabled: 1
+    path: Assets/Scenes/Chimera Select.unity
+    guid: 420b78ae8e08743a3912e53146f2a95f
+  - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+    guid: 4638046993cbb164eb245fab94506882
+  - enabled: 1
+    path: Assets/Scenes/Loading Screen.unity
+    guid: ae05629ceaffb36b29147a94eeb06adc
+  - enabled: 1
+    path: Assets/Scenes/Monster Catalog.unity
+    guid: 814282c79ddb24db3a675f4a0b645610
+  - enabled: 1
+    path: Assets/Scenes/ProLevel0.unity
+    guid: aa7c5b1cd1d7e7843a220e135e357b94
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: a26461ffdcec0c8429d5aa2aa3346b80, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

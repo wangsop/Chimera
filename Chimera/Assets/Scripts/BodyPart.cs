@@ -2,19 +2,18 @@ using UnityEngine;
 
 public abstract class BodyPart : MonoBehaviour
 {
+    public Sprite splash;
+
     protected Sprite image;
     protected SpriteRenderer spriteRenderer;
     protected int index;
-    public Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    protected void Start()
+    protected void Awake()
     {
         Initialize();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = image;
-        animator = GetComponent<Animator>();
-        animator.SetInteger("Index", index);
     }
 
     protected abstract void Initialize();
@@ -27,5 +26,14 @@ public abstract class BodyPart : MonoBehaviour
     public int GetIndex()
     {
         return index;
+    }
+
+    public override bool Equals(object other)
+    {
+        return GetType() == other.GetType();
+    }
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
     }
 }
