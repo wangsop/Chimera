@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
-using UnityEngine.UI;
-using System;
 using TMPro;
+using UnityEditor.Rendering;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class CreatureGenerator : MonoBehaviour
 {
@@ -190,8 +191,11 @@ public class CreatureGenerator : MonoBehaviour
         Vector3 spriteSize = new Vector3(generated.Head.GetComponentInChildren<SpriteRenderer>().bounds.size.x, 0, 0);
         GameObject newChimera = Instantiate(generated.BaseObject, new Vector3(Location.transform.position.x, Location.transform.position.y, 0), Quaternion.identity);
         GameObject newHead = Instantiate(generated.Head, newChimera.transform.position - spriteSize, Quaternion.identity, newChimera.transform);
+        newHead.transform.localScale = new Vector3(10f, 10f, 10f);
         GameObject newBody = Instantiate(generated.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
+        newBody.transform.localScale = new Vector3(10f, 10f, 10f);
         GameObject newTail = Instantiate(generated.Tail, newChimera.transform.position + spriteSize, Quaternion.identity, newChimera.transform);
+        newTail.transform.localScale = new Vector3(10f, 10f, 10f);
         Debug.Log("new chimera instantiated: " + generated.Head.name + generated.Body.name + generated.Tail.name);
 
         ChimeraParty.AddChimeraToParty(generated);

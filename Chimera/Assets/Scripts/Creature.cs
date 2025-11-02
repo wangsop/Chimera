@@ -19,8 +19,8 @@ public abstract class Creature : Damageable_Testing, Entity
     protected Creature aggro;
     protected float clock = 0;
     protected List<Creature> inTrigger;
-    [SerializeField] protected int attackRange = 20;
-    [SerializeField] protected int speed = 300;
+    [SerializeField] protected int attackRange = 2;
+    [SerializeField] protected int speed = 80;
     int attackCount = 0;
     protected Head head;
     protected Body body;
