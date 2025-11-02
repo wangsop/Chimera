@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class Body : BodyPart
 {
     protected int health = 10;
-    protected int speed = 300;
+    protected int speed = 80;
     public int getHealth(){
         return this.health;
     }

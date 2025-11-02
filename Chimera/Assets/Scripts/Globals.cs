@@ -11,12 +11,6 @@ using UnityEngine.Rendering.Universal.Internal;
 [DefaultExecutionOrder(-150)]
 public class Globals : MonoBehaviour
 {
-    /*public Sprite[] Heads;
-    public Sprite[] Bodies;
-    public Sprite[] Tails;
-    public static List<ChimeraStats> Chimeras = new List<ChimeraStats>();
-    //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
-    public static List<ChimeraStats> party = new List<ChimeraStats>();*/
     public static List<string> Chimeras = new List<string>();
     public static List<GameObject> party = new List<GameObject>();
     public static Dictionary<NewChimeraStats, GameObjectChimera> active_party_objs = new Dictionary<NewChimeraStats, GameObjectChimera>();
@@ -25,14 +19,8 @@ public class Globals : MonoBehaviour
     public const int PARTY_SIZE = 5;
     public static int currency = 1000;
     public static int levelSelected = 0;
-    //These must match exactly the name of the scripts
-    /*public static string[] hscripts = new string[7]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead", "PalacellHead", "ArtillipedeHead"};
-    public static string[] bscripts = new string[7]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody", "PalacellBody", "ArtillipedeBody"};
-    public static string[] tscripts = new string[7]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail", "PalacellTail", "ArtillipedeTail"};*/
     public GameObject Chimerafab;
-    //public GameObject[] Heads;
-    //public GameObject[] Bodies;
-    //public GameObject[] Tails;
+    [SerializeField] public Vector3 adjustedSpriteSize = new Vector3(1, 0, 0);
     public bool isDungeon = true;
     //public static int numMonsters = 1;
     public static int energy;
@@ -49,7 +37,7 @@ public class Globals : MonoBehaviour
         {
             energy = 0;
             //initialize all chimeras in party
-            Vector3 add = new Vector3(10, 2, 0);
+            Vector3 add = new Vector3(0.5f, 0.5f, 0);
             Vector3 adjust = new Vector3(0, 0, -1);
             /*
             foreach (int index in party_indexes)
@@ -86,9 +74,9 @@ public class Globals : MonoBehaviour
                 cs.level = chimera.level;
                 Debug.Log("Current chimera's level: "+cs.level+"  EXP: "+ chimera.exp);
                 Vector3 spriteSize = new Vector3(chimera.Head.GetComponentInChildren<SpriteRenderer>().bounds.size.x, 0, 0);
-                GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - spriteSize, Quaternion.identity, newChimera.transform);
+                GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - adjustedSpriteSize, Quaternion.identity, newChimera.transform);
                 GameObject newBody = Instantiate(chimera.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
-                GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + spriteSize, Quaternion.identity, newChimera.transform);
+                GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + adjustedSpriteSize, Quaternion.identity, newChimera.transform);
                 active_party_objs.Add(chimera, new GameObjectChimera(newHead, newBody, newTail, newChimera));
             }
         }
