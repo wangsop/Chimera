@@ -243,6 +243,7 @@ MonoBehaviour:
   eyeball: {fileID: 0}
   spot: 0
   maxDist: 25
+  maxMaxDist: 200
 --- !u!70 &3322994467588331629
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
