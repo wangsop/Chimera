@@ -24,6 +24,7 @@ public class HorselessHead : Head
     }
     protected override void Initialize(){
         index = 4;
+        scientist_description = "I had taught tamed monsters to puppet Nina’s beloved horse plushies. She had so much fun with them that when she was gone, I threw them out, unable to watch them move and play without her.";
         thisCreature = this.GetComponentInParent<Creature>();
         base.Initialize();
     }
