@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClickableChimeraScript : MonoBehaviour
+public class PartyClickableChimeraScript : MonoBehaviour
 {
 
     public Color clickedColor = Color.blue;

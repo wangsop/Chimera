@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 610703205}
   - component: {fileID: 610703204}
   m_Layer: 5
-  m_Name: ButtonChimeraCatalog
+  m_Name: ButtonMonsterCatalog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +628,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Chimera Catalog
+          m_StringArgument: Monster Catalog
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &610703202
@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 1068830388}
   - component: {fileID: 1068830387}
   m_Layer: 5
-  m_Name: ButtonMonsterCatalog
+  m_Name: ButtonChimeraCatalog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1058,14 +1058,14 @@ RectTransform:
   m_GameObject: {fileID: 1068830385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5819495, y: 0.529045, z: 0.529045}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7927898, y: 0.720718, z: 0.720718}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 801894550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.59229743, y: 0.35000002}
   m_AnchorMax: {x: 0.89500004, y: 0.9753795}
-  m_AnchoredPosition: {x: 2.5700989, y: 1.7061996}
+  m_AnchoredPosition: {x: 12, y: 1.7062073}
   m_SizeDelta: {x: 203.1675, y: 271.3676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1068830387
@@ -1180,7 +1180,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Monster Catalog
+          m_StringArgument: Chimera Catalog
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1068830390
@@ -1362,7 +1362,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.85
+  m_fontSize: 57.35
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
