@@ -19,9 +19,7 @@ public class CatalogGenerateScript : MonoBehaviour
         Debug.Log(currentY);
         globals = GameObject.Find("Main Camera").GetComponent<Globals>();
         globals.isDungeon = false;
-        Globals.party_indexes = new List<int>(); //reset party indexes for player to reselect everything
         for (int i = 0; i < ChimeraParty.Chimeras.Count; i++) {
-            //AddChimeraByObject(Globals.Chimeras[i]);
             GameObject newEntry = Instantiate(prefab, new Vector3(-280, currentY, 90), Quaternion.Euler(0, 0, 0)) as GameObject;
             NewChimeraStats chimera = ChimeraParty.Chimeras[i];
             if (chimera == null)
@@ -29,15 +27,6 @@ public class CatalogGenerateScript : MonoBehaviour
                 Debug.Log("Chimeras[i] is null");
                 continue;
             }
-            /*
-            GameObject pref = (GameObject)Resources.Load(Globals.Chimeras[i]);
-            if (pref == null)
-            {
-                Debug.Log("pref is null");
-            } 
-
-            GameObject chimeraPrefab = PrefabUtility.InstantiatePrefab(pref) as GameObject;
-            */
 
             currentY -= 160;
             newEntry.transform.SetParent(contentRect.transform, false);
@@ -56,7 +45,7 @@ public class CatalogGenerateScript : MonoBehaviour
             tmp.text = "      " + index + " " + chimera.Name;
             try
             {
-                newEntry.GetComponent<ClickableChimeraScript>().SetIndex(chimera);
+                newEntry.GetComponent<CatalogClickableChimeraScript>().SetIndex(chimera);
             }
             catch (Exception)
             {
