@@ -38,8 +38,8 @@ public class Player_Controller : MonoBehaviour
     private void FixedUpdate() //On fixed update unity assigns a force to the velocity of the rigid body physics based functions in fixed update
     {
 //        Debug.Log(MoveForce);
-        Vector2 moveVector = _axisInput * MoveForce * Time.fixedDeltaTime; //fixed delta time updates consistently and you can change this update interval in the project setting but overall consistent independent of framerate
-        rb.AddForce(moveVector);
+        Vector2 moveVector = _axisInput * MoveForce; //fixed delta time updates consistently and you can change this update interval in the project setting but overall consistent independent of framerate
+        rb.linearVelocity = moveVector;
     }
     private void OnMove(InputValue value) // we need input here keep in mind for invoke unity events we need to use callback.context which they take but for send messages they take the input value
     {
