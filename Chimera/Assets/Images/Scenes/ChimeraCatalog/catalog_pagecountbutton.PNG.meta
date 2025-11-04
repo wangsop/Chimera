@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      catalog_pagecountbutton_0: 583556574723782081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
