@@ -131,4 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33e5df55fe6149e69d4dec6dabb2bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splash: {fileID: 6328936261450349411, guid: b4b9e467a013242ccbdf4d4f5d4aec67, type: 3}
+  splash: {fileID: -271910391, guid: c3e6c58a05c6e4f0abfbd5c9c417387a, type: 3}
+  ability_description: Ability description has not been implemented yet
+  scientist_description: Scientist description not been implemented yet
+  ability_name: Sample Name
+  rarity: 1
