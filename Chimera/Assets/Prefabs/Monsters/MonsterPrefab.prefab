@@ -12,9 +12,17 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4804474877459982483, guid: 4b952653e7b136942b11966013bdd662, type: 3}
+    - target: {fileID: 987771506716824911, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
+      propertyPath: m_LinearDamping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
       propertyPath: m_Name
       value: MonsterPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3288814082978833388, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
       propertyPath: m_LocalPosition.x
@@ -82,6 +90,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4911202acaaa7414a97140ff265ae6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  damegableAfflicted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 184152887304058226}
+        m_TargetAssemblyTypeName: Creature, Assembly-CSharp
+        m_MethodName: OnAfflicted
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _isAlive: 1
+  timeSinceHit: 0
+  invincibilityTimer: 0.2
+  afflicted: 0
+  damageTicksLeft: 0
+  timeSinceLastTick: 0
+  status_effect: {fileID: 0}
+  Chimerafab: {fileID: 0}
   trig: {fileID: 0}
   attackRange: 15
   speed: 300
+  level: 1

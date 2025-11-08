@@ -1,14 +1,16 @@
-using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
+//using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+using static UnityEngine.UI.Image;
 
-public abstract class Creature : MonoBehaviour, Entity
+public abstract class Creature : Damageable_Testing, Entity
 {
     protected bool hostile;
     [SerializeField] GameObject Chimerafab;
-    protected int health = 10;
-    protected int maxHealth = 10;
+    //protected int health = 10;
+    //protected int maxHealth = 10;
     protected int attack = 1;
     protected float attackSpeed = 0.7f; //attack speed in time between attacks
     //[SerializeField] protected Collider2D collisions;
@@ -17,8 +19,8 @@ public abstract class Creature : MonoBehaviour, Entity
     protected Creature aggro;
     protected float clock = 0;
     protected List<Creature> inTrigger;
-    [SerializeField] protected int attackRange = 15;
-    [SerializeField] protected int speed = 300;
+    [SerializeField] protected int attackRange = 2;
+    [SerializeField] protected int speed = 80;
     int attackCount = 0;
     protected Head head;
     protected Body body;
@@ -29,8 +31,41 @@ public abstract class Creature : MonoBehaviour, Entity
     private readonly List<Creature> disabledAggroTargets = new();
     // if this is false, the creature will not move or attack
     protected bool canMove = true;
+    protected bool canAttack = true;
+    private Coroutine _stunRoutine;
+    private Coroutine _slowRoutine;
 
-
+    public void OnAfflicted(bool stunned, bool slowed, float speedReduction, float duration)
+    {
+        if (stunned)
+        {   
+            if (_stunRoutine != null) StopCoroutine(_stunRoutine);
+            _stunRoutine = StartCoroutine(Stun(duration));
+        }
+        if (slowed)
+        {
+            int original = speed;
+            int temp = (int)(speed * speedReduction);
+            if (_slowRoutine != null) StopCoroutine(_slowRoutine);
+            _slowRoutine = StartCoroutine(ApplyTempMoveForce(original, temp, duration));
+        }
+    }
+    private IEnumerator ApplyTempMoveForce(int original, int temp, float duration)
+    {
+        speed = temp;
+        yield return new WaitForSeconds(duration);
+        speed = original;
+        _slowRoutine = null;
+    }
+    private IEnumerator Stun(float duration)
+    {
+        canMove = false;
+        canAttack = false;
+        yield return new WaitForSeconds(duration);
+        canMove = true;
+        canAttack = true;
+        _stunRoutine = null;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
     {
@@ -38,14 +73,16 @@ public abstract class Creature : MonoBehaviour, Entity
         body = gameObject.GetComponentInChildren<Body>();
         tail = gameObject.GetComponentInChildren<Tail>();
         trig = gameObject.GetComponent<Collider2D>();
-        health = body.getHealth();
-        maxHealth = body.getHealth();
+        this.CurrentHealth = body.getHealth();
+        this.MaxHealth = body.getHealth();
         attack = tail.getAttack();
         rgb = GetComponent<Rigidbody2D>();
         inTrigger = new List<Creature>();
         head.GetComponent<Animator>().SetBool("IsChimera", !hostile);
         body.GetComponent<Animator>().SetBool("IsChimera", !hostile);
         tail.GetComponent<Animator>().SetBool("IsChimera", !hostile);
+        attackSpeed = tail.getAttackSpeed();
+        speed = body.getSpeed();
 
         // event responses
         EyeCandyHead.onEyeCandyTriggerAggro.AddListener(OnEyeCandyTriggerAggroResponse);
@@ -60,6 +97,16 @@ public abstract class Creature : MonoBehaviour, Entity
     protected void Update()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, 30f);
+        float healthPercent = (float)this.CurrentHealth / (float)this.MaxHealth;
+        OnHealthChanged(healthPercent);
+        if (this.CurrentHealth <= 0)
+        {
+            Die();
+            if (this.hostile == false)
+            {
+                Globals.energy += 5;
+            }
+        }
         foreach (Collider col in colliders)
         {
             Debug.Log("Overlap detected with: " + col.gameObject.name);
@@ -80,24 +127,59 @@ public abstract class Creature : MonoBehaviour, Entity
                 {
                     clock = Time.time;
                     attackCount++;
-                    Attack(aggro); //every second, while aggro is within attack range, attack aggro target
+                    if (canAttack)
+                    {
+                        tail.Attack(aggro); //every second, while aggro is within attack range, attack aggro target
+                    }
                 }
             }
         }
-        else
+        else if (this.canMove && inTrigger.Count != 0) {
+            reAggro();
+        } else if (!this.canMove)
         {
             rgb.linearVelocity = Vector2.zero;
+            rgb.MovePosition(this.transform.position);
+        }
+        else
+        {
+            //do patrol behaviors for monster, stay still for chimera
+        }
+        if (Afflicted)
+        {
+            if (timeSinceLastTick > status_effect.TimeBetweenTicks && DamageTicksLeft > 0)
+            {
+                Hit(status_effect.TickDamage, Vector2.zero, status_effect, false);
+                Debug.Log("Took tick damage");
+                DamageTicksLeft -= 1;
+                timeSinceLastTick = 0;
+            }
+            timeSinceLastTick += Time.deltaTime;
+            if (timeSinceStart > duration)
+            {
+                Debug.Log("effect ended");
+                Afflicted = false;
+            }
+            timeSinceStart += Time.deltaTime;
         }
     }
 
-    public bool takeDamage(int dmg)
+    /*public bool takeDamage(int dmg, Status_Effect effect=null)
     {
         Debug.Log(hostile ? "Enemy took damage" : "Ally took damage");
         dmg = body.takeDamage(dmg);
-        health -= dmg;
-        float healthPercent = (float)health / (float)maxHealth;
+        Vector2 kb = new Vector2(0.5f, 0.5f);
+        if (effect != null)
+        {
+            this.Hit(dmg, kb, effect, true);
+        }
+        else
+        {
+            this.Hit(dmg, kb);
+        }
+        float healthPercent = (float)this.CurrentHealth / (float)this.MaxHealth;
         OnHealthChanged(healthPercent);
-        if (health <= 0)
+        if (this.CurrentHealth <= 0)
         {
             Die();
             return true;
@@ -118,7 +200,7 @@ public abstract class Creature : MonoBehaviour, Entity
                 Globals.energy += 5;
             }
         }
-    }
+    }*/
 
     public void Die()
     {
@@ -174,7 +256,6 @@ public abstract class Creature : MonoBehaviour, Entity
 
     protected void reAggro()
     {
-        Debug.Log("New aggro");
         if (inTrigger.Count > 0)
         {
             // if the first inTrigger element is disabled, search recursively for an enabled element
@@ -304,24 +385,25 @@ public abstract class Creature : MonoBehaviour, Entity
     // Event callback for Horseless's ability: behaves differently for the chimera that triggered the event, nearby chimeras, and nearby enemies
     protected void OnHorselessAbilityResponse(Creature horseless, int radius, int duration, int damage)
     {
-        Debug.Log("Heard horseless ability");
 
         // guard clause: must be in range
         if (!((this.transform.position - horseless.transform.position).magnitude <= radius))
         {
             return;
         }
-
+        Debug.Log("Heard horseless ability");
         // if on opposing team or triggered the event, disable movement for duration
-        if (this.hostile == !horseless.hostile || this == horseless)
+        if (this.hostile == !horseless.hostile || this.Equals(horseless))
         {
-            StartCoroutine(FreezeForSeconds(duration));
+            this.Hit(0, Globals.default_kb, ((HorselessHead)horseless.head).freeze_effect, true);
+            //StartCoroutine(FreezeForSeconds(duration));
         }
 
         // if on opposing team, take damage
         if (this.hostile == !horseless.hostile)
         {
-            StartCoroutine(TakeDamageEverySecond(duration, damage));
+            this.Hit(0, Globals.default_kb, ((HorselessHead)horseless.head).dot_effect, true);
+            //StartCoroutine(TakeDamageEverySecond(duration, damage));
         }
     }
     // enables movement after a given delay in seconds
@@ -338,7 +420,7 @@ public abstract class Creature : MonoBehaviour, Entity
         bool dead = false;
         if (duration > 0)
         {
-            dead = this.takeDamage(damage);
+            //dead = this.takeDamage(damage);
         } 
         yield return new WaitForSeconds(1);
         if (!dead && duration > 1)

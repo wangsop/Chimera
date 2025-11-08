@@ -40,7 +40,15 @@ Material:
         m_Texture: {fileID: 2800000, guid: e07584f3e5e826b4494143d22f61df92, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FoamTexture:
+        m_Texture: {fileID: 2800000, guid: 843cad73207fc414a92656251015ddb4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _HeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _noCaustics:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -63,11 +71,12 @@ Material:
     - _CausticFaderMultiplier: 1
     - _CausticFaderScale: 0.1
     - _CausticHighlightsBlend: 0.08
-    - _CausticMovementAmount: 0.006
-    - _CausticMovementScale: 0.4
+    - _CausticMovementAmount: 0.04
+    - _CausticMovementScale: 0.5
     - _CausticScale: 0.08
     - _CausticSpeed: 0.8
     - _CausticStrength: 0.8
+    - _FoamScale: 1
     - _Pixelization: 16
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -78,13 +87,14 @@ Material:
     - _SpecularThreshold: -0.8
     - _SquashAmount: 1.4
     m_Colors:
-    - _CausticColor: {r: 0.721, g: 0.961, b: 1, a: 1}
-    - _CausticHighlightsColor: {r: 0.973, g: 0.996, b: 1, a: 1}
-    - _DeepColor: {r: 0.078, g: 0.357, b: 0.58, a: 1}
-    - _GridMin: {r: -30, g: -182, b: 0, a: 0}
-    - _GridSize: {r: 224, g: 230, b: 0, a: 0}
-    - _ShallowColor: {r: 0.596, g: 0.851, b: 1, a: 1}
-    - _SpecularColor: {r: 1, g: 0.992, b: 0.957, a: 1}
+    - _CausticColor: {r: 0.31, g: 1, b: 0.878, a: 1}
+    - _CausticHighlightsColor: {r: 0.722, g: 1, b: 0.976, a: 1}
+    - _DeepColor: {r: 0.016, g: 0.184, b: 0.239, a: 1}
+    - _GridMin: {r: -53, g: -281, b: 0, a: 0}
+    - _GridSize: {r: 294, g: 352, b: 0, a: 0}
+    - _SeaFoamColor: {r: 0.9470549, g: 0.9874212, b: 0.9867875, a: 0}
+    - _ShallowColor: {r: 0.247, g: 0.851, b: 0.82, a: 1}
+    - _SpecularColor: {r: 0.91, g: 0.984, b: 1, a: 1}
     - _TileSize: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

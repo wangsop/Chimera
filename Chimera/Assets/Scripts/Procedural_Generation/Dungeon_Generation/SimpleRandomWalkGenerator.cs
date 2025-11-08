@@ -20,7 +20,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
     /// <summary>
     /// Generates the floor positions for this algorithm in this case we are just running the randomwalk algorithm to generate our floor
     /// </summary> Keep in mind this is a method from abstract class must be overrided. 
-    protected override void RunProceduralGeneration()
+    public override void RunProceduralGeneration()
     {
         HashSet<Vector2Int> floorPositions = RunRandomWalk(randomWalkParameters, startPosition);
         tilemapVisualizer.Clear();

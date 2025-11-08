@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ability
   - BodyPart
+  - UIHealth
+  - Chimera
   layers:
   - Default
   - TransparentFX
@@ -14,8 +16,8 @@ TagManager:
   - Water
   - UI
   - Sprites
-  - 
-  - 
+  - Occuludable
+  - TrailFX
   - 
   - 
   - 
@@ -42,6 +44,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 2252451721
+    locked: 0
+  - name: Water
+    uniqueID: 3068414287
+    locked: 0
+  - name: Occludable
+    uniqueID: 420616761
     locked: 0
   m_RenderingLayers:
   - Default

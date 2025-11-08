@@ -5,7 +5,8 @@ public class ChimeraScript : Creature
 {
     public Transform eyeball;
     public int spot = 0;
-    [SerializeField] int maxDist = 1000;
+    [SerializeField] int maxDist = 2;
+    [SerializeField] int maxMaxDist = 15;
     private Vector2 pos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     new void Start()
@@ -22,26 +23,34 @@ public class ChimeraScript : Creature
         pos = transform.position;
         hostile = false;
         base.Start();
-        this.health /= level;
+        this.CurrentHealth /= level;
         this.attack *= level;
-        this.maxHealth /= level;
+        this.MaxHealth /= level;
     }
 
     // Update is called once per frame
     new void Update()
     {
-        if (eyeball != null && (Input.GetKey(KeyCode.Space) || (Input.GetKey(KeyCode.Alpha1) && spot == 1) || (Input.GetKey(KeyCode.Alpha2) && spot == 2) || (Input.GetKey(KeyCode.Alpha3) && spot == 3) || (Input.GetKey(KeyCode.Alpha4) && spot == 4) || (Input.GetKey(KeyCode.Alpha5) && spot == 5)) && canMove)
+        if (eyeball != null && canMove)
         {
             Vector2 EyePos = new Vector2(eyeball.position.x, eyeball.position.y);
             pos = (Vector2)transform.position;
-            if (Vector2.Distance(EyePos, pos) > maxDist)
+            if ((Input.GetKey(KeyCode.Space) || (Input.GetKey(KeyCode.Alpha1) && spot == 1) || (Input.GetKey(KeyCode.Alpha2) && spot == 2) || (Input.GetKey(KeyCode.Alpha3) && spot == 3) || (Input.GetKey(KeyCode.Alpha4) && spot == 4) || (Input.GetKey(KeyCode.Alpha5) && spot == 5)))
+            {
+                if (Vector2.Distance(EyePos, pos) > maxDist)
+                {
+                    Vector2 newPos = Vector2.MoveTowards(transform.position, EyePos, speed * Time.deltaTime);
+                    rgb.MovePosition(newPos);
+                    return;
+                }
+            } else if (Vector2.Distance(EyePos, pos) > maxMaxDist)
             {
                 Vector2 newPos = Vector2.MoveTowards(transform.position, EyePos, speed * Time.deltaTime);
                 rgb.MovePosition(newPos);
+                return;
             }
-        } else {
-            base.Update();
         }
+        base.Update();
     }
     public int[] GetIndexes(){
         int[] ret = new int[3];

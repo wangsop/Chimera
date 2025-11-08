@@ -7,6 +7,7 @@ public class LichenSlugHead : Head
     [SerializeField] private Transform whirlpoolSpawnPoint;
 
     private GameObject whirlpoolInstance;
+    //public override int rarity { get; set; } = 2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void UseAbility()
@@ -20,6 +21,9 @@ public class LichenSlugHead : Head
     protected override void Initialize()
     {
         index = 0;
+        ability_name = "Whirlpool";
+        ability_description = "Creates a little whirlpool of petals that will move around separately and deal damage to anything that gets in its way.";
+        scientist_description = "Ah... my first creature. Its goo has quite lovely preserving properties... hopefully it keeps her in good condition until I find it.";
         base.Initialize();
     }
 
