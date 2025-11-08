@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: c3e6c58a05c6e4f0abfbd5c9c417387a
+guid: 51898ddaa1c3a4ea5a9186c8807fa0fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2395992565775147614
-    second: Artillipede_SplashArt (2)_0
-  - first:
-      213: 3725372569886165334
-    second: Artillipede_SplashArt (2)_1
-  - first:
-      213: 3938458837219350041
-    second: Artillipede_SplashArt (2)_2
-  - first:
-      213: -4581148378101834617
-    second: Artillipede_SplashArt (2)_3
-  - first:
-      213: -4543879932267995402
-    second: Artillipede_SplashArt (2)_4
+      213: 110063094613122208
+    second: sprite_0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Artillipede_SplashArt_0
+      name: Galvanigar_Chimera_Idle_0_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 216
-        height: 480
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +115,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9dd505a2a75f495f886b520caa5de7d
-      internalID: -271910391
+      spriteID: e7d15ad55dcd24166b3c7d7bbd6c60b9
+      internalID: -1647888394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Artillipede_SplashArt_1
+      name: Galvanigar_Chimera_Idle_0_1
       rect:
         serializedVersion: 2
-        x: 216
+        x: 128
         y: 0
-        width: 216
-        height: 480
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b5314f2197914d60b6ce6a4e50a95fa
-      internalID: -1090295085
+      spriteID: 746d55301c1ef4699bbed71608f88680
+      internalID: 1645754031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Artillipede_SplashArt_2
+      name: Galvanigar_Chimera_Idle_0_2
       rect:
         serializedVersion: 2
-        x: 432
+        x: 256
         y: 0
-        width: 216
-        height: 480
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77230b2b1ce8d47d19387513c2df2f2a
-      internalID: -191294309
+      spriteID: 1ed0c523412cf47ef86a0d239f1c8d30
+      internalID: -1927985317
       vertices: []
       indices: 
       edges: []
@@ -181,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9e9a2d1db310243c088c507c9e364111
+    spriteID: 43423c51987d543809abf9a8477dbfaf
     internalID: 0
     vertices: []
     indices: 
@@ -191,9 +179,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Artillipede_SplashArt_0: -271910391
-      Artillipede_SplashArt_1: -1090295085
-      Artillipede_SplashArt_2: -191294309
+      Galvanigar_Chimera_Idle_0_0: -1647888394
+      Galvanigar_Chimera_Idle_0_1: 1645754031
+      Galvanigar_Chimera_Idle_0_2: -1927985317
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
