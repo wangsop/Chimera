@@ -238,7 +238,7 @@ MonoBehaviour:
   Chimerafab: {fileID: 0}
   trig: {fileID: 3322994467588331629}
   attackRange: 2
-  speed: 80
+  speed: 15
   level: 1
   eyeball: {fileID: 0}
   spot: 0
