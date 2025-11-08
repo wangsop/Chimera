@@ -1,15 +1,35 @@
 using UnityEngine;
+using UnityEngine.Events;
+
+/*
+Ability: Reinforcement
+From the time this is used until Artillipede's death, simulates
+increased defense by randomly not detracting from its own health
+when attacked. To balance: edit ABILITY_DMG_PROB
+*/
 
 [DefaultExecutionOrder(-100)]
 public class ArtillipedeHead : Head
 {
-    //public override int rarity { get; set; } = 1;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public override void UseAbility(){
+    // probability that any attack will land once ability is activated
+    private static readonly double ABILITY_DMG_PROB = 0.333;
+
+    // ability event
+    public static readonly UnityEvent<Creature, double> artillipedeAbility = new UnityEvent<Creature, double>();
+    // this chimera's Creature instance
+    private Creature myCreature;
+
+
+
+    public override void UseAbility()
+    {
         Debug.Log("Used Artillipede Ability");
+        artillipedeAbility.Invoke(myCreature, ABILITY_DMG_PROB);
     }
-    protected override void Initialize(){
+    protected override void Initialize()
+    {
         index = 6;
+        myCreature = GetComponent<Creature>();
         base.Initialize();
     }
 }
