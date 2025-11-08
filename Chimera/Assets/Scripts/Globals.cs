@@ -19,6 +19,7 @@ public class Globals : MonoBehaviour
     public const int PARTY_SIZE = 5;
     public static int currency = 1000;
     public static int levelSelected = 0;
+    public static int numKills = 0;
     public GameObject Chimerafab;
     [SerializeField] public Vector3 adjustedSpriteSize = new Vector3(1, 0, 0);
     public bool isDungeon = true;
@@ -36,6 +37,10 @@ public class Globals : MonoBehaviour
         if (isDungeon)
         {
             energy = 0;
+            if (levelSelected == -1)
+            {
+                energy += 50;
+            }
             //initialize all chimeras in party
             Vector3 add = new Vector3(0.5f, 0.5f, 0);
             Vector3 adjust = new Vector3(0, 0, -1);
