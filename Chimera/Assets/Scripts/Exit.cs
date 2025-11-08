@@ -37,20 +37,38 @@ public class Exit : MonoBehaviour
         playCanvas.SetActive(false);
         int biogu = Math.Min(50 * Globals.numKills + 100, 750);
         biogu = Math.Max(biogu, 100);
-        bioguEarned.text = "+" + biogu+" biogu";
-        if (Globals.levelSelected < 0)
+        if (Globals.levelSelected == 0)
         {
             biogu -= 100;
         }
+        Debug.Log("got biogu:" + biogu);
+        bioguEarned.text = "+" + biogu + " biogu";
         Globals.currency += biogu;
         ended = true;
         foreach (NewChimeraStats c in Globals.active_party_objs.Keys)
         {
-            if (Globals.levelSelected >= 0)
+            if (Globals.levelSelected > 0)
             {
-                c.addExp(50 + (10 * Globals.levelSelected));
+                c.addExp(40 + (10 * Globals.levelSelected));
             }
         }
         Globals.numKills = 0;
+    }
+    public void Surrender()
+    {
+        Creature[] allChimeras = FindObjectsByType<Creature>(FindObjectsSortMode.None);
+        foreach (Creature c in allChimeras)
+        {
+            c.Die();
+        }
+        Time.timeScale = 1f;
+        Globals.numKills = 0;
+        LoadingManager.LoadScene("Lab");
+    }
+    public void Continue()
+    {
+        Time.timeScale = 1f;
+        Globals.numKills = 0;
+        LoadingManager.LoadScene("Lab");
     }
 }

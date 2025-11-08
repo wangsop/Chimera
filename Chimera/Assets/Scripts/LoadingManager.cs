@@ -22,7 +22,7 @@ public class LoadingManager : MonoBehaviour
         {
             Debug.Log("You have not unlocked this level yet!");
         } 
-        else if (SelectedLevel >= 0)
+        else if (SelectedLevel > 0)
         {
             NextSceneToLoad = "ProLevel" + SelectedLevel;
             Globals.levelSelected = SelectedLevel;
@@ -31,7 +31,7 @@ public class LoadingManager : MonoBehaviour
         } else
         {
             NextSceneToLoad = "Tutorial";
-            Globals.levelSelected = -1;
+            Globals.levelSelected = 0;
             Debug.Log("Selected Tutorial");
             SceneManager.LoadScene("Chimera Select");
         }
