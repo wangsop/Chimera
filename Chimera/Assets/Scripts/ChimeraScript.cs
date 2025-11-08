@@ -5,7 +5,7 @@ public class ChimeraScript : Creature
 {
     public Transform eyeball;
     public int spot = 0;
-    [SerializeField] int maxDist = 2;
+    [SerializeField] int maxDist = 4;
     [SerializeField] int maxMaxDist = 15;
     private Vector2 pos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
