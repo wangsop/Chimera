@@ -35,7 +35,7 @@ public class MusicClass : MonoBehaviour
     {
         switch (scene.name)
         {
-            case "Dungeon":
+            case "ProLevel0":
                 PlayMusic(combatTrack1);
                 break;
             case "Title":
