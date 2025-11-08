@@ -20,7 +20,6 @@ public class ArtillipedeHead : Head
     private Creature myCreature;
 
 
-
     public override void UseAbility()
     {
         Debug.Log("Used Artillipede Ability");
@@ -29,7 +28,11 @@ public class ArtillipedeHead : Head
     protected override void Initialize()
     {
         index = 6;
-        myCreature = GetComponent<Creature>();
+        myCreature = GetComponentInParent<Creature>();
+        if (myCreature == null)
+        {
+            Debug.Log("Null Creature: Artillipede");
+        }
         base.Initialize();
     }
 }

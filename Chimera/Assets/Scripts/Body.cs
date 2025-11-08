@@ -18,19 +18,27 @@ public abstract class Body : BodyPart
     public int getSpeed(){ return speed; }
     protected override void Initialize(){
         ArtillipedeHead.artillipedeAbility.AddListener(OnArtillipedeAbility);
-        myCreature = GetComponent<Creature>();
+        myCreature = GetComponentInParent<Creature>();
+        if (myCreature == null)
+        {
+            Debug.Log("null creature: body");
+        }
     }
     public virtual int takeDamage(int damage)
     {
         if (dmgProb == 1)
         {
+            Debug.Log("dmgProb == 1");
             return damage;
         }
         // if artillipede ability: random roll for hit land
-        if (Random.value < dmgProb)
+        double randVal = Random.value;
+        if (randVal < dmgProb)
         {
+            Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == true");
             return damage;
         }
+        Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == false");
         return 0;
     }
 
