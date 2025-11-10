@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 21d5b690b57b0483196ed768279f6ff1
+guid: 1fa614f949ed749d89b09027cbfe2f21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3586660546017794905
-    second: Galvanigar_SplashArt_0
+      213: 2169958550577467098
+    second: Belcher_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Galvanigar_SplashArt_0
+      name: Belcher_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95b9c4f73c066c130800000000000000
-      internalID: 3586660546017794905
+      spriteID: adecd780ecd3d1e10800000000000000
+      internalID: 2169958550577467098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Galvanigar_SplashArt_1
+      name: Belcher_1
       rect:
         serializedVersion: 2
         x: 216
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c2728bd318c243e3b84d7316fc999e9
-      internalID: -1733891811
+      spriteID: 4abd794d709df47baa1cfeda7bc2ea09
+      internalID: -1480691378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Galvanigar_SplashArt_2
+      name: Belcher_2
       rect:
         serializedVersion: 2
         x: 432
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b87300afbe88246ea80831fa7919c6d3
-      internalID: 1029021585
+      spriteID: d7d75ad4d76364f39859dec657e844a3
+      internalID: 1003730892
       vertices: []
       indices: 
       edges: []
@@ -169,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a8a7481392018487a848a7d0a6ed61ae
+    spriteID: 7f294cb316cd64c40a43351e7065f9ea
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +179,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Galvanigar_SplashArt_0: 3586660546017794905
-      Galvanigar_SplashArt_1: -1733891811
-      Galvanigar_SplashArt_2: 1029021585
+      Belcher_0: 2169958550577467098
+      Belcher_1: -1480691378
+      Belcher_2: 1003730892
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
