@@ -73,3 +73,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Chimera/Assets/Images/Creatures/Inkyubon/.DS_Store
+Chimera/Assets/Images/Creatures/Inkyubon/Pixel/.DS_Store
+Chimera/Assets/Images/Creatures/Inkyubon/Pixel/Animation/.DS_Store
+Chimera/Assets/TextMesh Pro/Resources/Fonts & Materials/impact SDF.asset
+Chimera/Assets/TextMesh Pro/Resources/Fonts & Materials/impact SDF.asset
