@@ -19,6 +19,7 @@ public class Globals : MonoBehaviour
     public const int PARTY_SIZE = 5;
     public static int currency = 1000;
     public static int levelSelected = 0;
+    public static int numKills = 0;
     public GameObject Chimerafab;
     [SerializeField] public Vector3 adjustedSpriteSize = new Vector3(1, 0, 0);
     public bool isDungeon = true;
@@ -36,6 +37,10 @@ public class Globals : MonoBehaviour
         if (isDungeon)
         {
             energy = 0;
+            if (levelSelected == 0)
+            {
+                energy += 50;
+            }
             //initialize all chimeras in party
             Vector3 add = new Vector3(0.5f, 0.5f, 0);
             Vector3 adjust = new Vector3(0, 0, -1);
@@ -140,8 +145,13 @@ public class Globals : MonoBehaviour
     }*/
     public static void ChimeraAbility(int x){
         if (active_party_objs.Count > x){
+            //BIG ISSUE HERE COME BACK chimeras die during combat, party_indexes becomes out of date/out of range of the gameobjs
             NewChimeraStats chimera = party_game_objs[party_indexes[x]];
             GameObject head_object = active_party_objs[chimera].Head;
+            if (head_object == null)
+            {
+                return;
+            }
             Head h = head_object.GetComponent<Head>();
             if (h != null)
             {
