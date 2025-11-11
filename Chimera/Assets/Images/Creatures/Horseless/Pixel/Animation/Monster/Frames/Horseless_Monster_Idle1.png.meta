@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 56a78e650ea6840c9b8849b418b1d8f5
+guid: 86db8a2363fb143c793170d7c0bd0ad3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4679545367935191893
-    second: Horseless_Chimera_Idle1_0
+      213: 2057516106615078274
+    second: sprite_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd5d920d7a02c45f6903b3050fec1937
-      internalID: 1529084213
+      spriteID: 35494efd3adc94c5e9d6bf3180c1e5ab
+      internalID: 1838075866
       vertices: []
       indices: 
       edges: []
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91497a5eeb7294bfba21d8757c1ea2c2
-      internalID: -727420477
+      spriteID: fb84bb5bff95143f9801220f3e03ca91
+      internalID: 1598277554
       vertices: []
       indices: 
       edges: []
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b884067d32144673a13aaaaafe45a54
-      internalID: -100431037
+      spriteID: 109df82a7b7f64800b23c4f64d75e768
+      internalID: -182129266
       vertices: []
       indices: 
       edges: []
@@ -169,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c7facf79c2f8f495b869fe0b0c5ecf59
+    spriteID: f277ce2490bab4ff6ba765b244208752
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +179,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Horseless_Monster_Idle1_0: 1529084213
-      Horseless_Monster_Idle1_1: -727420477
-      Horseless_Monster_Idle1_2: -100431037
+      Horseless_Monster_Idle1_0: 1838075866
+      Horseless_Monster_Idle1_1: 1598277554
+      Horseless_Monster_Idle1_2: -182129266
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
