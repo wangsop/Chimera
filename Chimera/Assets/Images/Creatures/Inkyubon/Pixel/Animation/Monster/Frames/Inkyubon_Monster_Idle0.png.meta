@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 21d5b690b57b0483196ed768279f6ff1
+guid: c9cdc840946d34325a7f5155b8252152
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3586660546017794905
-    second: Galvanigar_SplashArt_0
+      213: 110063094613122208
+    second: sprite_0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,35 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Galvanigar_SplashArt_0
+      name: Inkyubon_Monster_Idle0_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 216
-        height: 480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95b9c4f73c066c130800000000000000
-      internalID: 3586660546017794905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Galvanigar_SplashArt_1
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 0
-        width: 216
-        height: 480
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +115,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c2728bd318c243e3b84d7316fc999e9
-      internalID: -1733891811
+      spriteID: 685bafc6b25114f1bba0fe3fa10c3267
+      internalID: 749114568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Galvanigar_SplashArt_2
+      name: Inkyubon_Monster_Idle0_1
       rect:
         serializedVersion: 2
-        x: 432
+        x: 128
         y: 0
-        width: 216
-        height: 480
+        width: 128
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,8 +137,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b87300afbe88246ea80831fa7919c6d3
-      internalID: 1029021585
+      spriteID: 7d06ffde3002046d1be4ac070e134e02
+      internalID: 1930495941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Inkyubon_Monster_Idle0_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aacdbcf4fdc8a4e1daea4545145e04c4
+      internalID: -1428184923
       vertices: []
       indices: 
       edges: []
@@ -169,7 +169,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a8a7481392018487a848a7d0a6ed61ae
+    spriteID: 0a2373eb77f0542818f171020f582c7f
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +179,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Galvanigar_SplashArt_0: 3586660546017794905
-      Galvanigar_SplashArt_1: -1733891811
-      Galvanigar_SplashArt_2: 1029021585
+      Inkyubon_Monster_Idle0_0: 749114568
+      Inkyubon_Monster_Idle0_1: 1930495941
+      Inkyubon_Monster_Idle0_2: -1428184923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
