@@ -1098,6 +1098,7 @@ MonoBehaviour:
   - {fileID: 4573677309019660251, guid: 1a370de286cf946dc98c858635840789, type: 3}
   - {fileID: 7942577993414279552, guid: 25aa5688a2cc047d7913c8b3df31528e, type: 3}
   - {fileID: 2056026784313779167, guid: e83db351d9c87449ba433e44ee2e3608, type: 3}
+  - {fileID: 383143045057129623, guid: 7a27c1747c38944fa8b2f683f5ac9e91, type: 3}
   Bodies:
   - {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
   - {fileID: 6132199212722008716, guid: 5784c445e27da4435beec5793a054557, type: 3}
@@ -1111,6 +1112,7 @@ MonoBehaviour:
   - {fileID: 6284080335372240177, guid: 62e99b476bd37444e853bfd5c17c9f9b, type: 3}
   - {fileID: 578090367968452785, guid: 9a082be3c475a4f38b31de25059a90bb, type: 3}
   - {fileID: 7260298432344726169, guid: 7666d61a2f00b4c2d8528f1dc7e4907a, type: 3}
+  - {fileID: 1311920351659170356, guid: e5b606537992e48a0b3e34531c908cfb, type: 3}
   Tails:
   - {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
   - {fileID: 7875629217057729115, guid: a58b479eda25a427d8bcbea4562b8f7d, type: 3}
@@ -1124,6 +1126,7 @@ MonoBehaviour:
   - {fileID: 2318920575999694433, guid: 6698f0a2d28474a0a8fd966a3f5690bc, type: 3}
   - {fileID: 5076064019967639220, guid: 6420a651a95804014ac456ec4b3abffd, type: 3}
   - {fileID: 8129210980050808754, guid: 0369c3dea7eff47c39931dfa31a7fe57, type: 3}
+  - {fileID: 4406843515249544167, guid: 1eeda3772127442e786059cf995d31e5, type: 3}
   Monsters:
   - {fileID: 7313375578454353807, guid: 1332c9a63a3654d1480dcfa7abd7ff13, type: 3}
   - {fileID: 606990119164908652, guid: 0882faef37d2c4758ae7ca11592c19a9, type: 3}
@@ -1137,6 +1140,7 @@ MonoBehaviour:
   - {fileID: 9111803279317786448, guid: dda228e402c7141739acddcc5ba50f15, type: 3}
   - {fileID: 4208651656262411453, guid: 2c6b7ff48c3ee452aa39ef8d2bd2c439, type: 3}
   - {fileID: 5578874874385706273, guid: c1db5ef96ae6f43b598bdea353fa1a06, type: 3}
+  - {fileID: 7561837016741100411, guid: 7c5edb2e7543e42edb803abcec7404cd, type: 3}
 --- !u!1 &1465414692
 GameObject:
   m_ObjectHideFlags: 0
