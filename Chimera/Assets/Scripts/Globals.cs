@@ -28,7 +28,7 @@ public class Globals : MonoBehaviour
     public const int maxEnergy = 100;
     public static string SceneSelection = "";
     //should be held in game manager eventually maybe?
-    public static int highestClearedLevel = 0;
+    public static int highestClearedLevel = 0; //misnamed; should be highest level accessible
     public static Vector2 default_kb = new Vector2(0.5f, 0.5f);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
