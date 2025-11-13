@@ -125,6 +125,11 @@ public class Damageable_Testing : MonoBehaviour
     {
         if (IsAlive && !isInvincible)
         {
+            SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
+            if (sfxplayer != null)
+            {
+                sfxplayer[sfxplayer.Length - 1].AttSFX();
+            }
             CurrentHealth -= damage;
             //isInvincible = true;
             LockVelocity = true;

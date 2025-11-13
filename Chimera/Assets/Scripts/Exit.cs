@@ -53,6 +53,7 @@ public class Exit : MonoBehaviour
             }
         }
         Globals.numKills = 0;
+        Globals.highestClearedLevel = Globals.levelSelected+1;
     }
     public void Surrender()
     {
