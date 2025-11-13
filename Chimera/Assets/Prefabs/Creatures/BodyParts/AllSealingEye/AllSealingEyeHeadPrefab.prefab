@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5729181968954805458
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 203845908196129050, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5839087974357250997, guid: 3d7050e2b527b46b9a6ba6fc36e2e1ba, type: 3}
+    - target: {fileID: 203845908196129050, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618464881902322915, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: d0bf76e8c0b1540d9b06789867e7a0a9, type: 2}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.783949
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792070356365575566, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      propertyPath: m_Name
+      value: AllSealingEyeHeadPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3785852519710649892, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 6178664479396281901, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 9078805057779104341}
+  m_SourcePrefab: {fileID: 100100000, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+--- !u!1 &3369770181722642091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
+  m_PrefabInstance: {fileID: 5729181968954805458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9078805057779104341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369770181722642091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538161efa00474f57aa6d8216c2f228e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splash: {fileID: -2105887077, guid: 6dbf8b44a46e14c81acaa06f33d9bbf7, type: 3}
+  ability_description: Ability description has not been implemented yet
+  scientist_description: Scientist description not been implemented yet
+  ability_name: Sample Name
+  rarity: 1
