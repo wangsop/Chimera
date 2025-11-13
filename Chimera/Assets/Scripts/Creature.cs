@@ -34,7 +34,6 @@ public abstract class Creature : Damageable_Testing, Entity
     protected bool canAttack = true;
     private Coroutine _stunRoutine;
     private Coroutine _slowRoutine;
-    
 
     public void OnAfflicted(bool stunned, bool slowed, float speedReduction, float duration)
     {
