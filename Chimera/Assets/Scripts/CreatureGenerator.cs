@@ -199,6 +199,11 @@ public class CreatureGenerator : MonoBehaviour
         Debug.Log("new chimera instantiated: " + generated.Head.name + generated.Body.name + generated.Tail.name);
 
         ChimeraParty.AddChimeraToParty(generated);
+        SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
+        if (sfxplayer != null && sfxplayer.Length >= 1)
+        {
+            sfxplayer[sfxplayer.Length - 1].Gacha(1); //temporary; when we have rarity-specific gacha noises, this int will be rarity
+        }
     }
 }
 

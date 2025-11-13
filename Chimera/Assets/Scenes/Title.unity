@@ -1346,10 +1346,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1659131849}
-  DoorCreak: {fileID: 8300000, guid: 8f5ad396c9a2b3b46a624d7383cadc25, type: 3}
+  DoorCreak: {fileID: 8300000, guid: 5f6604bfb11025942add346233ef4ac5, type: 3}
   PageSFX: {fileID: 8300000, guid: 6e7c534671e49a94ebf5cfb36eb12706, type: 3}
   ElectricBuzz: {fileID: 8300000, guid: 5ecfc92b686904e41a0de0ef5f4bed2b, type: 3}
+  YelpSFX:
+  - {fileID: 8300000, guid: 2390d10035de91740ac8017e5a43aa52, type: 3}
+  - {fileID: 8300000, guid: a1dcf59eb17352646992b4ad9ebc610a, type: 3}
+  - {fileID: 8300000, guid: 0dc4daa287f2ae14b8b86b010539a9e5, type: 3}
+  CrySFX:
+  - {fileID: 8300000, guid: cce81d361ccba4b4baa27fa39a170362, type: 3}
+  - {fileID: 8300000, guid: d302fdffefc1f5349bc2233c3b080f73, type: 3}
+  - {fileID: 8300000, guid: 995a893b5ed43af43a035c067331716a, type: 3}
+  AttackSFX:
+  - {fileID: 8300000, guid: 6e0362eaa8464b1489838d638a2a448a, type: 3}
+  - {fileID: 8300000, guid: 0ca29619706140a43bc23adc60597173, type: 3}
+  - {fileID: 8300000, guid: d01eff322a66a6c48a68a2744134a08a, type: 3}
+  GachaSFX:
+  - {fileID: 8300000, guid: 4063345cf68fe524fb68acbac7df1ea1, type: 3}
   GrowlSFX: {fileID: 0}
+  slider: {fileID: 355006356}
 --- !u!4 &1659131851
 Transform:
   m_ObjectHideFlags: 0
