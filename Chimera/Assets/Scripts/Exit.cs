@@ -55,7 +55,7 @@ public class Exit : MonoBehaviour
         Globals.numKills = 0;
         Globals.highestClearedLevel = Globals.levelSelected+1;
     }
-    public void Surrender()
+    public static void Surrender()
     {
         Creature[] allChimeras = FindObjectsByType<Creature>(FindObjectsSortMode.None);
         foreach (Creature c in allChimeras)
@@ -64,6 +64,8 @@ public class Exit : MonoBehaviour
         }
         Time.timeScale = 1f;
         Globals.numKills = 0;
+        Globals.currentlyDeadChimeras = 0;
+        Debug.Log("Surrendered. Returning to lab");
         LoadingManager.LoadScene("Lab");
     }
     public void Continue()
