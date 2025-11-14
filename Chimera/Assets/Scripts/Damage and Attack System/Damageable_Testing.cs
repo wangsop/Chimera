@@ -20,6 +20,30 @@ public class Damageable_Testing : MonoBehaviour
     [SerializeField] protected Status_Effect status_effect;
     protected float duration = 0;
     protected float timeSinceStart = 0.0f;
+    // may not exist depending on what subclass is using this
+    private Creature myCreature;
+    // probability of an attack on this chimera landing; default 1, changed by artillipede ability
+    private double dmgProb = 1;
+
+
+
+
+
+    public void Initialize()
+    {
+        // event listener for Artillipede ability
+        ArtillipedeHead.artillipedeAbility.AddListener(OnArtillipedeAbility);
+        // try to get this thing's Creature if it has one
+        try
+        {
+            myCreature = GetComponentInParent<Creature>();
+        }
+        catch (Exception e)
+        {
+            // Some Damageable_Testing's don't have Creature's (like maybe a breakable wall, idk), so exceptions are fine
+        }
+    }
+
     public int DamageTicksLeft
     {
         get
@@ -121,8 +145,23 @@ public class Damageable_Testing : MonoBehaviour
         }
     }
 
-    public void Hit(int damage, Vector2 knockback, Status_Effect effect=null, bool apply_effect=false)
+    public void Hit(int damage, Vector2 knockback, Status_Effect effect = null, bool apply_effect = false)
     {
+        // dodging (Artillipede ability)
+        if (dmgProb < 1)
+        {
+            double randVal = Random.value;
+            if (randVal >= dmgProb)
+            {
+                // DODGE
+                Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == true");
+                return;
+            }
+            // hit
+            Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == false");
+        }
+
+        // main implementation
         if (IsAlive && !isInvincible)
         {
             SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
@@ -144,11 +183,28 @@ public class Damageable_Testing : MonoBehaviour
                 damegableAfflicted?.Invoke(effect.Stunned, effect.Slowed, effect.SpeedReduction, effect.EffectDuration);
             }
         }
-            
-            //damageableHit?.Invoke(damage, knockback); //unity event invoked to have the player script implement its own version of how to deal with the knockback check the subscriber list of who invokes this event if its null it will error since it will be an erroneous event.
-                                                        //? checks if null
-                                                        //using this to pass back damage and knockback information to respective objects instead of dealing with velocity here 
 
-        
+        //damageableHit?.Invoke(damage, knockback); //unity event invoked to have the player script implement its own version of how to deal with the knockback check the subscriber list of who invokes this event if its null it will error since it will be an erroneous event.
+        //? checks if null
+        //using this to pass back damage and knockback information to respective objects instead of dealing with velocity here 
+
+
+    }
+    
+
+
+
+
+
+
+    // Respond to Artillipede ability: if this Creature triggered the ability, set dmgProb to allow potential dodging
+    private void OnArtillipedeAbility(Creature creature, double dmgProb)
+    {
+        Debug.Log("Artillipede ability: receive");
+        if (creature == myCreature)
+        {
+            this.dmgProb = dmgProb;
+            Debug.Log("Artillipede ability: respond");
+        }
     }
 }
