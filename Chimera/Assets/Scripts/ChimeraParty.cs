@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -42,7 +43,8 @@ public static class ChimeraParty
                 Chimeras.Remove(chimera);
                 Debug.Log("removed a chimera for dying");
                 Globals.currentlyDeadChimeras++;
-
+                Globals glob = UnityEngine.Object.FindFirstObjectByType<Globals>();
+                glob.removeChimera(chimera);
                 if (Globals.currentlyDeadChimeras >= Globals.party_indexes.Count) 
                 {
                     Exit.Surrender();

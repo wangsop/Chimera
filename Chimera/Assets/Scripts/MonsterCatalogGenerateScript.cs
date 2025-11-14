@@ -49,7 +49,7 @@ public class MonsterCatalogGenerateScript : MonoBehaviour
     public void MoveForward()
     {
         SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
-        if (sfxplayer != null && sfxplayer.Length >= 1)
+        if (sfxplayer.Length > 0 && sfxplayer.Length >= 1)
         {
             sfxplayer[sfxplayer.Length - 1].Page();
         }
@@ -60,7 +60,7 @@ public class MonsterCatalogGenerateScript : MonoBehaviour
     public void MoveBackward()
     {
         SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
-        if (sfxplayer != null && sfxplayer.Length >= 1)
+        if (sfxplayer.Length > 0 && sfxplayer.Length >= 1)
         {
             sfxplayer[sfxplayer.Length - 1].Page();
         }
