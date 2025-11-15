@@ -13,7 +13,7 @@ using UnityEngine.UI;
 public class Globals : MonoBehaviour
 {
     public static List<string> Chimeras = new List<string>();
-    public static List<GameObject> party = new List<GameObject>();
+    public static List<GameObjectChimera> party = new List<GameObjectChimera>();
     public static Dictionary<NewChimeraStats, GameObjectChimera> active_party_objs = new Dictionary<NewChimeraStats, GameObjectChimera>();
     public static List<NewChimeraStats> party_game_objs = new List<NewChimeraStats>();
     public static List<int> party_indexes = new List<int>();
@@ -48,6 +48,7 @@ public class Globals : MonoBehaviour
             //initialize all chimeras in party
             Vector3 add = new Vector3(0.5f, 0.5f, 0);
             Vector3 adjust = new Vector3(0, 0, -1);
+            party = new List<GameObjectChimera>();
             /*
             foreach (int index in party_indexes)
             {
@@ -90,7 +91,8 @@ public class Globals : MonoBehaviour
                 GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - adjustedSpriteSize, Quaternion.identity, newChimera.transform);
                 GameObject newBody = Instantiate(chimera.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
                 GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + adjustedSpriteSize, Quaternion.identity, newChimera.transform);
-                active_party_objs.Add(chimera, new GameObjectChimera(newHead, newBody, newTail, newChimera));
+                GameObjectChimera active_chimera = new GameObjectChimera(newHead, newBody, newTail, newChimera);
+                active_party_objs.Add(chimera, active_chimera);
             }
             for (int i = party_indexes.Count; i < 5; i++)
             {
@@ -206,6 +208,15 @@ public class Globals : MonoBehaviour
             return null;
         }
         return party_game_objs[party_indexes[i]];
+    }
+
+    public static GameObjectChimera FindChimeraGameObjectInPartyByIndex(int i)
+    {
+        if (i >= party_indexes.Count)
+        {
+            return null;
+        }
+        return active_party_objs[FindChimeraInPartyByIndex(i)];
     }
 
 }
