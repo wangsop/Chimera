@@ -14,4 +14,21 @@ public class RunDungeon : MonoBehaviour
     {
         
     }
+    public void Surrender()
+    {
+        Creature[] allChimeras = FindObjectsByType<Creature>(FindObjectsSortMode.None);
+        foreach (Creature c in allChimeras)
+        {
+            c.Die();
+        }
+        Time.timeScale = 1f;
+        Globals.numKills = 0;
+        LoadingManager.LoadScene("Lab");
+    }
+    public void Continue()
+    {
+        Time.timeScale = 1f;
+        Globals.numKills = 0;
+        LoadingManager.LoadScene("Lab");
+    }
 }

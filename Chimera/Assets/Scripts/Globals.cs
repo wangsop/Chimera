@@ -7,16 +7,11 @@ using System.Linq;
 using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine.Rendering.Universal.Internal;
+using UnityEngine.UI;
 //DO NOT EDIT!!!!! READ ONLY
 [DefaultExecutionOrder(-150)]
 public class Globals : MonoBehaviour
 {
-    /*public Sprite[] Heads;
-    public Sprite[] Bodies;
-    public Sprite[] Tails;
-    public static List<ChimeraStats> Chimeras = new List<ChimeraStats>();
-    //need to replace party with List<ChimeraStats>, put restriction on number in party selection script
-    public static List<ChimeraStats> party = new List<ChimeraStats>();*/
     public static List<string> Chimeras = new List<string>();
     public static List<GameObject> party = new List<GameObject>();
     public static Dictionary<NewChimeraStats, GameObjectChimera> active_party_objs = new Dictionary<NewChimeraStats, GameObjectChimera>();
@@ -25,22 +20,20 @@ public class Globals : MonoBehaviour
     public const int PARTY_SIZE = 5;
     public static int currency = 1000;
     public static int levelSelected = 0;
-    //These must match exactly the name of the scripts
-    /*public static string[] hscripts = new string[7]{"LichenSlugHead", "SharkatorHead", "NickHead", "EyeCandyHead", "StuartHead", "PalacellHead", "ArtillipedeHead"};
-    public static string[] bscripts = new string[7]{"LichenSlugBody", "SharkatorBody", "NickBody", "EyeCandyBody", "StuartBody", "PalacellBody", "ArtillipedeBody"};
-    public static string[] tscripts = new string[7]{"LichenSlugTail", "SharkatorTail", "NickTail", "EyeCandyTail", "StuartTail", "PalacellTail", "ArtillipedeTail"};*/
+    public static int numKills = 0;
     public GameObject Chimerafab;
-    //public GameObject[] Heads;
-    //public GameObject[] Bodies;
-    //public GameObject[] Tails;
+    [SerializeField] public Vector3 adjustedSpriteSize = new Vector3(1, 0, 0);
     public bool isDungeon = true;
     //public static int numMonsters = 1;
     public static int energy;
     public const int maxEnergy = 100;
     public static string SceneSelection = "";
     //should be held in game manager eventually maybe?
-    public static int highestClearedLevel = 0;
+    public static int highestClearedLevel = 0; //misnamed; should be highest level accessible
     public static Vector2 default_kb = new Vector2(0.5f, 0.5f);
+    public static int currentlyDeadChimeras = 0;
+    private static NewChimeraStats[] chimerasInParty = new NewChimeraStats[5];
+    public Button[] buttons;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,8 +41,12 @@ public class Globals : MonoBehaviour
         if (isDungeon)
         {
             energy = 0;
+            if (levelSelected == 0)
+            {
+                energy += 50;
+            }
             //initialize all chimeras in party
-            Vector3 add = new Vector3(10, 2, 0);
+            Vector3 add = new Vector3(0.5f, 0.5f, 0);
             Vector3 adjust = new Vector3(0, 0, -1);
             /*
             foreach (int index in party_indexes)
@@ -79,6 +76,10 @@ public class Globals : MonoBehaviour
             for (int i = 0; i < party_indexes.Count; i++)
             {
                 NewChimeraStats chimera = party_game_objs[party_indexes[i]];
+                if (chimera != null)
+                {
+                    chimerasInParty[i] = chimera;
+                }
                 GameObject newChimera = Instantiate(chimera.BaseObject, add * i + adjust, Quaternion.identity);
                 Debug.Log("new chimera instantiated");
                 ChimeraScript cs = newChimera.GetComponentInChildren<ChimeraScript>();
@@ -86,10 +87,14 @@ public class Globals : MonoBehaviour
                 cs.level = chimera.level;
                 Debug.Log("Current chimera's level: "+cs.level+"  EXP: "+ chimera.exp);
                 Vector3 spriteSize = new Vector3(chimera.Head.GetComponentInChildren<SpriteRenderer>().bounds.size.x, 0, 0);
-                GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - spriteSize, Quaternion.identity, newChimera.transform);
+                GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - adjustedSpriteSize, Quaternion.identity, newChimera.transform);
                 GameObject newBody = Instantiate(chimera.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
-                GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + spriteSize, Quaternion.identity, newChimera.transform);
+                GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + adjustedSpriteSize, Quaternion.identity, newChimera.transform);
                 active_party_objs.Add(chimera, new GameObjectChimera(newHead, newBody, newTail, newChimera));
+            }
+            for (int i = party_indexes.Count; i < 5; i++)
+            {
+                buttons[i].gameObject.SetActive(false);
             }
         }
     } 
@@ -151,24 +156,42 @@ public class Globals : MonoBehaviour
         }
     }*/
     public static void ChimeraAbility(int x){
-        if (active_party_objs.Count > x){
-            NewChimeraStats chimera = party_game_objs[party_indexes[x]];
-            GameObject head_object = active_party_objs[chimera].Head;
-            Head h = head_object.GetComponent<Head>();
-            if (h != null)
+        //BIG ISSUE HERE COME BACK chimeras die during combat, party_indexes becomes out of date/out of range of the gameobjs
+        NewChimeraStats chimera = chimerasInParty[x];
+        GameObjectChimera temp = active_party_objs[chimera];
+        if (temp == null)
+        {
+            Debug.Log("This chimera is dead");
+            return;
+        }
+        GameObject head_object = temp.Head;
+        if (head_object == null)
+        {
+            return;
+        }
+        Head h = head_object.GetComponent<Head>();
+        if (h != null)
+        {
+            if (energy >= 10)
             {
-                if (energy >= 10)
-                {
-                    head_object.GetComponent<Animator>().SetTrigger("Ability");
-                    h.UseAbility();
-                    energy -= 10;
-                }
-                else
-                {
-                    Debug.Log("Not enough energy!");
-                }
+                head_object.GetComponent<Animator>().SetTrigger("Ability");
+                h.UseAbility();
+                energy -= 10;
+            }
+            else
+            {
+                Debug.Log("Not enough energy!");
             }
         }
+    }
+    public void removeChimera(NewChimeraStats chimera)
+    {
+        int idx = Array.IndexOf(chimerasInParty, chimera);
+        if (idx >= 0 && idx < buttons.Length)
+        {
+            buttons[idx].gameObject.SetActive(false);
+        }
+
     }
 
     public static int AmountOfChimerasLeftToAddInParty()

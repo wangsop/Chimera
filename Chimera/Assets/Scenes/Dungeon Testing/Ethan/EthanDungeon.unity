@@ -326,6 +326,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa9fad41c1a70f4aa12998b51f3d4e4, type: 3}
   m_Name: 
@@ -334,7 +335,23 @@ MonoBehaviour:
   aHead: {fileID: 1290998404589710474, guid: a3e7f56a432f346eeb8e0840ba73eff0, type: 3}
   aBody: {fileID: 1401470735967571540, guid: 3d570050e976947c995565700ce7a3ea, type: 3}
   aTail: {fileID: 6074296988162736562, guid: c653ffe67a5ae401aa2e26e8bb38a3d2, type: 3}
+  Chimerafab: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
+  aHead: {fileID: 1290998404589710474, guid: a3e7f56a432f346eeb8e0840ba73eff0, type: 3}
+  aBody: {fileID: 1401470735967571540, guid: 3d570050e976947c995565700ce7a3ea, type: 3}
+  aTail: {fileID: 6074296988162736562, guid: c653ffe67a5ae401aa2e26e8bb38a3d2, type: 3}
   Eyeball: {fileID: 1632628119}
+--- !u!114 &330585552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcfc1f1612331243b88b5e538f471c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &498354129
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
+      propertyPath: Monster
+      value: 
+      objectReference: {fileID: 1672410032746975923, guid: 48919ac73ff434e60bb827b343020aa9, type: 3}
     - target: {fileID: 8750524548131872436, guid: 2ae9e034628cd4df19f31d015271eedc, type: 3}
       propertyPath: Monster
       value: 

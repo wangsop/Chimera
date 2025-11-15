@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static UnityEngine.UI.Image;
 
@@ -19,8 +19,8 @@ public abstract class Creature : Damageable_Testing, Entity
     protected Creature aggro;
     protected float clock = 0;
     protected List<Creature> inTrigger;
-    [SerializeField] protected int attackRange = 20;
-    [SerializeField] protected int speed = 300;
+    [SerializeField] protected int attackRange = 2;
+    [SerializeField] protected int speed = 80;
     int attackCount = 0;
     protected Head head;
     protected Body body;
@@ -204,13 +204,25 @@ public abstract class Creature : Damageable_Testing, Entity
 
     public void Die()
     {
+        SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
         if (this.hostile == false)
         {
             //find this creature in inventory and remove them
             NewChimeraStats thisChimera = new NewChimeraStats(this.head.gameObject, this.body.gameObject, this.tail.gameObject, Chimerafab);
             ChimeraParty.RemoveChimera(thisChimera);
+            if (sfxplayer.Length > 0 && sfxplayer[sfxplayer.Length - 1] != null)
+            {
+                sfxplayer[sfxplayer.Length - 1].Cry();
+            }
+        } else
+        {
+            Globals.numKills++;
+            if (sfxplayer.Length > 0 && sfxplayer[sfxplayer.Length - 1] != null)
+            {
+                sfxplayer[sfxplayer.Length - 1].Yelp();
+            }
         }
-        head.GetComponent<Animator>().SetBool("IsAlive", false);
+            head.GetComponent<Animator>().SetBool("IsAlive", false);
         body.GetComponent<Animator>().SetBool("IsAlive", false);
         tail.GetComponent<Animator>().SetBool("IsAlive", false);
         Destroy(this.gameObject);
@@ -391,7 +403,6 @@ public abstract class Creature : Damageable_Testing, Entity
         {
             return;
         }
-        Debug.Log("Heard horseless ability");
         // if on opposing team or triggered the event, disable movement for duration
         if (this.hostile == !horseless.hostile || this.Equals(horseless))
         {

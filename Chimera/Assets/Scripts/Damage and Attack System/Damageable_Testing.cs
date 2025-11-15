@@ -20,6 +20,13 @@ public class Damageable_Testing : MonoBehaviour
     [SerializeField] protected Status_Effect status_effect;
     protected float duration = 0;
     protected float timeSinceStart = 0.0f;
+    // probability of an attack on this chimera landing; default 1, changed by artillipede ability
+    private double dmgProb = 1;
+
+
+
+
+
     public int DamageTicksLeft
     {
         get
@@ -106,6 +113,8 @@ public class Damageable_Testing : MonoBehaviour
         health = _maxHealth;
         animator = GetComponent<Animator>();
         Afflicted = false;
+        // listen for artillipede ability
+        ArtillipedeHead.artillipedeAbility.AddListener(OnArtillipedeAbility);
     }
 
     private void Update()
@@ -121,10 +130,30 @@ public class Damageable_Testing : MonoBehaviour
         }
     }
 
-    public void Hit(int damage, Vector2 knockback, Status_Effect effect=null, bool apply_effect=false)
+    public void Hit(int damage, Vector2 knockback, Status_Effect effect = null, bool apply_effect = false)
     {
+        // potential dodge
+        if (dmgProb < 1)
+        {
+            // if artillipede ability: random roll for hit land
+            double randVal = Random.value;
+            if (randVal >= dmgProb)
+            {
+                // dodge
+                return;
+            }
+            // else: hit
+        }
+
+
+        // main implementation
         if (IsAlive && !isInvincible)
         {
+            SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
+            if (sfxplayer.Length > 0)
+            {
+                sfxplayer[sfxplayer.Length - 1].AttSFX();
+            }
             CurrentHealth -= damage;
             //isInvincible = true;
             LockVelocity = true;
@@ -139,11 +168,18 @@ public class Damageable_Testing : MonoBehaviour
                 damegableAfflicted?.Invoke(effect.Stunned, effect.Slowed, effect.SpeedReduction, effect.EffectDuration);
             }
         }
-            
-            //damageableHit?.Invoke(damage, knockback); //unity event invoked to have the player script implement its own version of how to deal with the knockback check the subscriber list of who invokes this event if its null it will error since it will be an erroneous event.
-                                                        //? checks if null
-                                                        //using this to pass back damage and knockback information to respective objects instead of dealing with velocity here 
 
-        
+        //damageableHit?.Invoke(damage, knockback); //unity event invoked to have the player script implement its own version of how to deal with the knockback check the subscriber list of who invokes this event if its null it will error since it will be an erroneous event.
+        //? checks if null
+        //using this to pass back damage and knockback information to respective objects instead of dealing with velocity here 
+    }
+    
+    // event listener for Artilipede ability
+    private void OnArtillipedeAbility(Damageable_Testing dt, double dmgProb)
+    {
+        if (dt == this)
+        {
+            this.dmgProb = dmgProb;
+        }
     }
 }

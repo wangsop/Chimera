@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Chimerafab: {fileID: 0}
+  adjustedSpriteSize: {x: 1, y: 0, z: 0}
   isDungeon: 0
 --- !u!1 &240879445
 GameObject:
@@ -1093,6 +1094,13 @@ MonoBehaviour:
   - {fileID: 4549342685362041209, guid: 39ed4fd6fd905415ab2261083d35869e, type: 3}
   - {fileID: 608986430754512878, guid: d317cdf8a04e248db9075763edafcf26, type: 3}
   - {fileID: 1290998404589710474, guid: a3e7f56a432f346eeb8e0840ba73eff0, type: 3}
+  - {fileID: 7008146949477489273, guid: 1eafca074eaa047e7bb3834cf026b1ec, type: 3}
+  - {fileID: 4573677309019660251, guid: 1a370de286cf946dc98c858635840789, type: 3}
+  - {fileID: 7942577993414279552, guid: 25aa5688a2cc047d7913c8b3df31528e, type: 3}
+  - {fileID: 2056026784313779167, guid: e83db351d9c87449ba433e44ee2e3608, type: 3}
+  - {fileID: 383143045057129623, guid: 7a27c1747c38944fa8b2f683f5ac9e91, type: 3}
+  - {fileID: 5755033695822888778, guid: bc7a13d471afe48ac9f89e0e8071196b, type: 3}
+  - {fileID: 3369770181722642091, guid: 80505fe2874864fdbb1ab73f67fb9361, type: 3}
   Bodies:
   - {fileID: 4828560408458159560, guid: 79b2a72928a882e48ae68261ea98a4b9, type: 3}
   - {fileID: 6132199212722008716, guid: 5784c445e27da4435beec5793a054557, type: 3}
@@ -1102,6 +1110,13 @@ MonoBehaviour:
   - {fileID: 3478940405516498343, guid: 379f9037493d845bca627e8fe56ecc6c, type: 3}
   - {fileID: 3311970242052931183, guid: fc76471132a4d4705a87e6307bad077d, type: 3}
   - {fileID: 1401470735967571540, guid: 3d570050e976947c995565700ce7a3ea, type: 3}
+  - {fileID: 4828560408458159560, guid: dd8432cc0bef84281983ceb5ab1f843f, type: 3}
+  - {fileID: 6284080335372240177, guid: 62e99b476bd37444e853bfd5c17c9f9b, type: 3}
+  - {fileID: 578090367968452785, guid: 9a082be3c475a4f38b31de25059a90bb, type: 3}
+  - {fileID: 7260298432344726169, guid: 7666d61a2f00b4c2d8528f1dc7e4907a, type: 3}
+  - {fileID: 1311920351659170356, guid: e5b606537992e48a0b3e34531c908cfb, type: 3}
+  - {fileID: 7933459214163219877, guid: 7b94976ac6293413f90e4407cf577bdb, type: 3}
+  - {fileID: 1950282564730089760, guid: 668f9889ff16242f384a97e7493aec3f, type: 3}
   Tails:
   - {fileID: 2498432198972904124, guid: e038fe679be8d1c42abfc09f6260c914, type: 3}
   - {fileID: 7875629217057729115, guid: a58b479eda25a427d8bcbea4562b8f7d, type: 3}
@@ -1111,6 +1126,13 @@ MonoBehaviour:
   - {fileID: 8067158184053193067, guid: e81da87dba5de46538c1ce2a9cd25b74, type: 3}
   - {fileID: 7323395320805424300, guid: 12652487cc74643b38746a94587b5d66, type: 3}
   - {fileID: 6074296988162736562, guid: c653ffe67a5ae401aa2e26e8bb38a3d2, type: 3}
+  - {fileID: 2498432198972904124, guid: 6e33ea106f59d4cd3aa65e5ca7925c07, type: 3}
+  - {fileID: 2318920575999694433, guid: 6698f0a2d28474a0a8fd966a3f5690bc, type: 3}
+  - {fileID: 5076064019967639220, guid: 6420a651a95804014ac456ec4b3abffd, type: 3}
+  - {fileID: 8129210980050808754, guid: 0369c3dea7eff47c39931dfa31a7fe57, type: 3}
+  - {fileID: 4406843515249544167, guid: 1eeda3772127442e786059cf995d31e5, type: 3}
+  - {fileID: 2871469894235636534, guid: 1255ec0f26eea4353a70d144f64ac60e, type: 3}
+  - {fileID: 6059659232387075940, guid: fe615474144b74ea1a4c55438d56e3d2, type: 3}
   Monsters:
   - {fileID: 7313375578454353807, guid: 1332c9a63a3654d1480dcfa7abd7ff13, type: 3}
   - {fileID: 606990119164908652, guid: 0882faef37d2c4758ae7ca11592c19a9, type: 3}
@@ -1120,6 +1142,13 @@ MonoBehaviour:
   - {fileID: 2714897321438028271, guid: da0e5d305e7d643459aadadfd411a4a3, type: 3}
   - {fileID: 4185002086731159025, guid: 03f36ab121aac41cca7a6970e9a078a4, type: 3}
   - {fileID: 355352760381618177, guid: 405c4aa57a669475e83d68e5e68617c1, type: 3}
+  - {fileID: 4206667203332758563, guid: 67f4317b355244132b889b0752178d0c, type: 3}
+  - {fileID: 9111803279317786448, guid: dda228e402c7141739acddcc5ba50f15, type: 3}
+  - {fileID: 4208651656262411453, guid: 2c6b7ff48c3ee452aa39ef8d2bd2c439, type: 3}
+  - {fileID: 5578874874385706273, guid: c1db5ef96ae6f43b598bdea353fa1a06, type: 3}
+  - {fileID: 7561837016741100411, guid: 7c5edb2e7543e42edb803abcec7404cd, type: 3}
+  - {fileID: 67492378404709233, guid: 6923e60f6c5d94358beb66bf93ea581c, type: 3}
+  - {fileID: 12143122940241477, guid: 5fbf65ab482c0467f8fbb2e20a02ffff, type: 3}
 --- !u!1 &1465414692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,12 +1434,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

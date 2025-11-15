@@ -119,7 +119,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8939495, y: 2.615572, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6793046374500130936}
@@ -237,12 +237,13 @@ MonoBehaviour:
   status_effect: {fileID: 0}
   Chimerafab: {fileID: 0}
   trig: {fileID: 3322994467588331629}
-  attackRange: 30
-  speed: 300
+  attackRange: 2
+  speed: 15
   level: 1
   eyeball: {fileID: 0}
   spot: 0
-  maxDist: 25
+  maxDist: 2
+  maxMaxDist: 15
 --- !u!70 &3322994467588331629
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
