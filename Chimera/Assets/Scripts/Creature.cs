@@ -210,14 +210,14 @@ public abstract class Creature : Damageable_Testing, Entity
             //find this creature in inventory and remove them
             NewChimeraStats thisChimera = new NewChimeraStats(this.head.gameObject, this.body.gameObject, this.tail.gameObject, Chimerafab);
             ChimeraParty.RemoveChimera(thisChimera);
-            if (sfxplayer != null && sfxplayer[sfxplayer.Length - 1] != null)
+            if (sfxplayer != null && sfxplayer.Length > 0)
             {
                 sfxplayer[sfxplayer.Length - 1].Cry();
             }
         } else
         {
             Globals.numKills++;
-            if (sfxplayer != null && sfxplayer[sfxplayer.Length - 1] != null)
+            if (sfxplayer != null && sfxplayer.Length > 0)
             {
                 sfxplayer[sfxplayer.Length - 1].Yelp();
             }
