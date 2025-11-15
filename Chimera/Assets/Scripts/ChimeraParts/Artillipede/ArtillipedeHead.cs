@@ -26,17 +26,12 @@ public class ArtillipedeHead : Head
 
     public override void UseAbility()
     {
-        Debug.Log("Used Artillipede Ability");
         artillipedeAbility.Invoke(myDamageableTesting, ABILITY_DMG_PROB);
     }
     protected override void Initialize()
     {
         index = 6;
         myDamageableTesting = (Damageable_Testing) GetComponentInParent<Creature>();
-        if (myDamageableTesting == null)
-        {
-            Debug.Log("Null Creature: Artillipede");
-        }
         base.Initialize();
     }
 }

@@ -115,7 +115,6 @@ public class Damageable_Testing : MonoBehaviour
         Afflicted = false;
         // listen for artillipede ability
         ArtillipedeHead.artillipedeAbility.AddListener(OnArtillipedeAbility);
-        Debug.Log("Damageable_Testing.Awake ran");
     }
 
     private void Update()
@@ -141,11 +140,9 @@ public class Damageable_Testing : MonoBehaviour
             if (randVal >= dmgProb)
             {
                 // dodge
-                Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == false");
                 return;
             }
-            // hit
-            Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == true");
+            // else: hit
         }
 
 
@@ -180,11 +177,9 @@ public class Damageable_Testing : MonoBehaviour
     // event listener for Artilipede ability
     private void OnArtillipedeAbility(Damageable_Testing dt, double dmgProb)
     {
-        Debug.Log("Artillipede ability: receive");
         if (dt == this)
         {
             this.dmgProb = dmgProb;
-            Debug.Log("Artillipede ability: respond");
         }
     }
 }
