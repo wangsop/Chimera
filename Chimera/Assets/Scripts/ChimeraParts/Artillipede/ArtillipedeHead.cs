@@ -14,22 +14,26 @@ public class ArtillipedeHead : Head
     // probability that any attack will land once ability is activated
     private static readonly double ABILITY_DMG_PROB = 0.333;
 
-    // ability event
-    public static readonly UnityEvent<Creature, double> artillipedeAbility = new UnityEvent<Creature, double>();
+    /*
+    ability event
+    param 1: This Chimera's Damageable_Testing object, the one that should change its hit probability
+    param 2: The new hit probability
+    */
+    public static readonly UnityEvent<Damageable_Testing, double> artillipedeAbility = new UnityEvent<Damageable_Testing, double>();
     // this chimera's Creature instance
-    private Creature myCreature;
+    private Damageable_Testing myDamageableTesting;
 
 
     public override void UseAbility()
     {
         Debug.Log("Used Artillipede Ability");
-        artillipedeAbility.Invoke(myCreature, ABILITY_DMG_PROB);
+        artillipedeAbility.Invoke(myDamageableTesting, ABILITY_DMG_PROB);
     }
     protected override void Initialize()
     {
         index = 6;
-        myCreature = GetComponentInParent<Creature>();
-        if (myCreature == null)
+        myDamageableTesting = (Damageable_Testing) GetComponentInParent<Creature>();
+        if (myDamageableTesting == null)
         {
             Debug.Log("Null Creature: Artillipede");
         }

@@ -20,22 +20,12 @@ public class Damageable_Testing : MonoBehaviour
     [SerializeField] protected Status_Effect status_effect;
     protected float duration = 0;
     protected float timeSinceStart = 0.0f;
-    // may be null if this damageable thing is not a Creature
-    private Creature myCreature;
     // probability of an attack on this chimera landing; default 1, changed by artillipede ability
     private double dmgProb = 1;
 
 
 
 
-
-    public void Initialize()
-    {
-        // listen for artillipede ability
-        ArtillipedeHead.artillipedeAbility.AddListener(OnArtillipedeAbility);
-        // get creature; can be null
-        myCreature = GetComponentInParent<Creature>();
-    }
 
     public int DamageTicksLeft
     {
@@ -123,6 +113,9 @@ public class Damageable_Testing : MonoBehaviour
         health = _maxHealth;
         animator = GetComponent<Animator>();
         Afflicted = false;
+        // listen for artillipede ability
+        ArtillipedeHead.artillipedeAbility.AddListener(OnArtillipedeAbility);
+        Debug.Log("Damageable_Testing.Awake ran");
     }
 
     private void Update()
@@ -185,10 +178,10 @@ public class Damageable_Testing : MonoBehaviour
     }
     
     // event listener for Artilipede ability
-    private void OnArtillipedeAbility(Creature creature, double dmgProb)
+    private void OnArtillipedeAbility(Damageable_Testing dt, double dmgProb)
     {
         Debug.Log("Artillipede ability: receive");
-        if (creature == myCreature)
+        if (dt == this)
         {
             this.dmgProb = dmgProb;
             Debug.Log("Artillipede ability: respond");
