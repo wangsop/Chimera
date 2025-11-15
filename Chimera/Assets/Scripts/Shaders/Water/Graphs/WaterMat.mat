@@ -91,12 +91,17 @@ Material:
     - _CausticHighlightsColor: {r: 0.722, g: 1, b: 0.976, a: 1}
     - _DeepColor: {r: 0.016, g: 0.184, b: 0.239, a: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - _GridMin: {r: -348, g: -93, b: 0, a: 0}
     - _GridSize: {r: 389, g: 481, b: 0, a: 0}
 =======
     - _GridMin: {r: -65, g: -287, b: 0, a: 0}
     - _GridSize: {r: 252, g: 381, b: 0, a: 0}
 >>>>>>> bb5c10cf (Integrating SFX pt2)
+=======
+    - _GridMin: {r: -65, g: -287, b: 0, a: 0}
+    - _GridSize: {r: 252, g: 381, b: 0, a: 0}
+>>>>>>> c17d3fb85fd0b22ec64c9ba93f6104ead1c58167
     - _SeaFoamColor: {r: 0.9470549, g: 0.9874212, b: 0.9867875, a: 0}
     - _ShallowColor: {r: 0.247, g: 0.851, b: 0.82, a: 1}
     - _SpecularColor: {r: 0.91, g: 0.984, b: 1, a: 1}
