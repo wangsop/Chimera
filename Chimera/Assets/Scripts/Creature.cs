@@ -403,7 +403,6 @@ public abstract class Creature : Damageable_Testing, Entity
         {
             return;
         }
-        Debug.Log("Heard horseless ability");
         // if on opposing team or triggered the event, disable movement for duration
         if (this.hostile == !horseless.hostile || this.Equals(horseless))
         {
