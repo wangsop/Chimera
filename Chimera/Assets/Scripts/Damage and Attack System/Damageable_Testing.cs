@@ -126,7 +126,7 @@ public class Damageable_Testing : MonoBehaviour
         if (IsAlive && !isInvincible)
         {
             SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
-            if (sfxplayer != null)
+            if (sfxplayer.Length > 0)
             {
                 sfxplayer[sfxplayer.Length - 1].AttSFX();
             }

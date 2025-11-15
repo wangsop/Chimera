@@ -7,6 +7,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine.Rendering.Universal.Internal;
+using UnityEngine.UI;
 //DO NOT EDIT!!!!! READ ONLY
 [DefaultExecutionOrder(-150)]
 public class Globals : MonoBehaviour
@@ -31,6 +32,8 @@ public class Globals : MonoBehaviour
     public static int highestClearedLevel = 0; //misnamed; should be highest level accessible
     public static Vector2 default_kb = new Vector2(0.5f, 0.5f);
     public static int currentlyDeadChimeras = 0;
+    private static NewChimeraStats[] chimerasInParty = new NewChimeraStats[5];
+    public Button[] buttons;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -73,6 +76,10 @@ public class Globals : MonoBehaviour
             for (int i = 0; i < party_indexes.Count; i++)
             {
                 NewChimeraStats chimera = party_game_objs[party_indexes[i]];
+                if (chimera != null)
+                {
+                    chimerasInParty[i] = chimera;
+                }
                 GameObject newChimera = Instantiate(chimera.BaseObject, add * i + adjust, Quaternion.identity);
                 Debug.Log("new chimera instantiated");
                 ChimeraScript cs = newChimera.GetComponentInChildren<ChimeraScript>();
@@ -84,6 +91,10 @@ public class Globals : MonoBehaviour
                 GameObject newBody = Instantiate(chimera.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
                 GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + adjustedSpriteSize, Quaternion.identity, newChimera.transform);
                 active_party_objs.Add(chimera, new GameObjectChimera(newHead, newBody, newTail, newChimera));
+            }
+            for (int i = party_indexes.Count; i < 5; i++)
+            {
+                buttons[i].gameObject.SetActive(false);
             }
         }
     } 
@@ -145,29 +156,42 @@ public class Globals : MonoBehaviour
         }
     }*/
     public static void ChimeraAbility(int x){
-        if (active_party_objs.Count > x){
-            //BIG ISSUE HERE COME BACK chimeras die during combat, party_indexes becomes out of date/out of range of the gameobjs
-            NewChimeraStats chimera = party_game_objs[party_indexes[x]];
-            GameObject head_object = active_party_objs[chimera].Head;
-            if (head_object == null)
+        //BIG ISSUE HERE COME BACK chimeras die during combat, party_indexes becomes out of date/out of range of the gameobjs
+        NewChimeraStats chimera = chimerasInParty[x];
+        GameObjectChimera temp = active_party_objs[chimera];
+        if (temp == null)
+        {
+            Debug.Log("This chimera is dead");
+            return;
+        }
+        GameObject head_object = temp.Head;
+        if (head_object == null)
+        {
+            return;
+        }
+        Head h = head_object.GetComponent<Head>();
+        if (h != null)
+        {
+            if (energy >= 10)
             {
-                return;
+                head_object.GetComponent<Animator>().SetTrigger("Ability");
+                h.UseAbility();
+                energy -= 10;
             }
-            Head h = head_object.GetComponent<Head>();
-            if (h != null)
+            else
             {
-                if (energy >= 10)
-                {
-                    head_object.GetComponent<Animator>().SetTrigger("Ability");
-                    h.UseAbility();
-                    energy -= 10;
-                }
-                else
-                {
-                    Debug.Log("Not enough energy!");
-                }
+                Debug.Log("Not enough energy!");
             }
         }
+    }
+    public void removeChimera(NewChimeraStats chimera)
+    {
+        int idx = Array.IndexOf(chimerasInParty, chimera);
+        if (idx >= 0 && idx < buttons.Length)
+        {
+            buttons[idx].gameObject.SetActive(false);
+        }
+
     }
 
     public static int AmountOfChimerasLeftToAddInParty()
