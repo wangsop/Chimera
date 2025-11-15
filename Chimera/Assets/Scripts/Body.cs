@@ -15,10 +15,14 @@ public abstract class Body : BodyPart
     }
     public int getSpeed(){ return speed; }
     protected override void Initialize(){
-        if (myCreature == null)
-        {
-            Debug.Log("null creature: body");
-        }
+        
     }
+    public virtual int takeDamage(int damage)
+    {
+        return damage;
+    }
+
+
+
     
 }

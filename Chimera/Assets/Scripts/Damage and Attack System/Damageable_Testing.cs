@@ -20,29 +20,12 @@ public class Damageable_Testing : MonoBehaviour
     [SerializeField] protected Status_Effect status_effect;
     protected float duration = 0;
     protected float timeSinceStart = 0.0f;
-    // may not exist depending on what subclass is using this
-    private Creature myCreature;
     // probability of an attack on this chimera landing; default 1, changed by artillipede ability
     private double dmgProb = 1;
 
 
 
 
-
-    public void Initialize()
-    {
-        // event listener for Artillipede ability
-        ArtillipedeHead.artillipedeAbility.AddListener(OnArtillipedeAbility);
-        // try to get this thing's Creature if it has one
-        try
-        {
-            myCreature = GetComponentInParent<Creature>();
-        }
-        catch (Exception e)
-        {
-            // Some Damageable_Testing's don't have Creature's (like maybe a breakable wall, idk), so exceptions are fine
-        }
-    }
 
     public int DamageTicksLeft
     {
@@ -130,6 +113,9 @@ public class Damageable_Testing : MonoBehaviour
         health = _maxHealth;
         animator = GetComponent<Animator>();
         Afflicted = false;
+        // listen for artillipede ability
+        ArtillipedeHead.artillipedeAbility.AddListener(OnArtillipedeAbility);
+        Debug.Log("Damageable_Testing.Awake ran");
     }
 
     private void Update()
@@ -147,19 +133,21 @@ public class Damageable_Testing : MonoBehaviour
 
     public void Hit(int damage, Vector2 knockback, Status_Effect effect = null, bool apply_effect = false)
     {
-        // dodging (Artillipede ability)
+        // potential dodge
         if (dmgProb < 1)
         {
+            // if artillipede ability: random roll for hit land
             double randVal = Random.value;
             if (randVal >= dmgProb)
             {
-                // DODGE
-                Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == true");
+                // dodge
+                Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == false");
                 return;
             }
             // hit
-            Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == false");
+            Debug.Log($"dmgProb == {dmgProb}, randVal == {randVal}, damaged == true");
         }
+
 
         // main implementation
         if (IsAlive && !isInvincible)
@@ -187,21 +175,13 @@ public class Damageable_Testing : MonoBehaviour
         //damageableHit?.Invoke(damage, knockback); //unity event invoked to have the player script implement its own version of how to deal with the knockback check the subscriber list of who invokes this event if its null it will error since it will be an erroneous event.
         //? checks if null
         //using this to pass back damage and knockback information to respective objects instead of dealing with velocity here 
-
-
     }
     
-
-
-
-
-
-
-    // Respond to Artillipede ability: if this Creature triggered the ability, set dmgProb to allow potential dodging
-    private void OnArtillipedeAbility(Creature creature, double dmgProb)
+    // event listener for Artilipede ability
+    private void OnArtillipedeAbility(Damageable_Testing dt, double dmgProb)
     {
         Debug.Log("Artillipede ability: receive");
-        if (creature == myCreature)
+        if (dt == this)
         {
             this.dmgProb = dmgProb;
             Debug.Log("Artillipede ability: respond");
