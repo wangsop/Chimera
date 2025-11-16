@@ -10,6 +10,10 @@ public abstract class Tail : BodyPart
     public int getAttack(){
         return attack;
     }
+    public void setAttack(int newAttack)
+    {
+        this.attack = newAttack;
+    }
     public float getAttackSpeed()
     {
         return attackSpeed;
