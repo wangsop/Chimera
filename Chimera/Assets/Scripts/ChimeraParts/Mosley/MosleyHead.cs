@@ -52,6 +52,7 @@ public class MosleyHead : Head
     }
 
     protected override void Initialize(){
+        rarity = 3;
         base.Initialize();
     }
 }
