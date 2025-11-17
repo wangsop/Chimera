@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: f79b9c0b8e40a9543bbaf9622d2d015d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -594386945244209251
+    second: Fire Aura_0
+  - first:
+      213: 4629178332965628941
+    second: Fire Aura_1
+  - first:
+      213: 2543169872603368098
+    second: Fire Aura_2
+  - first:
+      213: -5307056163365532506
+    second: Fire Aura_3
+  - first:
+      213: 224869898952435113
+    second: Fire Aura_4
+  - first:
+      213: 857419078733045567
+    second: Fire Aura_5
+  - first:
+      213: 8005977886162408796
+    second: Fire Aura_6
+  - first:
+      213: -7578972184955629532
+    second: Fire Aura_7
+  - first:
+      213: 2586292193297015556
+    second: Fire Aura_8
+  - first:
+      213: -5780646009503426295
+    second: Fire Aura_9
+  - first:
+      213: 9052681163821234701
+    second: Fire Aura_10
+  - first:
+      213: 1462697037403086469
+    second: Fire Aura_11
+  - first:
+      213: 7988987852882033523
+    second: Fire Aura_12
+  - first:
+      213: -2529690661295010498
+    second: Fire Aura_13
+  - first:
+      213: 5702381680228139663
+    second: Fire Aura_14
+  - first:
+      213: 1898603296832569301
+    second: Fire Aura_15
+  - first:
+      213: 470815685514830130
+    second: Fire Aura_16
+  - first:
+      213: -7557297734593769334
+    second: Fire Aura_17
+  - first:
+      213: -5867321149780386277
+    second: Fire Aura_18
+  - first:
+      213: 3273865686896088751
+    second: Fire Aura_19
+  - first:
+      213: 929733060017479322
+    second: Fire Aura_20
+  - first:
+      213: -1439835874974971372
+    second: Fire Aura_21
+  - first:
+      213: -4517482018649855722
+    second: Fire Aura_22
+  - first:
+      213: -3451082049033049537
+    second: Fire Aura_23
+  - first:
+      213: 2998056653091790726
+    second: Fire Aura_24
+  - first:
+      213: 3492575207483460275
+    second: Fire Aura_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fire Aura_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 109
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9fd695f83050c7f0800000000000000
+      internalID: -594386945244209251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 109
+        width: 55
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ce95ada252e3040800000000000000
+      internalID: 4629178332965628941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 114
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aacffb56872b4320800000000000000
+      internalID: 2543169872603368098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 100
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6accc83998c8956b0800000000000000
+      internalID: -5307056163365532506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 132
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5ecbf4bf5ee1300800000000000000
+      internalID: 224869898952435113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 75
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f968bfb1a26eb00800000000000000
+      internalID: 857419078733045567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 72
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c55d7505872fa1f60800000000000000
+      internalID: 8005977886162408796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_7
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 82
+        width: 71
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4205721f3f412d690800000000000000
+      internalID: -7578972184955629532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 82
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403a5da0c0b54e320800000000000000
+      internalID: 2586292193297015556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 87
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 909d44fd41507cfa0800000000000000
+      internalID: -5780646009503426295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a3f6a2e8591ad70800000000000000
+      internalID: 9052681163821234701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_11
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 27
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e5d60b43b8c4410800000000000000
+      internalID: 1462697037403086469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_12
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 33
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37bb1fdef169ede60800000000000000
+      internalID: 7988987852882033523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_13
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 58
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d43e51fbbb4ecd0800000000000000
+      internalID: -2529690661295010498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_14
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 60
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8281b7fcede22f40800000000000000
+      internalID: 5702381680228139663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_15
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 65
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5df3715a3a1395a10800000000000000
+      internalID: 1898603296832569301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_16
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 15
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2312bc91f5ca88600800000000000000
+      internalID: 470815685514830130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_17
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 60
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a809cab20c51f1790800000000000000
+      internalID: -7557297734593769334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_18
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 66
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e143c2086139ea0800000000000000
+      internalID: -5867321149780386277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 19
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa618cd1f7b1f6d20800000000000000
+      internalID: 3273865686896088751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_20
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 4
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e574aca4317ec00800000000000000
+      internalID: 929733060017479322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_21
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 2
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ac04976eca40ce0800000000000000
+      internalID: -1439835874974971372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6192927e90eae41c0800000000000000
+      internalID: -4517482018649855722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_23
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 33
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a68a8392b4b10d0800000000000000
+      internalID: -3451082049033049537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f580044ac3b9920800000000000000
+      internalID: 2998056653091790726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Aura_25
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 0
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba436195ae187030800000000000000
+      internalID: 3492575207483460275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fire Aura_0: -594386945244209251
+      Fire Aura_1: 4629178332965628941
+      Fire Aura_10: 9052681163821234701
+      Fire Aura_11: 1462697037403086469
+      Fire Aura_12: 7988987852882033523
+      Fire Aura_13: -2529690661295010498
+      Fire Aura_14: 5702381680228139663
+      Fire Aura_15: 1898603296832569301
+      Fire Aura_16: 470815685514830130
+      Fire Aura_17: -7557297734593769334
+      Fire Aura_18: -5867321149780386277
+      Fire Aura_19: 3273865686896088751
+      Fire Aura_2: 2543169872603368098
+      Fire Aura_20: 929733060017479322
+      Fire Aura_21: -1439835874974971372
+      Fire Aura_22: -4517482018649855722
+      Fire Aura_23: -3451082049033049537
+      Fire Aura_24: 2998056653091790726
+      Fire Aura_25: 3492575207483460275
+      Fire Aura_3: -5307056163365532506
+      Fire Aura_4: 224869898952435113
+      Fire Aura_5: 857419078733045567
+      Fire Aura_6: 8005977886162408796
+      Fire Aura_7: -7578972184955629532
+      Fire Aura_8: 2586292193297015556
+      Fire Aura_9: -5780646009503426295
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -961,6 +961,7 @@ MonoBehaviour:
   Chimerafab: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
   adjustedSpriteSize: {x: 1, y: 0, z: 0}
   isDungeon: 0
+  buttons: []
 --- !u!114 &1836746889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +992,7 @@ MonoBehaviour:
   - {fileID: 7561837016741100411, guid: 7c5edb2e7543e42edb803abcec7404cd, type: 3}
   - {fileID: 67492378404709233, guid: 6923e60f6c5d94358beb66bf93ea581c, type: 3}
   - {fileID: 12143122940241477, guid: 5fbf65ab482c0467f8fbb2e20a02ffff, type: 3}
+  - {fileID: 477431774848948009, guid: d3c1a94258271494f8b53045862d8126, type: 3}
 --- !u!1 &1900816542
 GameObject:
   m_ObjectHideFlags: 0
