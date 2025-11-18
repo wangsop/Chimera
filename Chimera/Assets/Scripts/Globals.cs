@@ -8,6 +8,7 @@ using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.UI;
+
 //DO NOT EDIT!!!!! READ ONLY
 [DefaultExecutionOrder(-150)]
 public class Globals : MonoBehaviour
