@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c7ab67a02792b824dbd77b16c81349a3
+guid: 71081168502284280a9d51a0c6b262a0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7733575895468818240
-    second: Screenshot 2025-11-17 191546_0
+      213: 6454801921181540540
+    second: combat_ability_dead_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screenshot 2025-11-17 191546_0
+      name: combat_ability_dead_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 40
-        height: 26
+        x: 18
+        y: 19
+        width: 82
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04f31fc7d4e235b60800000000000000
-      internalID: 7733575895468818240
+      spriteID: cb0e887f520149950800000000000000
+      internalID: 6454801921181540540
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Screenshot 2025-11-17 191546_0: 7733575895468818240
+      combat_ability_dead_0: 6454801921181540540
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

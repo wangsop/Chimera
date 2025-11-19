@@ -29,6 +29,8 @@ public class PartyGenerateScript : MonoBehaviour
                 Debug.Log("Chimeras[i] is null");
                 continue;
             }
+
+            Debug.Log(ChimeraParty.Chimeras[i]);
             /*
             GameObject pref = (GameObject)Resources.Load(Globals.Chimeras[i]);
             if (pref == null)

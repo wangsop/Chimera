@@ -17,10 +17,12 @@ public static class ChimeraParty
     }
     */
     public static List<NewChimeraStats> Chimeras = new List<NewChimeraStats>();
+    public static List<bool> isDead = new List<bool>();
 
     public static void AddChimeraToParty(NewChimeraStats chimera)
     {
         Chimeras.Add(chimera);
+        isDead.Add(false);
     }
 
     public static bool IsChimeraInParty(NewChimeraStats newChimera)
@@ -36,12 +38,14 @@ public static class ChimeraParty
     }
     public static void RemoveChimera(NewChimeraStats deadChimera)
     {
-        foreach (NewChimeraStats chimera in Chimeras)
+        for (int i = 0; i < Chimeras.Count; i++)
         {
+            NewChimeraStats chimera = Chimeras[i];
             if (chimera.Equals(deadChimera))
             {
                 Chimeras.Remove(chimera);
-                Debug.Log("removed a chimera for dying");
+                isDead[i] = true;
+                Debug.Log("Removed chimera " + chimera + " for dying");
                 Globals.currentlyDeadChimeras++;
                 Globals glob = UnityEngine.Object.FindFirstObjectByType<Globals>();
                 glob.removeChimera(chimera);
