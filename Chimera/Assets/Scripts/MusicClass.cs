@@ -10,8 +10,12 @@ public class MusicClass : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip combatTrack1;
-    public AudioClip ninaTheme;
     public AudioClip combatTrack2;
+    public AudioClip combatTrack3;
+    public AudioClip ninaTheme;
+    public AudioClip titleTrack;
+    public AudioClip labAmbience;
+    public AudioClip labTheme;
 
     private void Reset()
     {
@@ -36,16 +40,19 @@ public class MusicClass : MonoBehaviour
         switch (scene.name)
         {
             case "ProLevel1":
-                PlayMusic(combatTrack1);
+                PlayMusic(combatTrack3);
+                break;
+            case "ProLevel2":
+                PlayMusic(combatTrack2);
                 break;
             case "Tutorial":
                 PlayMusic(combatTrack1);
                 break;
             case "Title":
-                PlayMusic(ninaTheme);
+                PlayMusic(titleTrack);
                 break;
             default:
-                PlayMusic(combatTrack2);
+                PlayMusic(labTheme);
                 break;
         }
     }

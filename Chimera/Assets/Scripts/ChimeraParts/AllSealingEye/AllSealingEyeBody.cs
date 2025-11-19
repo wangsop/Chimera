@@ -6,7 +6,7 @@ public class AllSealingEyeBody : Body
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Initialize(){
-        health = 15;
+        health = 45;
         base.Initialize();
     }
     protected override void Update(){

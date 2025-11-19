@@ -6,8 +6,7 @@ public class StuartBody : Body
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Initialize(){
-        index = 4;
-        health = 7;
+        health = 33;
         base.Initialize();
     }
     protected override void Update(){

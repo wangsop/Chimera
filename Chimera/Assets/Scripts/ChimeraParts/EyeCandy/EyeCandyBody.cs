@@ -6,8 +6,7 @@ public class EyeCandyBody : Body
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Initialize(){
-        index = 3;
-        health = 2;
+        health = 25;
         base.Initialize();
     }
     protected override void Update(){

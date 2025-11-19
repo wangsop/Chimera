@@ -73,6 +73,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 184152887304058226}
   m_SourcePrefab: {fileID: 100100000, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
+--- !u!70 &3664482277409037550 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3322994467588331629, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
+  m_PrefabInstance: {fileID: 2073765705263531139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3902956181355501211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3093246287781483032, guid: 91803b2b67f09434282d1bba34f1a550, type: 3}
@@ -116,7 +121,7 @@ MonoBehaviour:
   timeSinceLastTick: 0
   status_effect: {fileID: 0}
   Chimerafab: {fileID: 0}
-  trig: {fileID: 0}
-  attackRange: 15
+  trig: {fileID: 3664482277409037550}
+  attackRange: 2
   speed: 300
   level: 1

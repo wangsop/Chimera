@@ -6,8 +6,7 @@ public class PalacellBody : Body
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Initialize(){
-        index = 5;
-        health = 15;
+        health = 50;
         base.Initialize();
     }
     protected override void Update(){
