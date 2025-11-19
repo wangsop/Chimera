@@ -18,7 +18,7 @@ public class DungeonUIManager : MonoBehaviour
             GameObject ability = abilityContainers[i];
             if (i < Globals.party_indexes.Count)
             {
-                NewChimeraStats chimera = ChimeraParty.Chimeras[i];
+                NewChimeraStats chimera = Globals.FindChimeraInPartyByIndex(i);
                 Debug.Log(chimera);
                 GameObject chimera_head = chimera.Head;
                 GameObject chimera_body = chimera.Body;
@@ -45,6 +45,8 @@ public class DungeonUIManager : MonoBehaviour
 
                 TMP_Text tmp = name.GetComponent<TMP_Text>();
                 tmp.text = Globals.FindChimeraInPartyByIndex(i).Name;
+
+                button.GetComponent<Button>().onClick.AddListener(() => Globals.ChimeraAbility(i));
 
                 starting_chimeras.Add(chimera);
             }

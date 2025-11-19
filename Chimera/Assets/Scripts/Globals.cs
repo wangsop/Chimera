@@ -96,7 +96,10 @@ public class Globals : MonoBehaviour
             }
             for (int i = party_indexes.Count; i < 5; i++)
             {
-                buttons[i].gameObject.SetActive(false);
+                if (buttons[i] != null)
+                {
+                    buttons[i].gameObject.SetActive(false);
+                }
             }
         }
     } 
@@ -159,40 +162,40 @@ public class Globals : MonoBehaviour
     }*/
     public static void ChimeraAbility(int x){
         //BIG ISSUE HERE COME BACK chimeras die during combat, party_indexes becomes out of date/out of range of the gameobjs
-        NewChimeraStats chimera = chimerasInParty[x];
-        GameObjectChimera temp = active_party_objs[chimera];
-        if (temp == null)
+        if (x > -1 && x < chimerasInParty.Length)
         {
-            Debug.Log("This chimera is dead");
-            return;
-        }
-        GameObject head_object = temp.Head;
-        if (head_object == null)
-        {
-            return;
-        }
-        Head h = head_object.GetComponent<Head>();
-        if (h != null)
-        {
-            if (energy >= 10)
+            NewChimeraStats chimera = chimerasInParty[x];
+            Debug.Log(chimera);
+            GameObjectChimera temp = active_party_objs[chimera];
+            if (temp == null)
             {
-                head_object.GetComponent<Animator>().SetTrigger("Ability");
-                h.UseAbility();
-                energy -= 10;
+                Debug.Log("This chimera is dead");
+                return;
             }
-            else
+            GameObject head_object = temp.Head;
+            if (head_object == null)
             {
-                Debug.Log("Not enough energy!");
+                return;
+            }
+            Head h = head_object.GetComponent<Head>();
+            if (h != null)
+            {
+                if (energy >= 10)
+                {
+                    head_object.GetComponent<Animator>().SetTrigger("Ability");
+                    h.UseAbility();
+                    energy -= 10;
+                }
+                else
+                {
+                    Debug.Log("Not enough energy!");
+                }
             }
         }
     }
     public void removeChimera(NewChimeraStats chimera)
     {
-        int idx = Array.IndexOf(chimerasInParty, chimera);
-        if (idx >= 0 && idx < buttons.Length)
-        {
-            buttons[idx].gameObject.SetActive(false);
-        }
+        Debug.Log("Removed Chimera");
 
     }
 

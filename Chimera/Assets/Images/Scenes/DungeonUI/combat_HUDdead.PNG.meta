@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      combat_HUDdead_0: 5313491707549774360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

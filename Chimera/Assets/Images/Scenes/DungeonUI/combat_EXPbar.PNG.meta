@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      combat_EXPbar_0: -227523340332753709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
