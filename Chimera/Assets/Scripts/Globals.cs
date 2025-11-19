@@ -14,7 +14,7 @@ using UnityEngine.UI;
 public class Globals : MonoBehaviour
 {
     public static List<string> Chimeras = new List<string>();
-    public static List<GameObject> party = new List<GameObject>();
+    public static List<GameObjectChimera> party = new List<GameObjectChimera>();
     public static Dictionary<NewChimeraStats, GameObjectChimera> active_party_objs = new Dictionary<NewChimeraStats, GameObjectChimera>();
     public static List<NewChimeraStats> party_game_objs = new List<NewChimeraStats>();
     public static List<int> party_indexes = new List<int>();
@@ -49,6 +49,7 @@ public class Globals : MonoBehaviour
             //initialize all chimeras in party
             Vector3 add = new Vector3(0.5f, 0.5f, 0);
             Vector3 adjust = new Vector3(0, 0, -1);
+            party = new List<GameObjectChimera>();
             /*
             foreach (int index in party_indexes)
             {
@@ -91,11 +92,15 @@ public class Globals : MonoBehaviour
                 GameObject newHead = Instantiate(chimera.Head, newChimera.transform.position - adjustedSpriteSize, Quaternion.identity, newChimera.transform);
                 GameObject newBody = Instantiate(chimera.Body, newChimera.transform.position, Quaternion.identity, newChimera.transform);
                 GameObject newTail = Instantiate(chimera.Tail, newChimera.transform.position + adjustedSpriteSize, Quaternion.identity, newChimera.transform);
-                active_party_objs.Add(chimera, new GameObjectChimera(newHead, newBody, newTail, newChimera));
+                GameObjectChimera active_chimera = new GameObjectChimera(newHead, newBody, newTail, newChimera);
+                active_party_objs.Add(chimera, active_chimera);
             }
             for (int i = party_indexes.Count; i < 5; i++)
             {
-                buttons[i].gameObject.SetActive(false);
+                if (buttons[i] != null)
+                {
+                    buttons[i].gameObject.SetActive(false);
+                }
             }
         }
     } 
@@ -158,40 +163,40 @@ public class Globals : MonoBehaviour
     }*/
     public static void ChimeraAbility(int x){
         //BIG ISSUE HERE COME BACK chimeras die during combat, party_indexes becomes out of date/out of range of the gameobjs
-        NewChimeraStats chimera = chimerasInParty[x];
-        GameObjectChimera temp = active_party_objs[chimera];
-        if (temp == null)
+        if (x > -1 && x < chimerasInParty.Length)
         {
-            Debug.Log("This chimera is dead");
-            return;
-        }
-        GameObject head_object = temp.Head;
-        if (head_object == null)
-        {
-            return;
-        }
-        Head h = head_object.GetComponent<Head>();
-        if (h != null)
-        {
-            if (energy >= 10)
+            NewChimeraStats chimera = chimerasInParty[x];
+            Debug.Log(chimera);
+            GameObjectChimera temp = active_party_objs[chimera];
+            if (temp == null)
             {
-                head_object.GetComponent<Animator>().SetTrigger("Ability");
-                h.UseAbility();
-                energy -= 10;
+                Debug.Log("This chimera is dead");
+                return;
             }
-            else
+            GameObject head_object = temp.Head;
+            if (head_object == null)
             {
-                Debug.Log("Not enough energy!");
+                return;
+            }
+            Head h = head_object.GetComponent<Head>();
+            if (h != null)
+            {
+                if (energy >= 10)
+                {
+                    head_object.GetComponent<Animator>().SetTrigger("Ability");
+                    h.UseAbility();
+                    energy -= 10;
+                }
+                else
+                {
+                    Debug.Log("Not enough energy!");
+                }
             }
         }
     }
     public void removeChimera(NewChimeraStats chimera)
     {
-        int idx = Array.IndexOf(chimerasInParty, chimera);
-        if (idx >= 0 && idx < buttons.Length)
-        {
-            buttons[idx].gameObject.SetActive(false);
-        }
+        Debug.Log("Removed Chimera");
 
     }
 
@@ -207,6 +212,15 @@ public class Globals : MonoBehaviour
             return null;
         }
         return party_game_objs[party_indexes[i]];
+    }
+
+    public static GameObjectChimera FindChimeraGameObjectInPartyByIndex(int i)
+    {
+        if (i >= party_indexes.Count)
+        {
+            return null;
+        }
+        return active_party_objs[FindChimeraInPartyByIndex(i)];
     }
 
 }
