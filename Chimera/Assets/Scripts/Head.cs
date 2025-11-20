@@ -5,6 +5,7 @@ public abstract class Head : BodyPart
     public string ability_description = "Ability description has not been implemented yet";
     public string scientist_description = "Scientist description not been implemented yet";
     public string ability_name = "Sample Name";
+    public Creature creature;
     //public abstract int rarity { get; set; }
     public int rarity = 1;
 

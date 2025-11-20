@@ -12,11 +12,11 @@ public abstract class Creature : Damageable_Testing, Entity
     //protected int health = 10;
     //protected int maxHealth = 10;
     protected int attack = 1;
-    protected float attackSpeed = 0.7f; //attack speed in time between attacks
+    public float attackSpeed = 0.7f; //attack speed in time between attacks
     //[SerializeField] protected Collider2D collisions;
     protected Rigidbody2D rgb;
     [SerializeField] protected Collider2D trig;
-    protected Creature aggro;
+    public Creature aggro;
     protected float clock = 0;
     protected List<Creature> inTrigger;
     [SerializeField] protected int attackRange = 2;
@@ -72,6 +72,7 @@ public abstract class Creature : Damageable_Testing, Entity
         head = gameObject.GetComponentInChildren<Head>();
         body = gameObject.GetComponentInChildren<Body>();
         tail = gameObject.GetComponentInChildren<Tail>();
+        head.creature = this;
         trig = gameObject.GetComponent<Collider2D>();
         this.CurrentHealth = body.getHealth();
         this.MaxHealth = body.getHealth();
