@@ -42,6 +42,7 @@ public class Globals : MonoBehaviour
         if (isDungeon)
         {
             energy = 0;
+            numKills = 0;
             if (levelSelected == 0)
             {
                 energy += 50;
