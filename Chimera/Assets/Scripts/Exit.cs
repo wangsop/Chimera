@@ -13,6 +13,7 @@ public class Exit : MonoBehaviour
     {
         Time.timeScale = 1f; //start the game
         endCanvas.SetActive(false);
+        ended = false;
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class Exit : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Exit found");
         if (other.gameObject.GetComponent<ChimeraScript>() == null)
         {
             return;

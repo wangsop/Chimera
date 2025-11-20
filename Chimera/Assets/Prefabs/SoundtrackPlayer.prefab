@@ -43,8 +43,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a13a6c85d2e94476ad5f55d70b955ba, type: 3}
-  m_Resource: {fileID: 8300000, guid: 6a13a6c85d2e94476ad5f55d70b955ba, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd17937e8437f7f45a986e3ac681c9e8, type: 3}
+  m_Resource: {fileID: 8300000, guid: bd17937e8437f7f45a986e3ac681c9e8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
@@ -145,5 +145,9 @@ MonoBehaviour:
   slider: {fileID: 0}
   textField: {fileID: 0}
   combatTrack1: {fileID: 8300000, guid: b016175335603c74f8dc590bf6b0de4f, type: 3}
-  ninaTheme: {fileID: 8300000, guid: 6d9a07825f6407541bb3617885149314, type: 3}
   combatTrack2: {fileID: 8300000, guid: b2bb29c25a9801a41b61a942bc32e6ed, type: 3}
+  combatTrack3: {fileID: 8300000, guid: a915aba66c6f5a7418a8f6fec59582f3, type: 3}
+  ninaTheme: {fileID: 8300000, guid: 6d9a07825f6407541bb3617885149314, type: 3}
+  titleTrack: {fileID: 8300000, guid: 2859fca439386ec41b1fe6a164f90f42, type: 3}
+  labAmbience: {fileID: 8300000, guid: 8c77570bea18d054c8bc66c981e41d26, type: 3}
+  labTheme: {fileID: 8300000, guid: bd17937e8437f7f45a986e3ac681c9e8, type: 3}

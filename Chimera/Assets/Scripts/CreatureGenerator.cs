@@ -147,7 +147,6 @@ public class CreatureGenerator : MonoBehaviour
             Globals.currency -= 100;
             if (Globals.currency < 100)
             {
-                Globals.currency = 0;
                 try
                 {
                     GachaButton.GetComponentInChildren<TMP_Text>().text = "Out of Biogu";

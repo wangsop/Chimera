@@ -81,7 +81,7 @@ public class DialogueManager : MonoBehaviour
             if (musicplayer.Length > 0 && musicplayer[musicplayer.Length - 1] != null)
             {
                 MusicClass mp = musicplayer[musicplayer.Length - 1];
-                mp.PlayMusic(mp.combatTrack2);
+                mp.PlayMusic(mp.labTheme);
             }
         } else
         {
