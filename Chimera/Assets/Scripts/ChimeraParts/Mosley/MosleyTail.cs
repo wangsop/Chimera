@@ -16,7 +16,11 @@ public class MosleyTail : Tail
 
     public override void Attack(Creature target)
     {
-        meowSource.PlayOneShot(meowClips[Random.Range(0, meowClips.Length)]);
+        if (Random.Range(0, 100) < 10)
+        {
+            meowSource.PlayOneShot(meowClips[Random.Range(0, meowClips.Length)]);
+        }
+        
         target.Hit(attack, new Vector2(0, 0));
     }
 }

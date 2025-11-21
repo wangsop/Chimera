@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: 11d0cc1492c014f4698ae28194bda9da
+guid: fc107b2fdca324fe9bcbf222b476e2a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1306427303325638221
-    second: SelectionCursorHover_0
+      213: -6339815598454062718
+    second: IMG_8653 - Yenzi _HS_0
+  - first:
+      213: 8380976729410243557
+    second: IMG_8653 - Yenzi _HS_1
+  - first:
+      213: -7394165716293450376
+    second: IMG_8653 - Yenzi _HS_2
+  - first:
+      213: 2556712900583269235
+    second: IMG_8653 - Yenzi _HS_3
+  - first:
+      213: -7487924415617863903
+    second: IMG_8653 - Yenzi _HS_4
+  - first:
+      213: -5788507439963017648
+    second: IMG_8653 - Yenzi _HS_5
+  - first:
+      213: -6984307527248695201
+    second: IMG_8653 - Yenzi _HS_6
+  - first:
+      213: 117134819979931467
+    second: IMG_8653 - Yenzi _HS_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +121,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SelectionCursorHover_0
+      name: IMG_8653 - Yenzi _HS_0
       rect:
         serializedVersion: 2
-        x: 685
-        y: 650
-        width: 180
-        height: 177
+        x: 0
+        y: 0
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d4e989be5bc512210800000000000000
-      internalID: 1306427303325638221
+      spriteID: 985e64d2d6a74411993a437fd61d72c7
+      internalID: -608134720
       vertices: []
       indices: 
       edges: []
@@ -125,7 +146,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 16658a09b17444f02838387103945e2b
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +156,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SelectionCursorHover_0: 1306427303325638221
+      IMG_8653 - Yenzi _HS_0: -608134720
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
