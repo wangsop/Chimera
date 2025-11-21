@@ -16,6 +16,9 @@ public class MusicClass : MonoBehaviour
     public AudioClip titleTrack;
     public AudioClip labAmbience;
     public AudioClip labTheme;
+    public AudioClip HeartTrack1;
+    public AudioClip HeartTrack2;
+    public AudioClip HeartTrack3;
 
     private void Reset()
     {
@@ -44,6 +47,9 @@ public class MusicClass : MonoBehaviour
                 break;
             case "ProLevel2":
                 PlayMusic(combatTrack2);
+                break;
+            case "ProLevel3":
+                PlayMusic(HeartTrack1);
                 break;
             case "Tutorial":
                 PlayMusic(combatTrack1);

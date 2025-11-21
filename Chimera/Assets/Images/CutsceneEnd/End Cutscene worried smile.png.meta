@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2c7ad77fdce970745831c72acfa7d9f7
+guid: e96f1865f43e7c6429fd8ccab2d54cd6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7148032129697586158
-    second: Cutscene #1 Frown_0
+      213: -6688648066786580137
+    second: End Cutscene worried smile_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cutscene #1 Frown_0
+      name: End Cutscene worried smile_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 214eb4266a61dcc90800000000000000
-      internalID: -7148032129697586158
+      spriteID: 759259f65062d23a0800000000000000
+      internalID: -6688648066786580137
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      End Cutscene worried smile_0: -6688648066786580137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

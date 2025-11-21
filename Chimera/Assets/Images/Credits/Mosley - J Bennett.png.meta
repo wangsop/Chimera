@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8870756f808eef64887490648b7ce645
+guid: 777289c9680a14dc8b6a09b033cfd249
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6755302191397315059
-    second: Cutscene #1 Frown #2_0
+      213: 4172414234763115049
+    second: Mosley - J Bennett_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cutscene #1 Frown #2_0
+      name: Mosley - J Bennett_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 6
+        y: 44
+        width: 182
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d0e5853b2785042a0800000000000000
-      internalID: -6755302191397315059
+      spriteID: 92ab6ded3a467e930800000000000000
+      internalID: 4172414234763115049
       vertices: []
       indices: 
       edges: []
