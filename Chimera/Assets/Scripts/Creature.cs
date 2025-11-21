@@ -88,8 +88,8 @@ public abstract class Creature : Damageable_Testing, Entity
             attack = tail.getAttack();
         }
 
-        // event responses
-        EyeCandyHead.onEyeCandyTriggerAggro.AddListener(OnEyeCandyTriggerAggroResponse);
+            // event responses
+            EyeCandyHead.onEyeCandyTriggerAggro.AddListener(OnEyeCandyTriggerAggroResponse);
         EyeCandyHead.onEyeCandyTriggerDisableAggro.AddListener(OnEyeCandyTriggerDisableAggroResponse);
         EyeCandyHead.onEyeCandyTriggerReenableAggro.AddListener(OnEyeCandyTriggerReenableAggroResponse);
         HorselessHead.onHorselessAbility.AddListener(OnHorselessAbilityResponse);

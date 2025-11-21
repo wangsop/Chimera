@@ -8,7 +8,7 @@ public class GalvanigarHead : Head
     public override void UseAbility(){
         if (creature != null && creature.aggro != null)
         {
-            creature.aggro.Hit(100, Globals.default_kb);
+            creature.aggro.Hit(50, Globals.default_kb);
             if (Random.Range(0, 1) < 0.1f)
             {
                 creature.Die();
