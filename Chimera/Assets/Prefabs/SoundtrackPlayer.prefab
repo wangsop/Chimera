@@ -151,3 +151,6 @@ MonoBehaviour:
   titleTrack: {fileID: 8300000, guid: 2859fca439386ec41b1fe6a164f90f42, type: 3}
   labAmbience: {fileID: 8300000, guid: 8c77570bea18d054c8bc66c981e41d26, type: 3}
   labTheme: {fileID: 8300000, guid: bd17937e8437f7f45a986e3ac681c9e8, type: 3}
+  HeartTrack1: {fileID: 8300000, guid: e9bbebaad1e2ed745bc16cc52c42192b, type: 3}
+  HeartTrack2: {fileID: 8300000, guid: 2fe179134d94dd64ba30a53ac91b4c43, type: 3}
+  HeartTrack3: {fileID: 8300000, guid: b56bb24216960b1498f99b0d8b226418, type: 3}

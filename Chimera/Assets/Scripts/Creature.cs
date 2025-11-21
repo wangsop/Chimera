@@ -188,6 +188,7 @@ public abstract class Creature : Damageable_Testing, Entity
         } else
         {
             Globals.numKills++;
+            Globals.energy += 5;
             if (sfxplayer != null && sfxplayer.Length > 0)
             {
                 sfxplayer[sfxplayer.Length - 1].Yelp();
