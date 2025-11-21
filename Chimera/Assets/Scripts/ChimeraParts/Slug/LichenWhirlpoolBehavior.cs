@@ -4,7 +4,6 @@ public class LichenWhirlpoolBehavior : MonoBehaviour
 {
     [SerializeField] private float normalWhirlpoolSpeed = 40;
     [SerializeField] private float destroyTime = 2;
-    [SerializeField] private LayerMask whatDestroysWhirlpool;
 
     private Rigidbody2D rb;
 
@@ -19,13 +18,13 @@ public class LichenWhirlpoolBehavior : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // checks to see if what the whirlpool collided with was within the LayerMask
-        if ((whatDestroysWhirlpool.value & (1 << collision.gameObject.layer)) > 0)
+        if (collision.gameObject.GetComponent<MonsterScript>() != null)
         {
             // can add particles, sfx, etc. here
 
             // damage enemies
-
+            MonsterScript enemy = collision.gameObject.GetComponent<MonsterScript>();
+            enemy.Hit(enemy.MaxHealth / 2, Globals.default_kb);
             // destroy whirlpool
             Destroy(gameObject);
 
