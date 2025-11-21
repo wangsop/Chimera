@@ -12,11 +12,11 @@ public abstract class Creature : Damageable_Testing, Entity
     //protected int health = 10;
     //protected int maxHealth = 10;
     protected int attack = 1;
-    protected float attackSpeed = 0.7f; //attack speed in time between attacks
+    public float attackSpeed = 0.7f; //attack speed in time between attacks
     //[SerializeField] protected Collider2D collisions;
     protected Rigidbody2D rgb;
     [SerializeField] protected Collider2D trig;
-    protected Creature aggro;
+    public Creature aggro;
     protected float clock = 0;
     protected List<Creature> inTrigger;
     [SerializeField] protected int attackRange = 2;
@@ -72,20 +72,24 @@ public abstract class Creature : Damageable_Testing, Entity
         head = gameObject.GetComponentInChildren<Head>();
         body = gameObject.GetComponentInChildren<Body>();
         tail = gameObject.GetComponentInChildren<Tail>();
-        trig = gameObject.GetComponent<Collider2D>();
-        this.CurrentHealth = body.getHealth();
-        this.MaxHealth = body.getHealth();
-        attack = tail.getAttack();
         rgb = GetComponent<Rigidbody2D>();
         inTrigger = new List<Creature>();
-        head.GetComponent<Animator>().SetBool("IsChimera", !hostile);
-        body.GetComponent<Animator>().SetBool("IsChimera", !hostile);
-        tail.GetComponent<Animator>().SetBool("IsChimera", !hostile);
-        attackSpeed = tail.getAttackSpeed();
-        speed = body.getSpeed();
+        if (head != null)
+        {
+            head.GetComponent<Animator>().SetBool("IsChimera", !hostile);
+            body.GetComponent<Animator>().SetBool("IsChimera", !hostile);
+            tail.GetComponent<Animator>().SetBool("IsChimera", !hostile);
+            attackSpeed = tail.getAttackSpeed();
+            speed = body.getSpeed();
+            head.creature = this;
+            trig = gameObject.GetComponent<Collider2D>();
+            this.CurrentHealth = body.getHealth();
+            this.MaxHealth = body.getHealth();
+            attack = tail.getAttack();
+        }
 
-        // event responses
-        EyeCandyHead.onEyeCandyTriggerAggro.AddListener(OnEyeCandyTriggerAggroResponse);
+            // event responses
+            EyeCandyHead.onEyeCandyTriggerAggro.AddListener(OnEyeCandyTriggerAggroResponse);
         EyeCandyHead.onEyeCandyTriggerDisableAggro.AddListener(OnEyeCandyTriggerDisableAggroResponse);
         EyeCandyHead.onEyeCandyTriggerReenableAggro.AddListener(OnEyeCandyTriggerReenableAggroResponse);
         HorselessHead.onHorselessAbility.AddListener(OnHorselessAbilityResponse);
@@ -96,7 +100,6 @@ public abstract class Creature : Damageable_Testing, Entity
     // Update is called once per frame
     protected void Update()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 30f);
         float healthPercent = (float)this.CurrentHealth / (float)this.MaxHealth;
         OnHealthChanged(healthPercent);
         if (this.CurrentHealth <= 0)
@@ -106,10 +109,6 @@ public abstract class Creature : Damageable_Testing, Entity
             {
                 Globals.energy += 5;
             }
-        }
-        foreach (Collider col in colliders)
-        {
-            Debug.Log("Overlap detected with: " + col.gameObject.name);
         }
         if (aggro != null && this.canMove)
         {
@@ -141,10 +140,6 @@ public abstract class Creature : Damageable_Testing, Entity
             rgb.linearVelocity = Vector2.zero;
             rgb.MovePosition(this.transform.position);
         }
-        else
-        {
-            //do patrol behaviors for monster, stay still for chimera
-        }
         if (Afflicted)
         {
             if (timeSinceLastTick > status_effect.TimeBetweenTicks && DamageTicksLeft > 0)
@@ -164,52 +159,28 @@ public abstract class Creature : Damageable_Testing, Entity
         }
     }
 
-    /*public bool takeDamage(int dmg, Status_Effect effect=null)
+    public void heal(float percent)
     {
-        Debug.Log(hostile ? "Enemy took damage" : "Ally took damage");
-        dmg = body.takeDamage(dmg);
-        Vector2 kb = new Vector2(0.5f, 0.5f);
-        if (effect != null)
+        this.CurrentHealth += (int)(percent*MaxHealth);
+        if (CurrentHealth > MaxHealth)
         {
-            this.Hit(dmg, kb, effect, true);
+            CurrentHealth = MaxHealth;
         }
-        else
-        {
-            this.Hit(dmg, kb);
-        }
-        float healthPercent = (float)this.CurrentHealth / (float)this.MaxHealth;
-        OnHealthChanged(healthPercent);
-        if (this.CurrentHealth <= 0)
-        {
-            Die();
-            return true;
-        }
-        return false;
     }
-
-    public void Attack(Creature target)
-    {
-        Debug.Log(hostile ? "Enemy attacked" : "Ally attacked");
-        bool died = tail.Attack(target);
-        if (died)
-        {
-            aggro = null;
-            reAggro();
-            if (this.hostile == false)
-            {
-                Globals.energy += 5;
-            }
-        }
-    }*/
 
     public void Die()
     {
+        if (this.hostile == false && head == null)
+        {
+            Destroy(this.gameObject);
+        }
         SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
         if (this.hostile == false)
         {
             //find this creature in inventory and remove them
             NewChimeraStats thisChimera = new NewChimeraStats(this.head.gameObject, this.body.gameObject, this.tail.gameObject, Chimerafab);
             ChimeraParty.RemoveChimera(thisChimera);
+            
             if (sfxplayer != null && sfxplayer.Length > 0)
             {
                 sfxplayer[sfxplayer.Length - 1].Cry();
@@ -222,7 +193,7 @@ public abstract class Creature : Damageable_Testing, Entity
                 sfxplayer[sfxplayer.Length - 1].Yelp();
             }
         }
-            head.GetComponent<Animator>().SetBool("IsAlive", false);
+        head.GetComponent<Animator>().SetBool("IsAlive", false);
         body.GetComponent<Animator>().SetBool("IsAlive", false);
         tail.GetComponent<Animator>().SetBool("IsAlive", false);
         Destroy(this.gameObject);
@@ -266,6 +237,11 @@ public abstract class Creature : Damageable_Testing, Entity
         }
     }
 
+    protected void HealthChange()
+    {
+        float healthPercent = (float)this.CurrentHealth / (float)this.MaxHealth;
+        OnHealthChanged(healthPercent);
+    }
     protected void reAggro()
     {
         if (inTrigger.Count > 0)

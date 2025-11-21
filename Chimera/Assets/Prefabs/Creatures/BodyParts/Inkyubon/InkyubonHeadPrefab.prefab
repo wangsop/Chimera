@@ -98,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_Name
-      value: LichenSlugHeadPrefab Variant
+      value: InkyubonHeadPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3785852519710649892, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
@@ -131,4 +131,6 @@ MonoBehaviour:
   ability_description: Ability description has not been implemented yet
   scientist_description: Scientist description not been implemented yet
   ability_name: Sample Name
+  creature: {fileID: 0}
   rarity: 1
+  baby: {fileID: 4208651656262411453, guid: 39a45cd412281814c8a6b9e188dc6864, type: 3}

@@ -98,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7008146949477489273, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
       propertyPath: m_Name
-      value: LichenSlugHeadPrefab Variant
+      value: BelcherHeadPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3785852519710649892, guid: b43ee5bd529c3ae4fa021e0b19165d3f, type: 3}
@@ -131,4 +131,7 @@ MonoBehaviour:
   ability_description: Ability description has not been implemented yet
   scientist_description: Scientist description not been implemented yet
   ability_name: Sample Name
+  creature: {fileID: 0}
   rarity: 1
+  freeze_effect: {fileID: 11400000, guid: 835eafd4d5b973441afb9c0fc1cfad5c, type: 2}
+  dot_effect: {fileID: 11400000, guid: 20330819b6aba0d4f859c06f315908f5, type: 2}

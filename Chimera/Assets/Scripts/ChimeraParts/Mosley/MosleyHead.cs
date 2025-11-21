@@ -19,7 +19,7 @@ public class MosleyHead : Head
         Debug.Log("Used Mosley Ability");
         Creature thisCreature = this.GetComponentInParent<Creature>();
         Tail tail = thisCreature.GetComponentInChildren<Tail>();
-        tail.setAttack(tail.getAttack() + 999);
+        tail.setAttack(tail.getAttack() + 20);
 
         SFXPlayer[] sfxplayer = UnityEngine.Object.FindObjectsByType<SFXPlayer>(FindObjectsSortMode.InstanceID);
         if (sfxplayer.Length > 0 && sfxplayer.Length >= 1)
@@ -46,7 +46,7 @@ public class MosleyHead : Head
         }
         Creature thisCreature = this.GetComponentInParent<Creature>();
         Tail tail = thisCreature.GetComponentInChildren<Tail>();
-        tail.setAttack(tail.getAttack() - 999);
+        tail.setAttack(tail.getAttack() - 20);
         abilityActive = false;
         Destroy(fireAnimation);
     }

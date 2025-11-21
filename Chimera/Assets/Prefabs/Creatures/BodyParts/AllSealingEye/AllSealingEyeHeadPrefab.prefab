@@ -135,4 +135,6 @@ MonoBehaviour:
   ability_description: Ability description has not been implemented yet
   scientist_description: Scientist description not been implemented yet
   ability_name: Sample Name
+  creature: {fileID: 0}
   rarity: 1
+  stungaze: {fileID: 11400000, guid: 0793d66a487d3f94a8d7fcb348ef6bbc, type: 2}
