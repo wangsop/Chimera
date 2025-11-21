@@ -19,6 +19,8 @@ public class NewChimeraStats
     public int level;
     public int exp;
     //exp scales linearly; every level costs 100 more exp to gain
+    public int rarity;
+    public string ability_name;
 
     #endregion
 
@@ -32,6 +34,9 @@ public class NewChimeraStats
         BaseObject = baseobj;
         level = 1;
         exp = 0;
+        Head head_obj = h.GetComponent<Head>();
+        rarity = head_obj.rarity;
+        ability_name = head_obj.ability_name;
         Name = $"{GetPartName(Head.name, 0)}-{GetPartName(Body.name, 1)}-{GetPartName(Tail.name, 2)}";
     }
     #endregion
