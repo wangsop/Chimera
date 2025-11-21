@@ -3,10 +3,17 @@ using UnityEngine;
 [DefaultExecutionOrder(-100)]
 public class AllSealingEyeHead : Head
 {
-    //public override int rarity { get; set; } = 1;
+    public Status_Effect stungaze;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void UseAbility(){
-        Debug.Log("Used All Sealing Eye Ability");
+        if (creature != null && creature.aggro != null)
+        {
+            creature.aggro.Hit(0, Globals.default_kb, stungaze, true);
+        }
+        else
+        {
+            Globals.energy += 10; //refund energy if no target
+        }
     }
     protected override void Initialize(){
         base.Initialize();
