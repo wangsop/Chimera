@@ -8,6 +8,7 @@ TagManager:
   - BodyPart
   - UIHealth
   - Chimera
+  - UIEventable
   layers:
   - Default
   - TransparentFX
