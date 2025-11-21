@@ -594,8 +594,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 55ba1df5796027140ab1dffa46967143, type: 2}
-  m_sharedMaterial: {fileID: 4964684708469772243, guid: 55ba1df5796027140ab1dffa46967143, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1606,7 +1606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6654975, y: 0.254}
   m_AnchorMax: {x: 0.74949753, y: 0.33560494}
-  m_AnchoredPosition: {x: 0.5239868, y: -0.51400757}
+  m_AnchoredPosition: {x: 0.5239868, y: -0.51397705}
   m_SizeDelta: {x: -7.6480103, y: -3.1679993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482868104
@@ -1656,7 +1656,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 73.25
+  m_fontSize: 77
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1846,11 +1846,36 @@ MonoBehaviour:
     - "...it\u2019s what you deserve anyways."
     - "...Nina wouldn\u2019t be dead if it weren\u2019t for you."
     - 
+  - strings:
+    - 'Nina: Daaad?'
+    - Not now, I'm busy.
+    - 'Nina: Dinner''s ready!'
+    - I'll be there in a minute.
+    - 'Nina: But you said that last time, and the time before that, and the time
+      before the time before that.'
+    - This is very important. The things we could use these monsters for!
+    - ....
+    - "Nina: But they\u2019re my friends...."
+    - ....
+    - "Nina: You\u2019re scaring me...."
+  - strings:
+    - "Adrenaline\u2026cortisol\u2026yes, of course, artificial fear! The beasts
+      will fight like cornered rats! An unstoppable army, if I can only figure out
+      how to control them...."
+    - 
+    - 
+    - 'Nina: Dad? Why is Nick locked up? Let him out!!'
+    - Nina? How did you get in here?! No, you need to leave, okay sweetheart? Dad
+      is working right now.
+    - "Nina: No!! Let him out, he\u2019s scared! "
+    - 
+    - "Doctor: No \u2014 NINA, NO!!"
+    - 
   images:
   - sprites:
     - {fileID: -7551176101055524867, guid: 94401496c8d037045b0ee6b0e7953366, type: 3}
     - {fileID: 0}
-    - {fileID: 1692370733642687572, guid: 336bf8626930e7e4f8fb893fc8db3fe5, type: 3}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 7057929263390365766, guid: 567d621de80df4362a8a44bbebe1291b, type: 3}
     - {fileID: 0}
@@ -1859,6 +1884,27 @@ MonoBehaviour:
     - {fileID: 7733575895468818240, guid: c7ab67a02792b824dbd77b16c81349a3, type: 3}
     - {fileID: 0}
     - {fileID: 7126129167007757848, guid: 54e341f79fca45241a954e5426c3fd3a, type: 3}
+  - sprites:
+    - {fileID: -3632507752497669855, guid: 57e583db4b800e74ea721a2dd1f3bc4f, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: -7148032129697586158, guid: 2c7ad77fdce970745831c72acfa7d9f7, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: -6755302191397315059, guid: 8870756f808eef64887490648b7ce645, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+  - sprites:
+    - {fileID: 6697692699820031604, guid: 36b4ace08a1169e4a83f69aa2e5b5066, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   background: {fileID: 2068323522}
 --- !u!1001 &1653229590
 PrefabInstance:
@@ -2001,7 +2047,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.4
+  m_fontSize: 58
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2273,7 +2319,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.35
+  m_fontSize: 55.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2361,7 +2407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.078, y: 0.057482965}
-  m_AnchoredPosition: {x: -0.19067383, y: 1.2999878}
+  m_AnchoredPosition: {x: -0.19067383, y: 1.3000488}
   m_SizeDelta: {x: -1.5812988, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964822466
@@ -2542,7 +2588,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 96.1
+  m_fontSize: 100
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

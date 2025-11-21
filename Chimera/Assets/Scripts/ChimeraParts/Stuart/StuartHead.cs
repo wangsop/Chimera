@@ -1,5 +1,7 @@
 using UnityEngine;
-
+using System;
+using System.Collections;
+using System.Collections.Generic;
 [DefaultExecutionOrder(-100)]
 public class StuartHead : Head
 {
@@ -7,7 +9,16 @@ public class StuartHead : Head
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public override void UseAbility(){
-        Debug.Log("Used Stuart Ability");
+        if (creature != null)
+        {
+            creature.attackSpeed *= 0.5f;
+            StartCoroutine(WaitEndAbility());
+        }
+    }
+    private IEnumerator WaitEndAbility()
+    {
+        yield return new WaitForSeconds(3.0f);
+        creature.attackSpeed *= 2.0f;
     }
     protected override void Initialize(){
         index = 4;

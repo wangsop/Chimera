@@ -134,4 +134,7 @@ MonoBehaviour:
   splash: {fileID: 1745935395977840466, guid: 65813e68706354b73a483822363db513, type: 3}
   ability_description: Ability description has not been implemented yet
   scientist_description: Scientist description not been implemented yet
+  ability_name: Sample Name
+  creature: {fileID: 0}
   rarity: 2
+  dmg_root: {fileID: 11400000, guid: b0d28cfc5d08ce543b9229cf3d4307e7, type: 2}
