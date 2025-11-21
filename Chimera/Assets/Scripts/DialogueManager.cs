@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
 {
     public GameObject canvas;
     public GameObject LabCanvas;
+    public GameObject EndCanvas;
     public TextMeshProUGUI dialogueText;
     public float typeSpeed = 0.1f;
     public List<StringListWrapper> lines = new List<StringListWrapper>(); //each row is a separate cutscene; each element is a separate line in that cutscene
@@ -32,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueText.text = string.Empty;
         canvas.SetActive(false);
+        EndCanvas.SetActive(false);
         if (Globals.highestClearedLevel > lastCleared)
         {
             MusicClass[] musicplayer = UnityEngine.Object.FindObjectsByType<MusicClass>(FindObjectsSortMode.InstanceID);
@@ -75,6 +77,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (index >= lines[lastCleared].strings.Count - 1)
         {
+            if (lastCleared == 4)
+            {
+                canvas.SetActive(false);
+                EndCanvas.SetActive(true);
+                return;
+            }
             canvas.SetActive(false);
             LabCanvas.SetActive(true);
             MusicClass[] musicplayer = UnityEngine.Object.FindObjectsByType<MusicClass>(FindObjectsSortMode.InstanceID);
