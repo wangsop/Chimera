@@ -20,6 +20,7 @@ public class NickHead : Head
         index = 2;
         ability_name = "Suffocate";
         ability_description = "Attacks an enemy with a vine tongue that applies a “strangulation” effect that stuns the enemy for a few seconds.";
+        scientist_description = "Nina named this one herself. She never did let me study it, in the end.";
         base.Initialize();
     }
 }

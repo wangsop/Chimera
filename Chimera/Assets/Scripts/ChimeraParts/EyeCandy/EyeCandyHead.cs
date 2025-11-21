@@ -42,6 +42,9 @@ public class EyeCandyHead : Head
     protected override void Initialize()
     {
         index = 3;
+        ability_name = "Hypnosis";
+        ability_description = "Makes all nearby enemies target it for a few seconds and ignore all other chimeras.";
+        scientist_description = "This unsettling creature has dangerous mind-control abilities. I've heard that those who spend too long near one will slowly go insane and begin to hallucinate themselves as an eyeball...definitely should keep Nina away.";
         thisCreature = GetComponentInParent<Creature>();
         base.Initialize();
     }

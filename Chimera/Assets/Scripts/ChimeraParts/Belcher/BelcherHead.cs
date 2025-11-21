@@ -17,6 +17,9 @@ public class BelcherHead : Head
         onHorselessAbility.Invoke(creature, ABILITY_RADIUS, ABILITY_DURATION, ABILITY_DAMAGE_PER_SECOND);
     }
     protected override void Initialize(){
+        ability_name = "Noxious Gas";
+        ability_description = "Any hostile monsters in a small radius will be poisoned and take continous damage over time.";
+        scientist_description = "This toxic beast should be handled with extreme care. Nina should be kept as far as possible from these; a Belcher's acidic mucus can even melt glass...";
         base.Initialize();
     }
 }

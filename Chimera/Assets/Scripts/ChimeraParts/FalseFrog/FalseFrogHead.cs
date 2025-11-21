@@ -24,6 +24,9 @@ public class FalseFrogHead : Head
         }
     }
     protected override void Initialize(){
+        ability_name = "Frogposter";
+        ability_description = "A tongue comes out of the chimera's hidden mouth. Chance to stun enemy.";
+        scientist_description = "A \"wolf in sheep's clothing\"; it's not a frog, but a horrid beast with a bulbous head and tail for fake eyes and a body that acts as a false head.It will take advantage of any creature foolish enough to believe its guise.";
         base.Initialize();
     }
 }

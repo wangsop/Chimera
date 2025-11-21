@@ -30,6 +30,9 @@ public class ArtillipedeHead : Head
     }
     protected override void Initialize()
     {
+        ability_name = "Full Steam Ahead";
+        ability_description = "Raise defenses, briefly becoming immune to approximately 33% of all attacks.";
+        scientist_description = "When threatened, will curl into a defensive shell and can stay in this form for many days. Otherwise easy to control.";
         index = 6;
         myDamageableTesting = (Damageable_Testing) GetComponentInParent<Creature>();
         base.Initialize();
