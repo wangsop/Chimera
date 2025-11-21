@@ -13,6 +13,7 @@ public class CreatureGenerator : MonoBehaviour
     public GameObject Location;
     public GameObject GachaButton;
     public GameObject BioguUI;
+    public GameObject[] Stars;
     public List<GameObject> Heads = new List<GameObject>();
     public List<GameObject> Bodies = new List<GameObject>();
     public List<GameObject> Tails = new List<GameObject>();
@@ -84,6 +85,10 @@ public class CreatureGenerator : MonoBehaviour
         {
             Debug.Log("Could not find Biogu!");
         }
+        for (int i = 0; i < 3; i++)
+        {
+            Stars[i].gameObject.SetActive(false);
+        }
     }
 
     [CanBeNull]
@@ -119,6 +124,20 @@ public class CreatureGenerator : MonoBehaviour
             Head head_script = head.GetComponent<Head>();
             Body body_script = body.GetComponent<Body>();
             Tail tail_script = tail.GetComponent<Tail>();
+
+            int rare = (int)((rarity[0] + rarity[1] + rarity[2]) / 3) + 1;
+            for (int i = 0; i < 3; i++)
+            {
+                if (i >= rare)
+                {
+                    Stars[i].gameObject.SetActive(false);
+                }
+                else
+                {
+                    Stars[i].gameObject.SetActive(true);
+                }
+                
+            }
 
             //ensure that the monster generated is not a full monster
             foreach (SkeletonChimera monster in Monster_Scripts)

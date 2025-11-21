@@ -55,7 +55,7 @@ public class UndyingHeart : Creature
         {
             sfxplayer[sfxplayer.Length - 1].Cry();
         }
-        Globals.highestClearedLevel = 3;
+        Globals.highestClearedLevel += 1;
         Destroy(this.gameObject);
         Time.timeScale = 1.0f;
         LoadingManager.LoadScene("Lab");
