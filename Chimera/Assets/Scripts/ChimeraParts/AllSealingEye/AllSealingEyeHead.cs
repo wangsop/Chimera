@@ -16,6 +16,9 @@ public class AllSealingEyeHead : Head
         }
     }
     protected override void Initialize(){
+        ability_name = "Gaze";
+        ability_description = "Stuns the first enemy to make eye contact with it for 10 seconds.";
+        scientist_description = "This beast possesses an abnormally long stun ability, and is rather unsettling to look at. Nina always found comfort in it, somehow, but I can't stand to be near.";
         base.Initialize();
     }
 }

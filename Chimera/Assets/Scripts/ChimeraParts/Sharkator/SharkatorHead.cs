@@ -18,6 +18,9 @@ public class SharkatorHead : Head
     }
     protected override void Initialize(){
         index = 1;
+        ability_name = "Jaws";
+        ability_description = "Sharkator will clamp its prey in its jaws, dealing massive damage and rooting the target briefly.";
+        scientist_description = "A pseudoelectronic cyborg with an open heart. You'd think the heart is an easy target, but it's a bait - attack it, and you're in for a nasty shock.";
         base.Initialize();
     }
 }

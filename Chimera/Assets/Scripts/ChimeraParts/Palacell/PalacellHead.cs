@@ -10,6 +10,9 @@ public class PalacellHead : Head
     }
     protected override void Initialize(){
         index = 5;
+        ability_name = "Cell Wall";
+        ability_description = " Immediately heal for around a quarter of its health.";
+        scientist_description = "Palace of plant cells… Good survival properties, though not very strong. Useful, I suppose…";
         base.Initialize();
     }
 }

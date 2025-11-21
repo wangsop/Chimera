@@ -20,6 +20,9 @@ public class GalvanigarHead : Head
         }
     }
     protected override void Initialize(){
+        ability_name = "Short Circuit";
+        ability_description = "Galvanigar will electrocute one enemy to death, dealing massive damage that almost no creature could survive. However, there is a chance it will also kill itself in the process.";
+        scientist_description = "A very unpredictable creature, Galvanigars are little better than suicide bombers - guaranteed kills, with a chance of death. For my purposes, however, they are just about perfect.";
         base.Initialize();
     }
 }

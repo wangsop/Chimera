@@ -17,6 +17,9 @@ public class BuzzHead : Head
         }
     }
     protected override void Initialize(){
+        ability_name = "Bulldog Bulldozer";
+        ability_description = "Single-target high damage attack that leaves a poison damage-over-time effect.";
+        scientist_description = "Buzz is somewhat of a \"mascot\" among researchers due to its very recognizable form and awe-inspiring colors. Naturally peace-loving creatures. Nina used to love catching them...";
         base.Initialize();
     }
 }

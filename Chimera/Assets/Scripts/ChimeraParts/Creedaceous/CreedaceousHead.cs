@@ -17,6 +17,9 @@ public class CreedaceousHead : Head
         }
     }
     protected override void Initialize(){
+        ability_name = "Sucker Punch";
+        ability_description = "Single-target KO that will stun any enemy hit by it for several seconds.";
+        scientist_description = "A rather aggressive specimen, Creedaceous is a reptilian fighter with abnormally powerful arms. Exercise caution when approaching; they may take it as a challenge.";
         base.Initialize();
     }
 }
