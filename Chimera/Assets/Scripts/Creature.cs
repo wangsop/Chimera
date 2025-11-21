@@ -144,6 +144,7 @@ public abstract class Creature : Damageable_Testing, Entity
         {
             if (timeSinceLastTick > status_effect.TimeBetweenTicks && DamageTicksLeft > 0)
             {
+                head.GetComponent<Animator>().SetTrigger("Damaged");
                 Hit(status_effect.TickDamage, Vector2.zero, status_effect, false);
                 Debug.Log("Took tick damage");
                 DamageTicksLeft -= 1;

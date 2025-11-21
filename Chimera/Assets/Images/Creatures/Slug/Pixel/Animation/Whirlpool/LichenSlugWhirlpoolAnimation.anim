@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Slug_Chimera_Attack
+  m_Name: LichenSlugWhirlpoolAnimation
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1997627381, guid: 39dad0391224947af8f43af6bcfb36b9, type: 3}
+      value: {fileID: -6314378960769020677, guid: 1b92171d607ff4c01810fe9a2cffdfcf, type: 3}
     - time: 0.16666667
-      value: {fileID: 1304320446, guid: 4747d2f7e3a4b440ca6c1f3aa1f811a8, type: 3}
+      value: {fileID: -103915898347679051, guid: e1ae91f759c894db6987af802a6224b9, type: 3}
     - time: 0.33333334
-      value: {fileID: 1080998064, guid: 3336685b5fd214c78880d25e0cb71e1d, type: 3}
+      value: {fileID: 7360234956774310630, guid: e595d65677aa0486ba2facabf5d95901, type: 3}
     - time: 0.5
-      value: {fileID: 805034083, guid: 394662efd40ea4016b579bd73caa0c67, type: 3}
+      value: {fileID: 1358958053910999878, guid: f74459313b2fa48f799ddb6667a54fe4, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1997627381, guid: 39dad0391224947af8f43af6bcfb36b9, type: 3}
-    - {fileID: 1304320446, guid: 4747d2f7e3a4b440ca6c1f3aa1f811a8, type: 3}
-    - {fileID: 1080998064, guid: 3336685b5fd214c78880d25e0cb71e1d, type: 3}
-    - {fileID: 805034083, guid: 394662efd40ea4016b579bd73caa0c67, type: 3}
+    - {fileID: -6314378960769020677, guid: 1b92171d607ff4c01810fe9a2cffdfcf, type: 3}
+    - {fileID: -103915898347679051, guid: e1ae91f759c894db6987af802a6224b9, type: 3}
+    - {fileID: 7360234956774310630, guid: e595d65677aa0486ba2facabf5d95901, type: 3}
+    - {fileID: 1358958053910999878, guid: f74459313b2fa48f799ddb6667a54fe4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -64,7 +64,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
