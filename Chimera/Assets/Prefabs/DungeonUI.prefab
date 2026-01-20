@@ -727,6 +727,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMechanics
       objectReference: {fileID: 0}
+    - target: {fileID: 6560597334252254622, guid: 378ffb37ecc984a4db0ac3271e3e5dbd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8081757331350584856}
+    - target: {fileID: 6560597334252254622, guid: 378ffb37ecc984a4db0ac3271e3e5dbd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SurrenderButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560597334252254622, guid: 378ffb37ecc984a4db0ac3271e3e5dbd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7773076017760192860, guid: 378ffb37ecc984a4db0ac3271e3e5dbd, type: 3}
       propertyPath: m_Type
       value: 0
@@ -858,6 +870,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7900034390909329187, guid: 378ffb37ecc984a4db0ac3271e3e5dbd, type: 3}
   m_PrefabInstance: {fileID: 4904875543720089833}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8081757331350584856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3763238150049146609, guid: 378ffb37ecc984a4db0ac3271e3e5dbd, type: 3}
+  m_PrefabInstance: {fileID: 4904875543720089833}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8ce75e7e68f0d4ca0a28c6e2d4f329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5567041081924395854
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,9 +27,14 @@ public class PauseMenu : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("Title");
         }
 
-    public void QuitButton()
-        {
-            Debug.Log("Quitting game! This would've quit in an actual build.");
-            Application.Quit();
-        }
+    public void SurrenderButton()
+    {
+        Exit.Surrender();
     }
+    
+    public void QuitButton()
+    {
+        Debug.Log("Quitting game! This would've quit in an actual build.");
+        Application.Quit();
+    }
+}
